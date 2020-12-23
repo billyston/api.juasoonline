@@ -11,7 +11,6 @@ class BranchController extends Controller
 {
     private $theRepository;
 
-
     /**
      * ShopController constructor.
      * @param BranchRepositoryInterface $branchRepository

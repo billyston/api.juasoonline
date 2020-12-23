@@ -21,10 +21,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4feba817-4efa-4e4a-b571-41b708c27c4a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Branch/BranchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Branch/BranchController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Shop/ShopRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Shop/ShopRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/ShopService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Shop/ShopService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Branch/BranchRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Branch/BranchRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -210,7 +209,9 @@
       <workItem from="1608677252330" duration="1795000" />
       <workItem from="1608679066457" duration="1723000" />
       <workItem from="1608681234730" duration="2055000" />
-      <workItem from="1608683710431" duration="604000" />
+      <workItem from="1608683710431" duration="1278000" />
+      <workItem from="1608685521535" duration="1891000" />
+      <workItem from="1608687430078" duration="760000" />
     </task>
     <servers />
   </component>
@@ -230,18 +231,18 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608683750107">
+    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608687600045">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608683750107" />
-    <state x="688" y="304" key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#" timestamp="1608671354604">
+    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608687600045" />
+    <state x="688" y="304" key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#" timestamp="1608686995472">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="688" y="304" key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608671354604" />
-    <state x="631" y="270" key="NewPhpClassDialog" timestamp="1608677614166">
+    <state x="688" y="304" key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608686995472" />
+    <state x="631" y="270" key="NewPhpClassDialog" timestamp="1608685883560">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="631" y="270" key="NewPhpClassDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608677614166" />
+    <state x="631" y="270" key="NewPhpClassDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608685883560" />
     <state x="469" y="176" key="SettingsEditor" timestamp="1608632053409">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

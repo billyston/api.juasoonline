@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Repositories\Administrator\AdministratorRepository;
+use App\Repositories\Administrator\AdministratorRepositoryInterface;
 use App\Repositories\Branch\BranchRepository;
 use App\Repositories\Branch\BranchRepositoryInterface;
 use App\Repositories\Shop\ShopRepository;
@@ -19,6 +21,7 @@ class RepositoryServiceProvider extends ServiceProvider
     {
         $this -> app -> bind( ShopRepositoryInterface::class, ShopRepository::class );
         $this -> app -> bind( BranchRepositoryInterface::class, BranchRepository::class );
+        $this -> app -> bind( AdministratorRepositoryInterface::class, AdministratorRepository::class );
     }
 
     /**
