@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\Branch\BranchController;
 use App\Http\Controllers\Shop\ShopController;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +18,5 @@ use Illuminate\Support\Facades\Route;
 Route::group( [], function ()
 {
     Route::apiResource( 'shops', ShopController::class );
+    Route::apiResource( 'branches', BranchController::class );
 });

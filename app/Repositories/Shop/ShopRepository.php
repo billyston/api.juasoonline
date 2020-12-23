@@ -3,7 +3,7 @@
 namespace App\Repositories\Shop;
 
 use App\Http\Requests\Shop\ShopRequest;
-use App\Services\ShopService;
+use App\Services\Shop\ShopService;
 
 class ShopRepository implements ShopRepositoryInterface
 {

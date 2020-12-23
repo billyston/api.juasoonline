@@ -1,14 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="4feba817-4efa-4e4a-b571-41b708c27c4a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_set_name" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_set_name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Shop/ShopRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Shop/ShopRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/ShopService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/Shop/ShopService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,13 +161,18 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Providers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Services/Branch" />
+      <recent name="$PROJECT_DIR$/app/Services/Shop" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/Providers" />
     </key>
   </component>
@@ -183,28 +205,50 @@
       <workItem from="1608662046570" duration="10000" />
       <workItem from="1608662923561" duration="854000" />
       <workItem from="1608663868265" duration="1113000" />
+      <workItem from="1608666641325" duration="1606000" />
+      <workItem from="1608670422923" duration="1792000" />
+      <workItem from="1608677252330" duration="1795000" />
+      <workItem from="1608679066457" duration="1723000" />
+      <workItem from="1608681234730" duration="2055000" />
+      <workItem from="1608683710431" duration="604000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="WindowStateProjectService">
-    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608647778131">
+    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608683750107">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608647778131" />
-    <state x="688" y="304" key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#" timestamp="1608646495944">
+    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608683750107" />
+    <state x="688" y="304" key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#" timestamp="1608671354604">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="688" y="304" key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608646495944" />
-    <state x="631" y="270" key="NewPhpClassDialog" timestamp="1608643202986">
+    <state x="688" y="304" key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608671354604" />
+    <state x="631" y="270" key="NewPhpClassDialog" timestamp="1608677614166">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="631" y="270" key="NewPhpClassDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608643202986" />
+    <state x="631" y="270" key="NewPhpClassDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608677614166" />
     <state x="469" y="176" key="SettingsEditor" timestamp="1608632053409">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="469" y="176" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608632053409" />
+    <state x="661" y="295" width="597" height="490" key="find.popup" timestamp="1608667745191">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="661" y="295" width="597" height="490" key="find.popup/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608667745191" />
   </component>
 </project>
