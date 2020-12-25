@@ -27,6 +27,7 @@ trait apiResponseBuilder
      */
     public function errorResponse( $data, $status_message, $message, $status_code )
     {
+        if ( $status_code === 422 ){ return response() -> json([ 'status' => $status_message, 'code' => $status_code, 'message' => $message, 'error(s)' => $data, ] ); }
         return response() -> json([ 'status' => $status_message, 'code' => $status_code, 'message' => $message, 'data' => $data, ] );
     }
 }

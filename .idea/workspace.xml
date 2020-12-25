@@ -21,10 +21,12 @@
   <component name="ChangeListManager">
     <list default="true" id="4feba817-4efa-4e4a-b571-41b708c27c4a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Branch/BranchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Branch/BranchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/Branch/BranchRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/Branch/BranchRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_set_name" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_set_name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Administrator/AdministratorRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Administrator/AdministratorRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Branch/BranchRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Branch/BranchRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Shop/ShopRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Shop/ShopRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/apiResponseBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/apiResponseBuilder.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +213,14 @@
       <workItem from="1608681234730" duration="2055000" />
       <workItem from="1608683710431" duration="1278000" />
       <workItem from="1608685521535" duration="1891000" />
-      <workItem from="1608687430078" duration="760000" />
+      <workItem from="1608687430078" duration="988000" />
+      <workItem from="1608802122693" duration="858000" />
+      <workItem from="1608804422386" duration="1007000" />
+      <workItem from="1608807800315" duration="1245000" />
+      <workItem from="1608809625190" duration="2198000" />
+      <workItem from="1608821882011" duration="558000" />
+      <workItem from="1608823777549" duration="534000" />
+      <workItem from="1608825919548" duration="7000" />
     </task>
     <servers />
   </component>
@@ -231,10 +240,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608687600045">
+    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608804862376">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608687600045" />
+    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608804862376" />
     <state x="688" y="304" key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#" timestamp="1608686995472">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
