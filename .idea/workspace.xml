@@ -22,11 +22,8 @@
     <list default="true" id="4feba817-4efa-4e4a-b571-41b708c27c4a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_set_name" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_set_name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Exceptions/Handler.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Exceptions/Handler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Administrator/AdministratorRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Administrator/AdministratorRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Branch/BranchRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Branch/BranchRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Shop/ShopRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/Shop/ShopRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/apiResponseBuilder.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/apiResponseBuilder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/synced_folders" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/synced_folders" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/vagrant_cwd" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/vagrant_cwd" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -162,7 +159,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
@@ -221,6 +218,11 @@
       <workItem from="1608821882011" duration="558000" />
       <workItem from="1608823777549" duration="534000" />
       <workItem from="1608825919548" duration="7000" />
+      <workItem from="1608893448827" duration="748000" />
+      <workItem from="1608902840478" duration="59000" />
+      <workItem from="1614329682550" duration="424000" />
+      <workItem from="1614332467110" duration="96000" />
+      <workItem from="1614333218961" duration="1363000" />
     </task>
     <servers />
   </component>
@@ -252,10 +254,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state x="631" y="270" key="NewPhpClassDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608685883560" />
-    <state x="469" y="176" key="SettingsEditor" timestamp="1608632053409">
+    <state x="469" y="176" key="SettingsEditor" timestamp="1608894023849">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="469" y="176" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608632053409" />
+    <state x="469" y="176" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608894023849" />
     <state x="661" y="295" width="597" height="490" key="find.popup" timestamp="1608667745191">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
