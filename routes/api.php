@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group([], function ()
 {
-    Route::apiResource( 'stores', StoreController::class );
+//    Route::apiResource( 'stores', StoreController::class );
 //    Route::apiResource( 'administrators', StoreAdministratorController::class );
 //    Route::apiResource( 'branches', BranchController::class );
 });
@@ -28,4 +28,5 @@ Route::group([], function ()
 Route::group([ 'prefix' => 'web' ], function ()
 {
     Route::post( 'registration', [ AdminController::class, 'registration' ]);
+    Route::apiResource( 'stores', StoreController::class ) -> only( [ 'store', 'show', 'update'] );
 });

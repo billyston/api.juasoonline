@@ -21,8 +21,14 @@
   <component name="ChangeListManager">
     <list default="true" id="4feba817-4efa-4e4a-b571-41b708c27c4a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_set_name" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_set_name" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_provision" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_set_name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/box_meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/id" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/id" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/index_uuid" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/index_uuid" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/private_key" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/synced_folders" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +236,8 @@
       <workItem from="1614762781538" duration="1573000" />
       <workItem from="1614803295700" duration="80000" />
       <workItem from="1614803522878" duration="12000" />
-      <workItem from="1614854471969" duration="5342000" />
+      <workItem from="1614854471969" duration="7727000" />
+      <workItem from="1614864970948" duration="5000" />
     </task>
     <servers />
   </component>
