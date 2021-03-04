@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Repositories\Shop;
+namespace App\Repositories\ProductService;
 
-use App\Http\Requests\Shop\ShopRequest;
+use App\Http\Requests\ProductService\StoreRequest;
 
-interface ShopRepositoryInterface
+interface StoreRepositoryInterface
 {
     /**
      * @return mixed
@@ -12,10 +12,10 @@ interface ShopRepositoryInterface
     public function index();
 
     /**
-     * @param ShopRequest $shopRequest
+     * @param StoreRequest $shopRequest
      * @return mixed
      */
-    public function store( ShopRequest $shopRequest );
+    public function store(StoreRequest $shopRequest );
 
     /**
      * @param $theShop
@@ -24,11 +24,11 @@ interface ShopRepositoryInterface
     public function show( $theShop );
 
     /**
-     * @param ShopRequest $shopRequest
+     * @param StoreRequest $shopRequest
      * @param $theShop
      * @return mixed
      */
-    public function update( ShopRequest $shopRequest, $theShop );
+    public function update(StoreRequest $shopRequest, $theShop );
 
     /**
      * @param $theShop

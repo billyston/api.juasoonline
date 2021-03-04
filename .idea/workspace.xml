@@ -19,7 +19,29 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4feba817-4efa-4e4a-b571-41b708c27c4a" name="Default Changelist" comment="" />
+    <list default="true" id="4feba817-4efa-4e4a-b571-41b708c27c4a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_set_name" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_set_name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Administrator/AdministratorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductService/StoreAdministratorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Branch/BranchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductService/BranchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Shop/ShopController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductService/StoreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Administrator/AdministratorRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProductService/AdministratorRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Branch/BranchRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProductService/BranchRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/Shop/ShopRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProductService/StoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Administrator/AdministratorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/AdministratorRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Administrator/AdministratorRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/AdministratorRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Branch/BranchRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/BranchRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Branch/BranchRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/BranchRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Shop/ShopRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/StoreRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/Shop/ShopRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/StoreRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Administrator/AdministratorService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ProductService/AdministratorService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Branch/BranchService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ProductService/BranchService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/Shop/ShopService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ProductService/StoreService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -153,6 +175,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -160,13 +183,16 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/Services/Branch" />
-      <recent name="$PROJECT_DIR$/app/Services/Shop" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app" />
       <recent name="$PROJECT_DIR$/app/Providers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Repositories/ProductService" />
+      <recent name="$PROJECT_DIR$/app/Services" />
+      <recent name="$PROJECT_DIR$/app/Services/ProductService" />
+      <recent name="$PROJECT_DIR$/app/Http/Requests/ProductService" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Product" />
     </key>
   </component>
   <component name="RunManager">
@@ -217,7 +243,12 @@
       <workItem from="1608902840478" duration="59000" />
       <workItem from="1614329682550" duration="424000" />
       <workItem from="1614332467110" duration="96000" />
-      <workItem from="1614333218961" duration="1668000" />
+      <workItem from="1614333218961" duration="7571000" />
+      <workItem from="1614720208039" duration="71000" />
+      <workItem from="1614762781538" duration="1573000" />
+      <workItem from="1614803295700" duration="80000" />
+      <workItem from="1614803522878" duration="12000" />
+      <workItem from="1614854471969" duration="4080000" />
     </task>
     <servers />
   </component>
@@ -235,27 +266,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1608804862376">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="698" y="299" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608804862376" />
-    <state x="688" y="304" key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#" timestamp="1608686995472">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="688" y="304" key="#com.jetbrains.php.refactoring.extract.interface.PhpExtractInterfaceDialog#/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608686995472" />
-    <state x="631" y="270" key="NewPhpClassDialog" timestamp="1608685883560">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="631" y="270" key="NewPhpClassDialog/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608685883560" />
-    <state x="469" y="176" key="SettingsEditor" timestamp="1608894023849">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="469" y="176" key="SettingsEditor/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608894023849" />
-    <state x="661" y="295" width="597" height="490" key="find.popup" timestamp="1608667745191">
-      <screen x="0" y="0" width="1920" height="1080" />
-    </state>
-    <state x="661" y="295" width="597" height="490" key="find.popup/1920.0.1920.1080/0.0.1920.1080@0.0.1920.1080" timestamp="1608667745191" />
   </component>
 </project>

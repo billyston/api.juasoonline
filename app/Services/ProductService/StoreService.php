@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Services\Branch;
+namespace App\Services\ProductService;
 
 use App\Traits\ExternalService;
 
-class BranchService
+class StoreService
 {
     use ExternalService;
-    private $baseURL = "http://shops.juasoonline.test/branches/";
+    private $baseURL = "http://products.juasoonline.dev/stores/";
 
     /**
      * @return array|mixed
      */
-    public function getAll()
+    public function getAll() : array
     {
         return $this -> getRequest( $this -> baseURL );
     }
@@ -21,7 +21,7 @@ class BranchService
      * @param $theRequest
      * @return array|mixed
      */
-    public function createBranch( $theRequest )
+    public function createShop( $theRequest ) : array
     {
         return $this -> postRequest( $this -> baseURL, $theRequest );
     }
@@ -30,7 +30,7 @@ class BranchService
      * @param $theBranch
      * @return array|mixed
      */
-    public function getBranch( $theBranch )
+    public function getShop( $theBranch ) : array
     {
         return $this -> getRequest( $this -> baseURL, $theBranch,  );
     }
@@ -40,7 +40,7 @@ class BranchService
      * @param $theBranch
      * @return array|mixed
      */
-    public function updateBranch( $theRequest, $theBranch )
+    public function updateShop( $theRequest, $theBranch ) : array
     {
         return $this -> putRequest( $this -> baseURL, $theRequest, $theBranch  );
     }
@@ -49,7 +49,7 @@ class BranchService
      * @param $theBranch
      * @return array|mixed
      */
-    public function deleteBranch( $theBranch )
+    public function deleteShop( $theBranch ) : array
     {
         return $this -> deleteRequest( $this -> baseURL, $theBranch  );
     }

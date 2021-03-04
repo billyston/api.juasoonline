@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Requests\Branch;
+namespace App\Http\Requests\ProductService;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BranchRequest extends FormRequest
+class StoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize() : bool
     {
         return true;
     }
@@ -21,7 +21,7 @@ class BranchRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules() : array
     {
         if ( in_array( $this -> getMethod (), [ 'PUT', 'PATCH' ] ) )
         {
@@ -29,16 +29,16 @@ class BranchRequest extends FormRequest
             [
                 'data'                                                  => [ 'required' ],
                 'data.id'                                               => [ 'required', 'string', ],
-                'data.type'                                             => [ 'required', 'string', 'in:Branch' ],
+                'data.type'                                             => [ 'required', 'string', 'in:Store' ],
             ];
         }
 
         return
         [
             'data'                                                      => [ 'required' ],
-            'data.type'                                                 => [ 'required', 'string', 'in:Branch' ],
+            'data.type'                                                 => [ 'required', 'string', 'in:Store' ],
 
-            'data.attributes.branch_name'                               => [ 'required', 'string' ],
+            'data.attributes.store_name'                                 => [ 'required', 'string' ],
 
             'data.attributes.region'                                    => [ 'required', 'string' ],
             'data.attributes.city'                                      => [ 'required', 'string' ],
@@ -48,24 +48,26 @@ class BranchRequest extends FormRequest
             'data.attributes.mobile_phone'                              => [ 'required', 'min:10', 'numeric' ],
             'data.attributes.other_phone'                               => [ 'min:10', 'numeric' ],
 
-            'data.attributes.email'                                     => [ 'required', 'email' ],
-
-            'data.relationships.shop.shop_id'                           => [ 'required', 'string' ],
+            'data.attributes.email'                                     => [ 'required', 'email', ],
+            'data.attributes.website'                                   => [ 'sometimes', 'url' ],
         ];
     }
 
-    public function messages()
+    /**
+     * @return string[]
+     */
+    public function messages() : array
     {
         return
         [
             'data.required'                                             => "The data field is invalid",
 
-            'data.type.required'                                        => "The resource type is required",
-            'data.type.string'                                          => "The resource type must be of a string type",
-            'data.type.in'                                              => "The resource type is invalid",
+            'data.type.required'                                        => "The type is required",
+            'data.type.string'                                          => "The type must be of a string",
+            'data.type.in'                                              => "The type is invalid",
 
-            'data.attributes.branch_name.required'                      => "The branch name is required",
-            'data.attributes.branch_name.string'                        => "The branch name must be of a string type",
+            'data.attributes.shop_name.required'                        => "The shop name is required",
+            'data.attributes.shop_name.string'                          => "The shop name must be of a string type",
 
             'data.attributes.region.required'                           => "The region is required",
             'data.attributes.region.string'                             => "The region must be of a string type",
@@ -86,9 +88,10 @@ class BranchRequest extends FormRequest
             'data.attributes.other_phone.min'                           => "The other phone number must have a minimum of 10 digits",
             'data.attributes.other_phone.numeric'                       => "The other phone number must only contain numbers",
 
+            'data.attributes.email.required'                            => "The email is required",
             'data.attributes.email.email'                               => "The email address is invalid",
 
-            'data.relationships.shop.shop_id.required'                  => "The shop id is required",
+            'data.attributes.website.url'                               => "The website address is invalid",
         ];
     }
 }

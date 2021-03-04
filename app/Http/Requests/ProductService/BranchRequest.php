@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Shop;
+namespace App\Http\Requests\ProductService;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class ShopRequest extends FormRequest
+class BranchRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,16 +29,16 @@ class ShopRequest extends FormRequest
             [
                 'data'                                                  => [ 'required' ],
                 'data.id'                                               => [ 'required', 'string', ],
-                'data.type'                                             => [ 'required', 'string', 'in:Shop' ],
+                'data.type'                                             => [ 'required', 'string', 'in:Branch' ],
             ];
         }
 
         return
         [
             'data'                                                      => [ 'required' ],
-            'data.type'                                                 => [ 'required', 'string', 'in:Shop' ],
+            'data.type'                                                 => [ 'required', 'string', 'in:Branch' ],
 
-            'data.attributes.shop_name'                                 => [ 'required', 'string' ],
+            'data.attributes.branch_name'                               => [ 'required', 'string' ],
 
             'data.attributes.region'                                    => [ 'required', 'string' ],
             'data.attributes.city'                                      => [ 'required', 'string' ],
@@ -48,8 +48,9 @@ class ShopRequest extends FormRequest
             'data.attributes.mobile_phone'                              => [ 'required', 'min:10', 'numeric' ],
             'data.attributes.other_phone'                               => [ 'min:10', 'numeric' ],
 
-            'data.attributes.email'                                     => [ 'required', 'email', ],
-            'data.attributes.website'                                   => [ 'sometimes', 'url' ],
+            'data.attributes.email'                                     => [ 'required', 'email' ],
+
+            'data.relationships.shop.shop_id'                           => [ 'required', 'string' ],
         ];
     }
 
@@ -59,12 +60,12 @@ class ShopRequest extends FormRequest
         [
             'data.required'                                             => "The data field is invalid",
 
-            'data.type.required'                                        => "The type is required",
-            'data.type.string'                                          => "The type must be of a string",
-            'data.type.in'                                              => "The type is invalid",
+            'data.type.required'                                        => "The resource type is required",
+            'data.type.string'                                          => "The resource type must be of a string type",
+            'data.type.in'                                              => "The resource type is invalid",
 
-            'data.attributes.shop_name.required'                        => "The shop name is required",
-            'data.attributes.shop_name.string'                          => "The shop name must be of a string type",
+            'data.attributes.branch_name.required'                      => "The branch name is required",
+            'data.attributes.branch_name.string'                        => "The branch name must be of a string type",
 
             'data.attributes.region.required'                           => "The region is required",
             'data.attributes.region.string'                             => "The region must be of a string type",
@@ -85,10 +86,9 @@ class ShopRequest extends FormRequest
             'data.attributes.other_phone.min'                           => "The other phone number must have a minimum of 10 digits",
             'data.attributes.other_phone.numeric'                       => "The other phone number must only contain numbers",
 
-            'data.attributes.email.required'                            => "The email is required",
             'data.attributes.email.email'                               => "The email address is invalid",
 
-            'data.attributes.website.url'                               => "The website address is invalid",
+            'data.relationships.shop.shop_id.required'                  => "The shop id is required",
         ];
     }
 }

@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Administrator;
+namespace App\Http\Controllers\ProductService;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Administrator\AdministratorRequest;
 use App\Repositories\Administrator\AdministratorRepositoryInterface;
 use Illuminate\Http\Request;
 
-class AdministratorController extends Controller
+class StoreAdministratorController extends Controller
 {
     private $theRepository;
 
     /**
-     * ShopController constructor.
+     * StoreController constructor.
      * @param AdministratorRepositoryInterface $administratorRepository
      */
     public function __construct( AdministratorRepositoryInterface $administratorRepository )

@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Services\Shop;
+namespace App\Services\ProductService;
 
 use App\Traits\ExternalService;
 
-class ShopService
+class AdministratorService
 {
     use ExternalService;
-    private $baseURL = "http://shops.juasoonline.test/shops/";
+    private $baseURL = "http://products.juasoonline.dev/store/administrator/";
 
     /**
      * @return array|mixed
@@ -21,7 +21,7 @@ class ShopService
      * @param $theRequest
      * @return array|mixed
      */
-    public function createShop( $theRequest )
+    public function createAdministrator( $theRequest )
     {
         return $this -> postRequest( $this -> baseURL, $theRequest );
     }
@@ -30,7 +30,7 @@ class ShopService
      * @param $theBranch
      * @return array|mixed
      */
-    public function getShop( $theBranch )
+    public function getAdministrator( $theBranch )
     {
         return $this -> getRequest( $this -> baseURL, $theBranch,  );
     }
@@ -40,7 +40,7 @@ class ShopService
      * @param $theBranch
      * @return array|mixed
      */
-    public function updateShop( $theRequest, $theBranch )
+    public function updateAdministrator( $theRequest, $theBranch )
     {
         return $this -> putRequest( $this -> baseURL, $theRequest, $theBranch  );
     }
@@ -49,7 +49,7 @@ class ShopService
      * @param $theBranch
      * @return array|mixed
      */
-    public function deleteShop( $theBranch )
+    public function deleteAdministrator( $theBranch )
     {
         return $this -> deleteRequest( $this -> baseURL, $theBranch  );
     }

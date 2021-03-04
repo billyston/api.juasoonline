@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Repositories\Administrator;
+namespace App\Repositories\ProductService;
 
-use App\Http\Requests\Administrator\AdministratorRequest;
-use App\Services\Administrator\AdministratorService;
+use App\Http\Requests\ProductService\AdministratorRequest;
+use App\Services\ProductService\AdministratorService;
 
 class AdministratorRepository implements AdministratorRepositoryInterface
 {
     private $administratorService;
 
     /**
-     * ShopRepository constructor.
+     * StoreRepository constructor.
      * @param AdministratorService $administratorService
      */
     public function __construct( AdministratorService $administratorService )

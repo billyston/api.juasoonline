@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories\Branch;
+namespace App\Repositories\ProductService;
 
-use App\Http\Requests\Branch\BranchRequest;
+use App\Http\Requests\ProductService\BranchRequest;
 
 interface BranchRepositoryInterface
 {

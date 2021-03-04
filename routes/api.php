@@ -1,8 +1,9 @@
 <?php
 
-use App\Http\Controllers\Administrator\AdministratorController;
-use App\Http\Controllers\Branch\BranchController;
-use App\Http\Controllers\Shop\ShopController;
+use App\Http\Controllers\ProductService\StoreController;
+use App\Http\Controllers\ProductService\StoreAdministratorController;
+use App\Http\Controllers\ProductService\BranchController;
+use App\Http\Controllers\Web\Admins\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,9 +17,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group( [], function ()
+Route::group([], function ()
 {
-    Route::apiResource( 'shops', ShopController::class );
-    Route::apiResource( 'branches', BranchController::class );
-    Route::apiResource( 'administrators', AdministratorController::class );
+    Route::apiResource( 'stores', StoreController::class );
+//    Route::apiResource( 'administrators', StoreAdministratorController::class );
+//    Route::apiResource( 'branches', BranchController::class );
+});
+
+
+Route::group([ 'prefix' => 'web' ], function ()
+{
+    Route::post( 'registration', [ AdminController::class, 'registration' ]);
 });

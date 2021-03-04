@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Branch;
+namespace App\Http\Controllers\ProductService;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Branch\BranchRequest;
@@ -12,7 +12,7 @@ class BranchController extends Controller
     private $theRepository;
 
     /**
-     * ShopController constructor.
+     * StoreController constructor.
      * @param BranchRepositoryInterface $branchRepository
      */
     public function __construct( BranchRepositoryInterface $branchRepository )

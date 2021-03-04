@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Repositories\Branch;
+namespace App\Repositories\ProductService;
 
-use App\Http\Requests\Branch\BranchRequest;
-use App\Services\Branch\BranchService;
+use App\Http\Requests\ProductService\BranchRequest;
+use App\Services\ProductService\BranchService;
 
 class BranchRepository implements BranchRepositoryInterface
 {
     private $branchService;
 
     /**
-     * ShopRepository constructor.
+     * StoreRepository constructor.
      * @param BranchService $branchService
      */
     public function __construct( BranchService $branchService )

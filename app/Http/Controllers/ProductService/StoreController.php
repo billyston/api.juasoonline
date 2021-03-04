@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Http\Controllers\Shop;
+namespace App\Http\Controllers\ProductService;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Shop\ShopRequest;
-use App\Repositories\Shop\ShopRepositoryInterface;
+use App\Http\Requests\ProductService\StoreRequest;
+use App\Repositories\ProductService\StoreRepositoryInterface;
 
-class ShopController extends Controller
+class StoreController extends Controller
 {
     private $theRepository;
 
     /**
-     * ShopController constructor.
-     * @param ShopRepositoryInterface $shopRepository
+     * StoreController constructor.
+     * @param StoreRepositoryInterface $shopRepository
      */
-    public function __construct( ShopRepositoryInterface $shopRepository )
+    public function __construct(StoreRepositoryInterface $shopRepository )
     {
         $this -> theRepository = $shopRepository;
     }
@@ -28,10 +28,10 @@ class ShopController extends Controller
     }
 
     /**
-     * @param ShopRequest $shopRequest
+     * @param StoreRequest $shopRequest
      * @return mixed
      */
-    public function store( ShopRequest $shopRequest )
+    public function store(StoreRequest $shopRequest )
     {
         return $this -> theRepository -> store( $shopRequest );
     }
@@ -46,11 +46,11 @@ class ShopController extends Controller
     }
 
     /**
-     * @param ShopRequest $shopRequest
+     * @param StoreRequest $shopRequest
      * @param $theShop
      * @return mixed
      */
-    public function update( ShopRequest $shopRequest, $theShop )
+    public function update(StoreRequest $shopRequest, $theShop )
     {
         return $this -> theRepository -> update( $shopRequest, $theShop );
     }

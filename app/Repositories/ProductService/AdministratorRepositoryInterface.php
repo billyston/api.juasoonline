@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories\Administrator;
+namespace App\Repositories\ProductService;
 
-use App\Http\Requests\Administrator\AdministratorRequest;
+use App\Http\Requests\ProductService\AdministratorRequest;
 
 interface AdministratorRepositoryInterface
 {
