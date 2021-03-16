@@ -5,6 +5,7 @@ namespace App\Http\Controllers\ProductService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductService\StoreRequest;
 use App\Repositories\ProductService\StoreRepositoryInterface;
+use Illuminate\Http\JsonResponse;
 
 class StoreController extends Controller
 {
@@ -14,7 +15,7 @@ class StoreController extends Controller
      * StoreController constructor.
      * @param StoreRepositoryInterface $shopRepository
      */
-    public function __construct(StoreRepositoryInterface $shopRepository )
+    public function __construct( StoreRepositoryInterface $shopRepository )
     {
         $this -> theRepository = $shopRepository;
     }
@@ -29,9 +30,9 @@ class StoreController extends Controller
 
     /**
      * @param StoreRequest $shopRequest
-     * @return mixed
+     * @return array|mixed
      */
-    public function store(StoreRequest $shopRequest )
+    public function store( StoreRequest $shopRequest ) : array
     {
         return $this -> theRepository -> store( $shopRequest );
     }
@@ -50,7 +51,7 @@ class StoreController extends Controller
      * @param $theShop
      * @return mixed
      */
-    public function update(StoreRequest $shopRequest, $theShop )
+    public function update( StoreRequest $shopRequest, $theShop )
     {
         return $this -> theRepository -> update( $shopRequest, $theShop );
     }

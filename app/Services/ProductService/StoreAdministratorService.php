@@ -2,9 +2,10 @@
 
 namespace App\Services\ProductService;
 
+use App\Models\StoreAdmin\StoreAdministrator;
 use App\Traits\ExternalService;
 
-class AdministratorService
+class StoreAdministratorService
 {
     use ExternalService;
     private $baseURL = "http://products.juasoonline.dev/store/administrator/";
@@ -21,7 +22,7 @@ class AdministratorService
      * @param $theRequest
      * @return array|mixed
      */
-    public function createAdministrator( $theRequest )
+    public function createAdministrator( $theRequest ) : array
     {
         return $this -> postRequest( $this -> baseURL, $theRequest );
     }

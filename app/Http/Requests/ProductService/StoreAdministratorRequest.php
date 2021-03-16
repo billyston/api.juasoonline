@@ -4,7 +4,7 @@ namespace App\Http\Requests\ProductService;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AdministratorRequest extends FormRequest
+class StoreAdministratorRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -29,14 +29,14 @@ class AdministratorRequest extends FormRequest
             [
                 'data'                                                  => [ 'required' ],
                 'data.id'                                               => [ 'required', 'string' ],
-                'data.type'                                             => [ 'required', 'string', 'in:Administrator' ],
+                'data.type'                                             => [ 'required', 'string', 'in:StoreAdministrator' ],
             ];
         }
 
         return
         [
             'data'                                                      => [ 'required' ],
-            'data.type'                                                 => [ 'required', 'string', 'in:Administrator' ],
+            'data.type'                                                 => [ 'required', 'string', 'in:StoreAdministrator' ],
 
             'data.attributes.first_name'                                => [ 'required', 'string' ],
             'data.attributes.other_names'                               => [ 'sometimes', 'string' ],
@@ -48,7 +48,7 @@ class AdministratorRequest extends FormRequest
             'data.attributes.mobile_phone'                              => [ 'required', 'min:10', 'numeric' ],
             'data.attributes.other_phone'                               => [ 'min:10', 'numeric' ],
 
-            'data.relationships.shop.shop_id'                           => [ 'required', 'string' ],
+            'data.relationships.store.store_id'                         => [ 'required', 'numeric' ],
         ];
     }
 

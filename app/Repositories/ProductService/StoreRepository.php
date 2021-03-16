@@ -4,6 +4,7 @@ namespace App\Repositories\ProductService;
 
 use App\Http\Requests\ProductService\StoreRequest;
 use App\Services\ProductService\StoreService;
+use Illuminate\Http\JsonResponse;
 
 class StoreRepository implements StoreRepositoryInterface
 {
@@ -13,7 +14,7 @@ class StoreRepository implements StoreRepositoryInterface
      * StoreRepository constructor.
      * @param StoreService $shopService
      */
-    public function __construct(StoreService $shopService )
+    public function __construct( StoreService $shopService )
     {
         $this -> shopService = $shopService;
     }
@@ -30,7 +31,7 @@ class StoreRepository implements StoreRepositoryInterface
      * @param StoreRequest $shopRequest
      * @return array|mixed
      */
-    public function store(StoreRequest $shopRequest )
+    public function store( StoreRequest $shopRequest ) : array
     {
         return $this -> shopService -> createShop( $shopRequest );
     }

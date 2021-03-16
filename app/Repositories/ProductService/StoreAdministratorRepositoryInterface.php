@@ -2,9 +2,9 @@
 
 namespace App\Repositories\ProductService;
 
-use App\Http\Requests\ProductService\AdministratorRequest;
+use App\Http\Requests\ProductService\StoreAdministratorRequest;
 
-interface AdministratorRepositoryInterface
+interface StoreAdministratorRepositoryInterface
 {
     /**
      * @return array|mixed
@@ -12,10 +12,10 @@ interface AdministratorRepositoryInterface
     public function index();
 
     /**
-     * @param AdministratorRequest $administratorRequest
+     * @param StoreAdministratorRequest $administratorRequest
      * @return array|mixed
      */
-    public function store( AdministratorRequest $administratorRequest );
+    public function store( StoreAdministratorRequest $administratorRequest ) : array;
 
     /**
      * @param $theAdministrator
@@ -24,11 +24,11 @@ interface AdministratorRepositoryInterface
     public function show( $theAdministrator );
 
     /**
-     * @param AdministratorRequest $administratorRequest
+     * @param StoreAdministratorRequest $administratorRequest
      * @param $theAdministrator
      * @return array|mixed
      */
-    public function update( AdministratorRequest $administratorRequest, $theAdministrator );
+    public function update(StoreAdministratorRequest $administratorRequest, $theAdministrator );
 
     /**
      * @param $theAdministrator

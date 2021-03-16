@@ -15,7 +15,7 @@ interface StoreRepositoryInterface
      * @param StoreRequest $shopRequest
      * @return mixed
      */
-    public function store(StoreRequest $shopRequest );
+    public function store( StoreRequest $shopRequest );
 
     /**
      * @param $theShop

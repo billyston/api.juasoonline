@@ -3,7 +3,6 @@
 use App\Http\Controllers\ProductService\StoreController;
 use App\Http\Controllers\ProductService\StoreAdministratorController;
 use App\Http\Controllers\ProductService\BranchController;
-use App\Http\Controllers\Web\Admins\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,16 +16,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group([], function ()
-{
-//    Route::apiResource( 'stores', StoreController::class );
-//    Route::apiResource( 'administrators', StoreAdministratorController::class );
-//    Route::apiResource( 'branches', BranchController::class );
-});
-
-
 Route::group([ 'prefix' => 'web' ], function ()
 {
-    Route::post( 'registration', [ AdminController::class, 'registration' ]);
     Route::apiResource( 'stores', StoreController::class ) -> only( [ 'store', 'show', 'update'] );
+    Route::apiResource( 'administrators', StoreAdministratorController::class ) -> only( [ 'store', 'show', 'update'] );
+    Route::apiResource( 'branches', BranchController::class ) -> only( [ 'store', 'show', 'update'] );
 });

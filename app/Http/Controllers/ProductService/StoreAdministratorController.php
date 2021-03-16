@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\ProductService;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Administrator\AdministratorRequest;
-use App\Repositories\Administrator\AdministratorRepositoryInterface;
-use Illuminate\Http\Request;
+use App\Http\Requests\ProductService\StoreAdministratorRequest;
+use App\Repositories\ProductService\StoreAdministratorRepositoryInterface;
 
 class StoreAdministratorController extends Controller
 {
@@ -13,9 +12,9 @@ class StoreAdministratorController extends Controller
 
     /**
      * StoreController constructor.
-     * @param AdministratorRepositoryInterface $administratorRepository
+     * @param StoreAdministratorRepositoryInterface $administratorRepository
      */
-    public function __construct( AdministratorRepositoryInterface $administratorRepository )
+    public function __construct( StoreAdministratorRepositoryInterface $administratorRepository )
     {
         $this -> theRepository = $administratorRepository;
     }
@@ -29,10 +28,10 @@ class StoreAdministratorController extends Controller
     }
 
     /**
-     * @param AdministratorRequest $administratorRequest
-     * @return mixed
+     * @param StoreAdministratorRequest $administratorRequest
+     * @return array|mixed
      */
-    public function store( AdministratorRequest $administratorRequest )
+    public function store( StoreAdministratorRequest $administratorRequest ) : array
     {
         return $this -> theRepository -> store( $administratorRequest );
     }
@@ -47,11 +46,11 @@ class StoreAdministratorController extends Controller
     }
 
     /**
-     * @param AdministratorRequest $administratorRequest
+     * @param StoreAdministratorRequest $administratorRequest
      * @param $theAdministrator
      * @return mixed
      */
-    public function update( AdministratorRequest $administratorRequest, $theAdministrator )
+    public function update( StoreAdministratorRequest $administratorRequest, $theAdministrator )
     {
         return $this -> theRepository -> update( $administratorRequest, $theAdministrator );
     }

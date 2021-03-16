@@ -2,12 +2,14 @@
 
 namespace App\Providers;
 
-use App\Repositories\ProductService\AdministratorRepository;
-use App\Repositories\ProductService\AdministratorRepositoryInterface;
+use App\Repositories\ProductService\StoreAdministratorRepository;
+use App\Repositories\ProductService\StoreAdministratorRepositoryInterface;
 use App\Repositories\ProductService\BranchRepository;
 use App\Repositories\ProductService\BranchRepositoryInterface;
 use App\Repositories\ProductService\StoreRepository;
 use App\Repositories\ProductService\StoreRepositoryInterface;
+use App\Repositories\StoreAdmin\StoreAdminRepository;
+use App\Repositories\StoreAdmin\StoreAdminRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -20,8 +22,8 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this -> app -> bind( StoreRepositoryInterface::class, StoreRepository::class );
+        $this -> app -> bind( StoreAdministratorRepositoryInterface::class, StoreAdministratorRepository::class );
         $this -> app -> bind( BranchRepositoryInterface::class, BranchRepository::class );
-        $this -> app -> bind( AdministratorRepositoryInterface::class, AdministratorRepository::class );
     }
 
     /**
