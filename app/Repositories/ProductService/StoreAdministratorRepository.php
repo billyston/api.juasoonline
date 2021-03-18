@@ -3,8 +3,10 @@
 namespace App\Repositories\ProductService;
 
 use App\Http\Requests\ProductService\StoreAdministratorRequest;
+use App\Mail\ProductService\StoreAdministratorEmailVerification;
 use App\Models\ProductService\StoreAdministrator;
 use App\Services\ProductService\StoreAdministratorService;
+use Illuminate\Support\Facades\Mail;
 
 class StoreAdministratorRepository implements StoreAdministratorRepositoryInterface
 {
@@ -40,8 +42,9 @@ class StoreAdministratorRepository implements StoreAdministratorRepositoryInterf
         $storeAdmin -> save();
 
         // Email confirmation code
-        logger( $storeAdmin );
+//        logger( $storeAdmin );
 
+        Mail::to( $response['data']['attributes']['email'] ) -> send( new StoreAdministratorEmailVerification( $storeAdmin ) );
         return $response;
     }
 

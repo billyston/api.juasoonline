@@ -20,29 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4feba817-4efa-4e4a-b571-41b708c27c4a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Repositories/ProductService/StoreAdministratorRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/api.juasoonline.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/api.juasoonline.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/id" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/id" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/index_uuid" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/index_uuid" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductService/StoreAdministratorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductService/StoreAdministratorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductService/StoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductService/StoreController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Web/Admins/AdminController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ProductService/AdministratorRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProductService/StoreAdministratorRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ProductService/StoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProductService/StoreRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/ProductService/AdministratorRepository.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/ProductService/AdministratorRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/StoreAdministratorRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/ProductService/StoreRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/StoreRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Repositories/ProductService/StoreRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/StoreRepositoryInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Services/ProductService/AdministratorService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ProductService/StoreAdministratorService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Traits/ExternalService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/ExternalService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/cors.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/cors.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ProductService/StoreAdministratorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/StoreAdministratorRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,11 +173,11 @@
       <recent name="$PROJECT_DIR$/app/Providers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/emails" />
+      <recent name="$PROJECT_DIR$/app/Mail/ProductService" />
       <recent name="$PROJECT_DIR$/app/Repositories/ProductService" />
       <recent name="$PROJECT_DIR$/app/Services" />
       <recent name="$PROJECT_DIR$/app/Services/ProductService" />
-      <recent name="$PROJECT_DIR$/app/Http/Requests/ProductService" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Product" />
     </key>
   </component>
   <component name="RunManager">
@@ -270,7 +250,7 @@
       <workItem from="1615836361272" duration="1521000" />
       <workItem from="1615841862666" duration="148000" />
       <workItem from="1615842139384" duration="10006000" />
-      <workItem from="1615893816173" duration="9988000" />
+      <workItem from="1615893816173" duration="18882000" />
     </task>
     <servers />
   </component>
