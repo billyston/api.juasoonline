@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\ProductService\StoreAdministrator;
+
 return [
 
     /*
@@ -35,13 +37,22 @@ return [
     |
     */
 
-    'guards' => [
-        'web' => [
+    'guards' =>
+    [
+        'store_administrator' =>
+        [
+            'driver' => 'jwt',
+            'provider' => 'store_administrators',
+        ],
+
+        'web' =>
+        [
             'driver' => 'session',
             'provider' => 'users',
         ],
 
-        'api' => [
+        'api' =>
+        [
             'driver' => 'token',
             'provider' => 'users',
             'hash' => false,
@@ -65,8 +76,17 @@ return [
     |
     */
 
-    'providers' => [
-        'users' => [
+    'providers' =>
+    [
+        'store_administrators' =>
+        [
+            'driver' => 'eloquent',
+            'model' => StoreAdministrator::class,
+        ],
+
+
+        'users' =>
+        [
             'driver' => 'eloquent',
             'model' => App\Models\User::class,
         ],

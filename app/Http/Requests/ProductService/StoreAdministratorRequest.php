@@ -11,7 +11,7 @@ class StoreAdministratorRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize() : bool
     {
         return true;
     }
@@ -21,7 +21,7 @@ class StoreAdministratorRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules() : array
     {
         if ( in_array( $this -> getMethod (), [ 'PUT', 'PATCH' ] ) )
         {
@@ -44,9 +44,10 @@ class StoreAdministratorRequest extends FormRequest
 
             'data.attributes.designation'                               => [ 'required', 'string' ],
 
-            'data.attributes.email'                                     => [ 'required', 'email' ],
             'data.attributes.mobile_phone'                              => [ 'required', 'min:10', 'numeric' ],
             'data.attributes.other_phone'                               => [ 'min:10', 'numeric' ],
+
+            'data.attributes.email'                                     => [ 'required', 'email', 'unique:store_administrators,email' ],
 
             'data.relationships.store.store_id'                         => [ 'required', 'numeric' ],
         ];
@@ -55,7 +56,7 @@ class StoreAdministratorRequest extends FormRequest
     /**
      * @return array|string[]
      */
-    public function messages()
+    public function messages() : array
     {
         return
         [
@@ -76,15 +77,16 @@ class StoreAdministratorRequest extends FormRequest
             'data.attributes.designation.required'                      => "The designation is required",
             'data.attributes.designation.string'                        => "The designation must be of a string type",
 
-            'data.attributes.email.required'                            => "The email is required",
-            'data.attributes.email.email'                               => "The email address is invalid",
-
             'data.attributes.mobile_phone.required'                     => "The mobile phone number is required",
             'data.attributes.mobile_phone.min'                          => "The mobile phone number must have a minimum of 10 digits",
             'data.attributes.mobile_phone.numeric'                      => "The mobile phone number must only contain numbers",
 
             'data.attributes.other_phone.min'                           => "The other phone number must have a minimum of 10 digits",
             'data.attributes.other_phone.numeric'                       => "The other phone number must only contain numbers",
+
+            'data.attributes.email.required'                            => "The email is required",
+            'data.attributes.email.email'                               => "The email address is invalid",
+            'data.attributes.email.unique'                              => "The email address has already been taken",
 
             'data.relationships.shop.shop_id.required'                  => "The shop id is required",
         ];

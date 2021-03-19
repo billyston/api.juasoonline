@@ -18,7 +18,19 @@ use Illuminate\Support\Facades\Route;
 
 Route::group([ 'prefix' => 'web' ], function ()
 {
-    Route::apiResource( 'stores', StoreController::class ) -> only( [ 'store', 'show', 'update'] );
-    Route::apiResource( 'administrators', StoreAdministratorController::class ) -> only( [ 'store', 'show', 'update'] );
-    Route::apiResource( 'branches', BranchController::class ) -> only( [ 'store', 'show', 'update'] );
+    Route::group([ 'prefix' => 'auth' ], function()
+    {
+        Route::post( 'admin/login', [ StoreAdministratorController::class, "login" ] );
+    });
+
+    Route::post( 'stores', [ StoreController::class, "store" ] );
+    Route::post( 'administrators', [ StoreAdministratorController::class, "store" ] );
+
+    Route::group([ 'middleware' => 'auth:store_administrator' ], function()
+    {
+        Route::post( 'admin/logout', [ StoreAdministratorController::class, "logout" ] );
+
+        Route::apiResource( 'stores', StoreController::class ) -> only( [ 'show', 'update'] );
+        Route::apiResource( 'administrators', StoreAdministratorController::class ) -> only( [ 'show', 'update'] );
+    });
 });

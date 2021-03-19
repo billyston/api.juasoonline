@@ -5,10 +5,11 @@ namespace App\Http\Controllers\ProductService;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductService\StoreAdministratorRequest;
 use App\Repositories\ProductService\StoreAdministratorRepositoryInterface;
+use App\Traits\AuthenticatesJwtUsers;
 
 class StoreAdministratorController extends Controller
 {
-    private $theRepository;
+    private $theRepository; use AuthenticatesJwtUsers;
 
     /**
      * StoreController constructor.
@@ -17,6 +18,7 @@ class StoreAdministratorController extends Controller
     public function __construct( StoreAdministratorRepositoryInterface $administratorRepository )
     {
         $this -> theRepository = $administratorRepository;
+        $this -> setGuardName( 'store_administrator' );
     }
 
     /**

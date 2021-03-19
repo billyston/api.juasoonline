@@ -24,7 +24,7 @@ class StoreAdministratorRepository implements StoreAdministratorRepositoryInterf
     /**
      * @return array|mixed
      */
-    public function index()
+    public function index() : array
     {
         return $this -> administratorService -> getAll();
     }
@@ -42,8 +42,6 @@ class StoreAdministratorRepository implements StoreAdministratorRepositoryInterf
         $storeAdmin -> save();
 
         // Email confirmation code
-//        logger( $storeAdmin );
-
         Mail::to( $response['data']['attributes']['email'] ) -> send( new StoreAdministratorEmailVerification( $storeAdmin ) );
         return $response;
     }
@@ -52,7 +50,7 @@ class StoreAdministratorRepository implements StoreAdministratorRepositoryInterf
      * @param $theAdministrator
      * @return array|mixed
      */
-    public function show( $theAdministrator )
+    public function show( $theAdministrator ) : array
     {
         return $this -> administratorService -> getAdministrator( $theAdministrator );
     }
@@ -62,7 +60,7 @@ class StoreAdministratorRepository implements StoreAdministratorRepositoryInterf
      * @param $theAdministrator
      * @return array|mixed
      */
-    public function update(StoreAdministratorRequest $administratorRequest, $theAdministrator )
+    public function update(StoreAdministratorRequest $administratorRequest, $theAdministrator ) : array
     {
         return $this -> administratorService -> updateAdministrator( $administratorRequest, $theAdministrator );
     }
@@ -71,7 +69,7 @@ class StoreAdministratorRepository implements StoreAdministratorRepositoryInterf
      * @param $theAdministrator
      * @return array|mixed
      */
-    public function destroy( $theAdministrator )
+    public function destroy( $theAdministrator ) : array
     {
         return $this -> administratorService -> deleteAdministrator( $theAdministrator );
     }
