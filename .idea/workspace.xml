@@ -20,21 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4feba817-4efa-4e4a-b571-41b708c27c4a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/api.juasoonline.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/api.juasoonline.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_set_name" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_set_name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductService/StoreAdministratorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductService/StoreAdministratorController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ProductService/StoreAdministratorRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProductService/StoreAdministratorRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ProductService/StoreAdministrator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProductService/StoreAdministrator.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Repositories/ProductService/StoreAdministratorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/StoreAdministratorRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ProductService/StoreAdministratorRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/StoreAdministratorRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/ProductService/StoreAdministratorService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ProductService/StoreAdministratorService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/AuthenticatesJwtUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/AuthenticatesJwtUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/ExternalService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/ExternalService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -267,7 +260,11 @@
       <workItem from="1615841862666" duration="148000" />
       <workItem from="1615842139384" duration="10006000" />
       <workItem from="1615893816173" duration="36356000" />
-      <workItem from="1616110130132" duration="3357000" />
+      <workItem from="1616110130132" duration="3976000" />
+      <workItem from="1616167622716" duration="110000" />
+      <workItem from="1616365786180" duration="13347000" />
+      <workItem from="1616572110565" duration="162000" />
+      <workItem from="1616575011272" duration="1503000" />
     </task>
     <servers />
   </component>

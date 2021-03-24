@@ -21,7 +21,7 @@ interface StoreAdministratorRepositoryInterface
      * @param $theAdministrator
      * @return array|mixed
      */
-    public function show( $theAdministrator );
+    public function show( $theAdministrator ) : array;
 
     /**
      * @param StoreAdministratorRequest $administratorRequest

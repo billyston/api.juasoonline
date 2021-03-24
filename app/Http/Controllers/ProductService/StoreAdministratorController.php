@@ -40,9 +40,9 @@ class StoreAdministratorController extends Controller
 
     /**
      * @param $theAdministrator
-     * @return mixed
+     * @return array|mixed
      */
-    public function show( $theAdministrator )
+    public function show( $theAdministrator ) : array
     {
         return $this -> theRepository -> show( $theAdministrator );
     }

@@ -8,7 +8,7 @@ use App\Traits\ExternalService;
 class StoreAdministratorService
 {
     use ExternalService;
-    private $baseURL = "http://products.juasoonline.dev/store/administrator/";
+    private $baseURL = "http://products.juasoonline.dev/stores/administrator/";
 
     /**
      * @return array|mixed
@@ -28,12 +28,12 @@ class StoreAdministratorService
     }
 
     /**
-     * @param $theBranch
+     * @param $theAdministrator
      * @return array|mixed
      */
-    public function getAdministrator( $theBranch )
+    public function getAdministrator( $theAdministrator ) : array
     {
-        return $this -> getRequest( $this -> baseURL, $theBranch,  );
+        return $this -> getRequest( $this -> baseURL, $theAdministrator,  );
     }
 
     /**

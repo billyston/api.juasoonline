@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\ProductService\StoreController;
 use App\Http\Controllers\ProductService\StoreAdministratorController;
-use App\Http\Controllers\ProductService\BranchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,19 +17,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::group([ 'prefix' => 'web' ], function ()
 {
-    Route::group([ 'prefix' => 'auth' ], function()
+    Route::group([ 'prefix' => 'stores' ], function()
     {
-        Route::post( 'admin/login', [ StoreAdministratorController::class, "login" ] );
-    });
+        Route::post( '', [ StoreController::class, "store" ]);
+        Route::post( 'administrator', [ StoreAdministratorController::class, "store" ]);
 
-    Route::post( 'stores', [ StoreController::class, "store" ] );
-    Route::post( 'administrators', [ StoreAdministratorController::class, "store" ] );
+        Route::post( 'auth/login', [ StoreAdministratorController::class, "login" ]);
 
-    Route::group([ 'middleware' => 'auth:store_administrator' ], function()
-    {
-        Route::post( 'admin/logout', [ StoreAdministratorController::class, "logout" ] );
-
-        Route::apiResource( 'stores', StoreController::class ) -> only( [ 'show', 'update'] );
-        Route::apiResource( 'administrators', StoreAdministratorController::class ) -> only( [ 'show', 'update'] );
+        Route::group([ 'middleware' => 'auth:store_administrator' ], function()
+        {
+            Route::post( 'auth/logout', [ StoreAdministratorController::class, "logout" ]);
+            Route::apiResource( '', StoreController::class, [ 'parameters' => [ '' => 'store' ]] ) -> only([ 'show', 'update' ]);
+            Route::apiResource( 'administrator', StoreAdministratorController::class ) -> only([ 'show', 'update' ]);
+        });
     });
 });
