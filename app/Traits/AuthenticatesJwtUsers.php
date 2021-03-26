@@ -3,14 +3,15 @@
 namespace App\Traits;
 
 use App\Http\Requests\UserLoginRequest;
-use App\Http\Resources\ProductService\StoreAdministratorResource;
+use App\Http\Resources\ProductService\Store\StoreAdministratorResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
 trait AuthenticatesJwtUsers
 {
-    private $guard_name = null; use apiResponseBuilder;
+    private $guard_name = null;
+    use apiResponseBuilder;
 
     /**
      * @param UserLoginRequest $userLoginRequest
@@ -37,7 +38,7 @@ trait AuthenticatesJwtUsers
                 'token' =>
                 [
                     'token_type' => 'bearer',
-                    'expires' => guard( $this -> guard_name) -> factory() -> getTTL() * 60,
+                    'expires' => guard( $this -> guard_name ) -> factory() -> getTTL() * 100000,
                     'access_token' => $token
                 ]
             ]

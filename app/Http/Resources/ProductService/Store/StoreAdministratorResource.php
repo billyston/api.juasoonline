@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\ProductService;
+namespace App\Http\Resources\ProductService\Store;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
@@ -23,10 +23,6 @@ class StoreAdministratorResource extends JsonResource
             'attributes' =>
             [
                 'resource_id'       => $this -> resource_id,
-                'first_name'        => "",
-                'other_names'       => "",
-                'last_name'         => "",
-                'designation'       => "",
 
                 'created_at'        => $this -> created_at -> toDateTimeString(),
                 'updated_at'        => $this -> updated_at -> toDateTimeString(),

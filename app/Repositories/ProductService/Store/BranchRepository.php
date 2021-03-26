@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Repositories\ProductService;
+namespace App\Repositories\ProductService\Store;
 
-use App\Http\Requests\ProductService\BranchRequest;
-use App\Services\ProductService\BranchService;
+use App\Http\Requests\ProductService\Store\BranchRequest;
+use App\Services\ProductService\Store\BranchService;
 
 class BranchRepository implements BranchRepositoryInterface
 {
@@ -21,7 +21,7 @@ class BranchRepository implements BranchRepositoryInterface
     /**
      * @return array|mixed
      */
-    public function index()
+    public function index() : array
     {
         return $this -> branchService -> getAll();
     }
@@ -30,7 +30,7 @@ class BranchRepository implements BranchRepositoryInterface
      * @param BranchRequest $branchRequest
      * @return array|mixed
      */
-    public function store( BranchRequest $branchRequest )
+    public function store( BranchRequest $branchRequest ) : array
     {
         return $this -> branchService -> createBranch( $branchRequest );
     }
@@ -39,7 +39,7 @@ class BranchRepository implements BranchRepositoryInterface
      * @param $theBranch
      * @return array|mixed
      */
-    public function show( $theBranch )
+    public function show( $theBranch ) : array
     {
         return $this -> branchService -> getBranch( $theBranch );
     }
@@ -49,7 +49,7 @@ class BranchRepository implements BranchRepositoryInterface
      * @param $theBranch
      * @return array|mixed
      */
-    public function update( BranchRequest $branchRequest, $theBranch )
+    public function update( BranchRequest $branchRequest, $theBranch ) : array
     {
         return $this -> branchService -> updateBranch( $branchRequest, $theBranch );
     }
@@ -58,7 +58,7 @@ class BranchRepository implements BranchRepositoryInterface
      * @param $theBranch
      * @return array|mixed
      */
-    public function destroy( $theBranch )
+    public function destroy( $theBranch ) : array
     {
         return $this -> branchService -> deleteBranch( $theBranch );
     }

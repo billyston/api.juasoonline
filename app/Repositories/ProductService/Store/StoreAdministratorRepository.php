@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Repositories\ProductService;
+namespace App\Repositories\ProductService\Store;
 
-use App\Http\Requests\ProductService\StoreAdministratorRequest;
+use App\Http\Requests\ProductService\Store\StoreAdministratorRequest;
 use App\Mail\ProductService\StoreAdministratorEmailVerification;
-use App\Models\ProductService\StoreAdministrator;
-use App\Services\ProductService\StoreAdministratorService;
+use App\Models\ProductService\Store\StoreAdministrator;
+use App\Services\ProductService\Store\StoreAdministratorService;
 use Illuminate\Support\Facades\Mail;
 
 class StoreAdministratorRepository implements StoreAdministratorRepositoryInterface
@@ -16,7 +16,7 @@ class StoreAdministratorRepository implements StoreAdministratorRepositoryInterf
      * StoreRepository constructor.
      * @param StoreAdministratorService $administratorService
      */
-    public function __construct(StoreAdministratorService $administratorService )
+    public function __construct( StoreAdministratorService $administratorService )
     {
         $this -> administratorService = $administratorService;
     }
@@ -33,7 +33,7 @@ class StoreAdministratorRepository implements StoreAdministratorRepositoryInterf
      * @param StoreAdministratorRequest $administratorRequest
      * @return array|mixed
      */
-    public function store(StoreAdministratorRequest $administratorRequest ) : array
+    public function store( StoreAdministratorRequest $administratorRequest ) : array
     {
         $response =  $this -> administratorService -> createAdministrator( $administratorRequest );
 
@@ -60,7 +60,7 @@ class StoreAdministratorRepository implements StoreAdministratorRepositoryInterf
      * @param $theAdministrator
      * @return array|mixed
      */
-    public function update(StoreAdministratorRequest $administratorRequest, $theAdministrator ) : array
+    public function update( StoreAdministratorRequest $administratorRequest, $theAdministrator ) : array
     {
         return $this -> administratorService -> updateAdministrator( $administratorRequest, $theAdministrator );
     }

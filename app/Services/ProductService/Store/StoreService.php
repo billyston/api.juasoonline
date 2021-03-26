@@ -1,19 +1,18 @@
 <?php
 
-namespace App\Services\ProductService;
+namespace App\Services\ProductService\Store;
 
-use App\Models\StoreAdmin\StoreAdministrator;
 use App\Traits\ExternalService;
 
-class StoreAdministratorService
+class StoreService
 {
     use ExternalService;
-    private $baseURL = "http://products.juasoonline.dev/store/administrator/";
+    private $baseURL = "http://products.juasoonline.dev/stores/";
 
     /**
      * @return array|mixed
      */
-    public function getAll()
+    public function getAll() : array
     {
         return $this -> getRequest( $this -> baseURL );
     }
@@ -22,7 +21,7 @@ class StoreAdministratorService
      * @param $theRequest
      * @return array|mixed
      */
-    public function createAdministrator( $theRequest ) : array
+    public function createShop( $theRequest ) : array
     {
         return $this -> postRequest( $this -> baseURL, $theRequest );
     }
@@ -31,7 +30,7 @@ class StoreAdministratorService
      * @param $theBranch
      * @return array|mixed
      */
-    public function getAdministrator( $theBranch )
+    public function getShop( $theBranch ) : array
     {
         return $this -> getRequest( $this -> baseURL, $theBranch,  );
     }
@@ -41,7 +40,7 @@ class StoreAdministratorService
      * @param $theBranch
      * @return array|mixed
      */
-    public function updateAdministrator( $theRequest, $theBranch )
+    public function updateShop( $theRequest, $theBranch ) : array
     {
         return $this -> putRequest( $this -> baseURL, $theRequest, $theBranch  );
     }
@@ -50,7 +49,7 @@ class StoreAdministratorService
      * @param $theBranch
      * @return array|mixed
      */
-    public function deleteAdministrator( $theBranch )
+    public function deleteShop( $theBranch ) : array
     {
         return $this -> deleteRequest( $this -> baseURL, $theBranch  );
     }

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories\ProductService;
+namespace App\Repositories\ProductService\Store;
 
-use App\Http\Requests\ProductService\StoreAdministratorRequest;
+use App\Http\Requests\ProductService\Store\StoreAdministratorRequest;
 
 interface StoreAdministratorRepositoryInterface
 {
@@ -21,7 +21,7 @@ interface StoreAdministratorRepositoryInterface
      * @param $theAdministrator
      * @return array|mixed
      */
-    public function show( $theAdministrator );
+    public function show( $theAdministrator ) : array;
 
     /**
      * @param StoreAdministratorRequest $administratorRequest

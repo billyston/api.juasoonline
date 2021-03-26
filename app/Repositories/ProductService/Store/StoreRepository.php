@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Repositories\ProductService;
+namespace App\Repositories\ProductService\Store;
 
-use App\Http\Requests\ProductService\StoreRequest;
-use App\Services\ProductService\StoreService;
-use Illuminate\Http\JsonResponse;
+use App\Http\Requests\ProductService\Store\StoreRequest;
+use App\Services\ProductService\Store\StoreService;
 
 class StoreRepository implements StoreRepositoryInterface
 {

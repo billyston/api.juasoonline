@@ -19,7 +19,39 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="4feba817-4efa-4e4a-b571-41b708c27c4a" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="4feba817-4efa-4e4a-b571-41b708c27c4a" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_set_name" beforeDir="false" afterPath="$PROJECT_DIR$/.vagrant/machines/api.juasoonline/virtualbox/action_set_name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductService/BranchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductService/Store/BranchController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductService/StoreAdministratorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductService/Store/StoreAdministratorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ProductService/StoreController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ProductService/Store/StoreController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ProductService/BranchRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProductService/Store/BranchRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ProductService/StoreAdministratorRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProductService/Store/StoreAdministratorRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Requests/ProductService/StoreRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/ProductService/Store/StoreRequest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/ProductService/StoreAdministratorResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/ProductService/Store/StoreAdministratorResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ProductService/StoreAdministrator.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProductService/Store/StoreAdministrator.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/RepositoryServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ProductService/BranchRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/Store/BranchRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ProductService/BranchRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/Store/BranchRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ProductService/StoreAdministratorRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/Store/StoreAdministratorRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ProductService/StoreAdministratorRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/Store/StoreAdministratorRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ProductService/StoreRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/Store/StoreRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Repositories/ProductService/StoreRepositoryInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Repositories/ProductService/Store/StoreRepositoryInterface.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/ProductService/BranchService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ProductService/Store/BranchService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/ProductService/StoreAdministratorService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ProductService/Store/StoreAdministratorService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Services/ProductService/StoreService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Services/ProductService/Store/StoreService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/AuthenticatesJwtUsers.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/AuthenticatesJwtUsers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Traits/Relatives.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Traits/Relatives.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/helpers.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/helpers.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/jwt.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/jwt.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+    </list>
+>>>>>>> 0cba99bb4378df0fcd7ae78dae97f0e0986fc9a9
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -158,25 +190,25 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Models" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Repositories/ProductService/Store" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Repositories/ProductService/Store" />
       <recent name="$PROJECT_DIR$/app/Models" />
       <recent name="$PROJECT_DIR$/config" />
       <recent name="$PROJECT_DIR$/app/Traits" />
       <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/app/Providers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/emails" />
-      <recent name="$PROJECT_DIR$/app/Mail/ProductService" />
-      <recent name="$PROJECT_DIR$/app/Repositories/ProductService" />
-      <recent name="$PROJECT_DIR$/app/Services" />
-      <recent name="$PROJECT_DIR$/app/Services/ProductService" />
+      <recent name="$PROJECT_DIR$/app/Services/ProductService/Product" />
+      <recent name="$PROJECT_DIR$/app/Repositories/ProductService/Store" />
+      <recent name="$PROJECT_DIR$/app/Services/ProductService/Store" />
+      <recent name="$PROJECT_DIR$/app/Http/Resources/ProductService/Store" />
+      <recent name="$PROJECT_DIR$/app/Http/Requests/ProductService/Store" />
     </key>
   </component>
   <component name="RunManager">
@@ -250,7 +282,13 @@
       <workItem from="1615841862666" duration="148000" />
       <workItem from="1615842139384" duration="10006000" />
       <workItem from="1615893816173" duration="36356000" />
-      <workItem from="1616110130132" duration="3357000" />
+      <workItem from="1616110130132" duration="3976000" />
+      <workItem from="1616167622716" duration="110000" />
+      <workItem from="1616365786180" duration="13347000" />
+      <workItem from="1616572110565" duration="162000" />
+      <workItem from="1616575011272" duration="2291000" />
+      <workItem from="1616659477352" duration="325000" />
+      <workItem from="1616663559290" duration="29131000" />
     </task>
     <servers />
   </component>

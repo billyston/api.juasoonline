@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\ProductService;
+namespace App\Http\Controllers\ProductService\Store;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ProductService\StoreAdministratorRequest;
-use App\Repositories\ProductService\StoreAdministratorRepositoryInterface;
+use App\Http\Requests\ProductService\Store\StoreAdministratorRequest;
+use App\Repositories\ProductService\Store\StoreAdministratorRepositoryInterface;
 use App\Traits\AuthenticatesJwtUsers;
 
 class StoreAdministratorController extends Controller
@@ -40,9 +40,9 @@ class StoreAdministratorController extends Controller
 
     /**
      * @param $theAdministrator
-     * @return mixed
+     * @return array|mixed
      */
-    public function show( $theAdministrator )
+    public function show( $theAdministrator ) : array
     {
         return $this -> theRepository -> show( $theAdministrator );
     }
