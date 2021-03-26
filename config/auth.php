@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\ProductService\StoreAdministrator;
+use App\Models\ProductService\Store\StoreAdministrator;
 
 return [
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories\ProductService;
+namespace App\Repositories\ProductService\Store;
 
-use App\Http\Requests\ProductService\StoreAdministratorRequest;
+use App\Http\Requests\ProductService\Store\StoreAdministratorRequest;
 
 interface StoreAdministratorRepositoryInterface
 {

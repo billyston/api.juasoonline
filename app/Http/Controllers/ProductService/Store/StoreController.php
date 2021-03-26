@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\ProductService;
+namespace App\Http\Controllers\ProductService\Store;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ProductService\StoreRequest;
-use App\Repositories\ProductService\StoreRepositoryInterface;
-use Illuminate\Http\JsonResponse;
+use App\Http\Requests\ProductService\Store\StoreRequest;
+use App\Repositories\ProductService\Store\StoreRepositoryInterface;
 
 class StoreController extends Controller
 {

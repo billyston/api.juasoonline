@@ -2,14 +2,16 @@
 
 namespace App\Providers;
 
-use App\Repositories\ProductService\StoreAdministratorRepository;
-use App\Repositories\ProductService\StoreAdministratorRepositoryInterface;
-use App\Repositories\ProductService\BranchRepository;
-use App\Repositories\ProductService\BranchRepositoryInterface;
-use App\Repositories\ProductService\StoreRepository;
-use App\Repositories\ProductService\StoreRepositoryInterface;
-use App\Repositories\StoreAdmin\StoreAdminRepository;
-use App\Repositories\StoreAdmin\StoreAdminRepositoryInterface;
+use App\Repositories\ProductService\Store\StoreRepository;
+use App\Repositories\ProductService\Store\StoreRepositoryInterface;
+use App\Repositories\ProductService\Store\StoreAdministratorRepository;
+use App\Repositories\ProductService\Store\StoreAdministratorRepositoryInterface;
+use App\Repositories\ProductService\Store\BranchRepository;
+use App\Repositories\ProductService\Store\BranchRepositoryInterface;
+use App\Repositories\ProductService\Product\ProductRepository;
+use App\Repositories\ProductService\Product\ProductRepositoryInterface;
+use App\Repositories\ProductService\Product\SpecificationRepository;
+use App\Repositories\ProductService\Product\SpecificationRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -24,6 +26,9 @@ class RepositoryServiceProvider extends ServiceProvider
         $this -> app -> bind( StoreRepositoryInterface::class, StoreRepository::class );
         $this -> app -> bind( StoreAdministratorRepositoryInterface::class, StoreAdministratorRepository::class );
         $this -> app -> bind( BranchRepositoryInterface::class, BranchRepository::class );
+
+        $this -> app -> bind( ProductRepositoryInterface::class, ProductRepository::class );
+        $this -> app -> bind( SpecificationRepositoryInterface::class, SpecificationRepository::class );
     }
 
     /**

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Repositories\ProductService;
+namespace App\Repositories\ProductService\Store;
 
-use App\Http\Requests\ProductService\StoreAdministratorRequest;
+use App\Http\Requests\ProductService\Store\StoreAdministratorRequest;
 use App\Mail\ProductService\StoreAdministratorEmailVerification;
-use App\Models\ProductService\StoreAdministrator;
-use App\Services\ProductService\StoreAdministratorService;
+use App\Models\ProductService\Store\StoreAdministrator;
+use App\Services\ProductService\Store\StoreAdministratorService;
 use Illuminate\Support\Facades\Mail;
 
 class StoreAdministratorRepository implements StoreAdministratorRepositoryInterface
@@ -33,7 +33,7 @@ class StoreAdministratorRepository implements StoreAdministratorRepositoryInterf
      * @param StoreAdministratorRequest $administratorRequest
      * @return array|mixed
      */
-    public function store(StoreAdministratorRequest $administratorRequest ) : array
+    public function store( StoreAdministratorRequest $administratorRequest ) : array
     {
         $response =  $this -> administratorService -> createAdministrator( $administratorRequest );
 

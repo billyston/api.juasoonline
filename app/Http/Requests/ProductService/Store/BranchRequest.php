@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\ProductService;
+namespace App\Http\Requests\ProductService\Store;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -11,7 +11,7 @@ class BranchRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize() : bool
     {
         return true;
     }
@@ -21,7 +21,7 @@ class BranchRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules() : array
     {
         if ( in_array( $this -> getMethod (), [ 'PUT', 'PATCH' ] ) )
         {
@@ -29,14 +29,14 @@ class BranchRequest extends FormRequest
             [
                 'data'                                                  => [ 'required' ],
                 'data.id'                                               => [ 'required', 'string', ],
-                'data.type'                                             => [ 'required', 'string', 'in:Branch' ],
+                'data.type'                                             => [ 'required', 'string', 'in:StoreBranch' ],
             ];
         }
 
         return
         [
             'data'                                                      => [ 'required' ],
-            'data.type'                                                 => [ 'required', 'string', 'in:Branch' ],
+            'data.type'                                                 => [ 'required', 'string', 'in:StoreBranch' ],
 
             'data.attributes.branch_name'                               => [ 'required', 'string' ],
 
@@ -50,11 +50,14 @@ class BranchRequest extends FormRequest
 
             'data.attributes.email'                                     => [ 'required', 'email' ],
 
-            'data.relationships.shop.shop_id'                           => [ 'required', 'string' ],
+            'data.relationships.store.store_id'                         => [ 'required', 'string' ],
         ];
     }
 
-    public function messages()
+    /**
+     * @return array|string[]
+     */
+    public function messages() : array
     {
         return
         [
@@ -88,7 +91,7 @@ class BranchRequest extends FormRequest
 
             'data.attributes.email.email'                               => "The email address is invalid",
 
-            'data.relationships.shop.shop_id.required'                  => "The shop id is required",
+            'data.relationships.store.store_id.required'                => "The store id is required",
         ];
     }
 }

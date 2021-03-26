@@ -15,7 +15,7 @@ function includeResources() : array
 }
 
 /**
- * Generate unique shipment ID
+ * Generate unique ID
  * @param int $length
  * @return string
  */
