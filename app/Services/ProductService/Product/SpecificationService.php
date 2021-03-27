@@ -7,7 +7,12 @@ use App\Traits\ExternalService;
 class SpecificationService
 {
     use ExternalService;
-    private $baseURL = "http://products.juasoonline.dev/products/specifications";
+    private $baseURL;
+
+    public function __construct() {
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'products/specifications';
+    }
+//    private $baseURL = "https://test.products.juasoonline.com/products/specifications";
 
     /**
      * @return array|mixed

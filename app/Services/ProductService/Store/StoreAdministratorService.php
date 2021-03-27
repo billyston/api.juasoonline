@@ -7,7 +7,12 @@ use App\Traits\ExternalService;
 class StoreAdministratorService
 {
     use ExternalService;
-    private $baseURL = "http://products.juasoonline.dev/stores/administrator/";
+    private $baseURL;
+
+    public function __construct() {
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/administrator';
+    }
+//    private $baseURL = "https://test.products.juasoonline.com/stores/administrator";
 
     /**
      * @return array|mixed

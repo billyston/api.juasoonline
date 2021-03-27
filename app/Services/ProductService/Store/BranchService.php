@@ -7,7 +7,12 @@ use App\Traits\ExternalService;
 class BranchService
 {
     use ExternalService;
-    private $baseURL = "http://products.juasoonline.dev/stores/branches/";
+    private $baseURL;
+
+    public function __construct() {
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/branches';
+    }
+//    private $baseURL = "https://test.products.juasoonline.com/stores/branches";
 
     /**
      * @return array|mixed
