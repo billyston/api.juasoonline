@@ -10,7 +10,7 @@ class StoreService
     private $baseURL;
 
     public function __construct() {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores';
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/';
     }
 //    private $baseURL = "https://test.products.juasoonline.com/stores";
 

@@ -10,7 +10,7 @@ class SpecificationService
     private $baseURL;
 
     public function __construct() {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'products/specifications';
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'products/specifications/';
     }
 //    private $baseURL = "https://test.products.juasoonline.com/products/specifications";
 

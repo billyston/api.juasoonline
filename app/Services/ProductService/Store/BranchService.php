@@ -10,7 +10,7 @@ class BranchService
     private $baseURL;
 
     public function __construct() {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/branches';
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/branches/';
     }
 //    private $baseURL = "https://test.products.juasoonline.com/stores/branches";
 
