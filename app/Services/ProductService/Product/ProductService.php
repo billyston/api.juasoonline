@@ -7,14 +7,14 @@ use App\Traits\ExternalService;
 class ProductService
 {
     use ExternalService;
-//    private $baseURL;
-//
-//    public function __construct() {
-//        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'products/';
-//    }
+    private $baseURL;
+
+    public function __construct() {
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'products/';
+    }
 
 //    private $baseURL = "http://products.juasoonline.dev/products/";
-    private $baseURL = "https://test.products.juasoonline.com/products/";
+//    private $baseURL = "https://test.products.juasoonline.com/products/";
 
     /**
      * @return array|mixed
