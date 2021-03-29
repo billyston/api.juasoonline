@@ -47,7 +47,7 @@ class StoreAdministratorService
      * @param $theBranch
      * @return array|mixed
      */
-    public function updateAdministrator( $theRequest, $theBranch )
+    public function updateAdministrator( $theRequest, $theBranch ) : array
     {
         return $this -> putRequest( $this -> baseURL, $theRequest, $theBranch  );
     }
@@ -56,7 +56,7 @@ class StoreAdministratorService
      * @param $theBranch
      * @return array|mixed
      */
-    public function deleteAdministrator( $theBranch )
+    public function deleteAdministrator( $theBranch ) : array
     {
         return $this -> deleteRequest( $this -> baseURL, $theBranch  );
     }
