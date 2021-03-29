@@ -9,8 +9,9 @@ class BranchService
     use ExternalService;
     private $baseURL;
 
-    public function __construct() {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/branches/';
+    public function __construct()
+    {
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/branches';
     }
 
 //    private $baseURL = "http://products.juasoonline.dev/stores/branches";
@@ -21,7 +22,7 @@ class BranchService
      */
     public function getAll() : array
     {
-        return $this -> getRequest( $this -> baseURL );
+        return $this -> getAllRequest( $this -> baseURL );
     }
 
     /**

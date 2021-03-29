@@ -9,8 +9,9 @@ class SpecificationService
     use ExternalService;
     private $baseURL;
 
-    public function __construct() {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'products/specifications/';
+    public function __construct()
+    {
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'products/specifications';
     }
 
 //    private $baseURL = "http://products.juasoonline.dev/products/specifications";
@@ -21,7 +22,7 @@ class SpecificationService
      */
     public function getAll() : array
     {
-        return $this -> getRequest( $this -> baseURL );
+        return $this -> getAllRequest( $this -> baseURL );
     }
 
     /**

@@ -9,8 +9,9 @@ class StoreService
     use ExternalService;
     private $baseURL;
 
-    public function __construct() {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/';
+    public function __construct()
+    {
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores';
     }
 
 //    private $baseURL = "http://products.juasoonline.dev/stores/";
@@ -21,7 +22,7 @@ class StoreService
      */
     public function getAll() : array
     {
-        return $this -> getRequest( $this -> baseURL );
+        return $this -> getAllRequest( $this -> baseURL );
     }
 
     /**

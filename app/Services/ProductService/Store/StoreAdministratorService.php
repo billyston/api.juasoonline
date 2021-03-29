@@ -9,8 +9,9 @@ class StoreAdministratorService
     use ExternalService;
     private $baseURL;
 
-    public function __construct() {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/administrator/';
+    public function __construct()
+    {
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/administrator';
     }
 
 //    private $baseURL = "http://products.juasoonline.dev/stores/administrator";
@@ -21,7 +22,7 @@ class StoreAdministratorService
      */
     public function getAll() : array
     {
-        return $this -> getRequest( $this -> baseURL );
+        return $this -> getAllRequest( $this -> baseURL );
     }
 
     /**

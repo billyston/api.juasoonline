@@ -12,9 +12,20 @@ trait ExternalService
      * @param null $theResource
      * @return array|mixed
      */
-    public function getRequest( $url, $theResource = null ) : array
+    public function getAllRequest( $url ) : array
     {
-        $response = Http::withHeaders([ 'Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json' ]) -> get( $url . $theResource, [ 'include' => request()->include ] );
+        $response = Http::withHeaders([ 'Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json' ]) -> get( $url, [ 'include' => request()->include ] );
+        return $response -> json();
+    }
+
+    /**
+     * @param $url
+     * @param null $theResource
+     * @return array|mixed
+     */
+    public function getRequest( $url, $theResource ) : array
+    {
+        $response = Http::withHeaders([ 'Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json' ]) -> get( $url.'/'.$theResource, [ 'include' => request()->include ] );
         return $response -> json();
     }
 
