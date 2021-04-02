@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductService\Product\Category\CategoryController;
 use App\Http\Controllers\ProductService\Product\ImageController;
 use App\Http\Controllers\ProductService\Product\OverviewController;
 use App\Http\Controllers\ProductService\Product\SpecificationController;
@@ -47,6 +48,11 @@ Route::group([ 'prefix' => 'web' ], function ()
             Route::apiResource( 'specifications', SpecificationController::class );
             Route::apiResource( 'overviews', OverviewController::class );
             Route::apiResource( 'images', ImageController::class );
+        });
+
+        Route::group([], function ()
+        {
+            Route::apiResource( 'categories', CategoryController::class ) -> only([ 'index', 'show' ]);
         });
     });
 });

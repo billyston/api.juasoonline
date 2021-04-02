@@ -12,6 +12,8 @@ use App\Repositories\ProductService\Product\ProductRepository;
 use App\Repositories\ProductService\Product\ProductRepositoryInterface;
 use App\Repositories\ProductService\Product\SpecificationRepository;
 use App\Repositories\ProductService\Product\SpecificationRepositoryInterface;
+use App\Repositories\ProductService\Product\Category\CategoryRepository;
+use App\Repositories\ProductService\Product\Category\CategoryRepositoryInterface;
 use Illuminate\Support\ServiceProvider;
 
 class RepositoryServiceProvider extends ServiceProvider
@@ -29,6 +31,8 @@ class RepositoryServiceProvider extends ServiceProvider
 
         $this -> app -> bind( ProductRepositoryInterface::class, ProductRepository::class );
         $this -> app -> bind( SpecificationRepositoryInterface::class, SpecificationRepository::class );
+
+        $this -> app -> bind( CategoryRepositoryInterface::class, CategoryRepository::class );
     }
 
     /**
