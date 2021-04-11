@@ -14,9 +14,6 @@ class StoreService
         $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores';
     }
 
-//    private $baseURL = "http://products.juasoonline.dev/stores/";
-//    private $baseURL = "https://test.products.juasoonline.com/stores/";
-
     /**
      * @return array|mixed
      */

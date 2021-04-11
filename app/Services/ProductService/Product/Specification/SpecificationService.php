@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\ProductService\Product;
+namespace App\Services\ProductService\Product\Specification;
 
 use App\Traits\ExternalService;
 
@@ -9,29 +9,31 @@ class SpecificationService
     use ExternalService;
     private $baseURL;
 
+    /**
+     * SpecificationService constructor.
+     */
     public function __construct()
     {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'products/specifications';
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'product/';
     }
 
-//    private $baseURL = "http://products.juasoonline.dev/products/specifications";
-//    private $baseURL = "https://test.products.juasoonline.com/products/specifications";
-
     /**
+     * @param $theProduct
      * @return array|mixed
      */
-    public function getAll() : array
+    public function getAll( $theProduct ) : array
     {
-        return $this -> getAllRequest( $this -> baseURL );
+        return $this -> getAllRequest( $this -> baseURL.$theProduct."/specifications" );
     }
 
     /**
      * @param $theRequest
+     * @param $theProduct
      * @return array|mixed
      */
-    public function createSpecification( $theRequest ) : array
+    public function createSpecification( $theProduct, $theRequest ) : array
     {
-        return $this -> postRequest( $this -> baseURL, $theRequest );
+        return $this -> postRequest( $this -> baseURL.$theProduct."/specifications", $theRequest );
     }
 
     /**

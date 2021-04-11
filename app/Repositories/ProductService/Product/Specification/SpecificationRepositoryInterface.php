@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Repositories\ProductService\Product;
+namespace App\Repositories\ProductService\Product\Specification;
 
-use App\Http\Requests\ProductService\Product\SpecificationRequest;
+use App\Http\Requests\ProductService\Product\Specification\SpecificationRequest;
 
 interface SpecificationRepositoryInterface
 {
     /**
+     * @param $theProduct
      * @return array|mixed
      */
-    public function index(): array;
+    public function index( $theProduct ): array;
 
     /**
      * @param $theSpecification
@@ -18,11 +19,11 @@ interface SpecificationRepositoryInterface
     public function show( $theSpecification ): array;
 
     /**
+     * @param $theProduct
      * @param SpecificationRequest $specificationRequest
-     * @param $theSpecification
      * @return array|mixed
      */
-    public function store( SpecificationRequest $specificationRequest ): array;
+    public function store( $theProduct, SpecificationRequest $specificationRequest ): array;
 
     /**
      * @param SpecificationRequest $specificationRequest

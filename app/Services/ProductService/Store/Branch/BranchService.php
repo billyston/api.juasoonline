@@ -1,21 +1,18 @@
 <?php
 
-namespace App\Services\ProductService\Store;
+namespace App\Services\ProductService\Store\Branch;
 
 use App\Traits\ExternalService;
 
-class StoreAdministratorService
+class BranchService
 {
     use ExternalService;
     private $baseURL;
 
     public function __construct()
     {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/administrator';
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/branches';
     }
-
-//    private $baseURL = "http://products.juasoonline.dev/stores/administrator";
-//    private $baseURL = "https://test.products.juasoonline.com/stores/administrator";
 
     /**
      * @return array|mixed
@@ -29,18 +26,18 @@ class StoreAdministratorService
      * @param $theRequest
      * @return array|mixed
      */
-    public function createAdministrator( $theRequest ) : array
+    public function createBranch( $theRequest ) : array
     {
         return $this -> postRequest( $this -> baseURL, $theRequest );
     }
 
     /**
-     * @param $theAdministrator
+     * @param $theBranch
      * @return array|mixed
      */
-    public function getAdministrator( $theAdministrator ) : array
+    public function getBranch( $theBranch ) : array
     {
-        return $this -> getRequest( $this -> baseURL, $theAdministrator,  );
+        return $this -> getRequest( $this -> baseURL, $theBranch,  );
     }
 
     /**
@@ -48,7 +45,7 @@ class StoreAdministratorService
      * @param $theBranch
      * @return array|mixed
      */
-    public function updateAdministrator( $theRequest, $theBranch ) : array
+    public function updateBranch( $theRequest, $theBranch ) : array
     {
         return $this -> putRequest( $this -> baseURL, $theRequest, $theBranch  );
     }
@@ -57,7 +54,7 @@ class StoreAdministratorService
      * @param $theBranch
      * @return array|mixed
      */
-    public function deleteAdministrator( $theBranch ) : array
+    public function deleteBranch( $theBranch ) : array
     {
         return $this -> deleteRequest( $this -> baseURL, $theBranch  );
     }

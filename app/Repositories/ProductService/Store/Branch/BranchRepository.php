@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Repositories\ProductService\Store;
+namespace App\Repositories\ProductService\Store\Branch;
 
-use App\Http\Requests\ProductService\Store\BranchRequest;
-use App\Services\ProductService\Store\BranchService;
+use App\Http\Requests\ProductService\Store\Branch\BranchRequest;
+use App\Services\ProductService\Store\Branch\BranchService;
 
 class BranchRepository implements BranchRepositoryInterface
 {

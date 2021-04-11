@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Repositories\ProductService\Store;
+namespace App\Repositories\ProductService\Store\StoreAdministrator;
 
-use App\Http\Requests\ProductService\Store\StoreAdministratorRequest;
+use App\Http\Requests\ProductService\Store\StoreAdministrator\StoreAdministratorRequest;
 use App\Mail\ProductService\StoreAdministratorEmailVerification;
 use App\Models\ProductService\Store\StoreAdministrator;
-use App\Services\ProductService\Store\StoreAdministratorService;
+use App\Services\ProductService\Store\StoreAdministrator\StoreAdministratorService;
 use Illuminate\Support\Facades\Mail;
 
 class StoreAdministratorRepository implements StoreAdministratorRepositoryInterface

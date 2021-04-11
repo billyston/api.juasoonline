@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\ProductService\Product;
+namespace App\Http\Requests\ProductService\Product\Overview;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -11,9 +11,9 @@ class OverviewRequest extends FormRequest
      *
      * @return bool
      */
-    public function authorize()
+    public function authorize() : bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -21,7 +21,7 @@ class OverviewRequest extends FormRequest
      *
      * @return array
      */
-    public function rules()
+    public function rules() : array
     {
         return [
             //

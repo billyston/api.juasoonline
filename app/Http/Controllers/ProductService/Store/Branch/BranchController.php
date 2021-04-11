@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\ProductService\Store;
+namespace App\Http\Controllers\ProductService\Store\Branch;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ProductService\Store\BranchRequest;
-use App\Repositories\ProductService\Store\BranchRepositoryInterface;
+use App\Http\Requests\ProductService\Store\Branch\BranchRequest;
+use App\Repositories\ProductService\Store\Branch\BranchRepositoryInterface;
 
 class BranchController extends Controller
 {

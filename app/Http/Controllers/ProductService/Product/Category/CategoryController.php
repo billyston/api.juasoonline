@@ -4,8 +4,6 @@ namespace App\Http\Controllers\ProductService\Product\Category;
 
 use App\Http\Controllers\Controller;
 use App\Repositories\ProductService\Product\Category\CategoryRepositoryInterface;
-use Illuminate\Http\Request;
-use Illuminate\Http\Response;
 
 class CategoryController extends Controller
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\ProductService\Store;
+namespace App\Http\Controllers\ProductService\Store\StoreAdministrator;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ProductService\Store\StoreAdministratorRequest;
-use App\Repositories\ProductService\Store\StoreAdministratorRepositoryInterface;
+use App\Http\Requests\ProductService\Store\StoreAdministrator\StoreAdministratorRequest;
+use App\Repositories\ProductService\Store\StoreAdministrator\StoreAdministratorRepositoryInterface;
 use App\Traits\AuthenticatesJwtUsers;
 
 class StoreAdministratorController extends Controller

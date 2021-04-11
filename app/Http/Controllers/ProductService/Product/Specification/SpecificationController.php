@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\ProductService\Product;
+namespace App\Http\Controllers\ProductService\Product\Specification;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\ProductService\Product\SpecificationRequest;
-use App\Repositories\ProductService\Product\SpecificationRepositoryInterface;
-use Illuminate\Http\Request;
+use App\Http\Requests\ProductService\Product\Specification\SpecificationRequest;
+use App\Repositories\ProductService\Product\Specification\SpecificationRepositoryInterface;
 
 class SpecificationController extends Controller
 {
@@ -23,22 +22,24 @@ class SpecificationController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * @param $theProduct
      * @return array|mixed
      */
-    public function index() : array
+    public function index( $theProduct ) : array
     {
-        return $this -> theRepository -> index();
+        return $this -> theRepository -> index( $theProduct );
     }
 
     /**
      * Store a newly created resource in storage.
      *
+     * @param $theProduct
      * @param SpecificationRequest $specificationRequest
      * @return array|mixed
      */
-    public function store( SpecificationRequest $specificationRequest ) : array
+    public function store( $theProduct, SpecificationRequest $specificationRequest ) : array
     {
-        return $this -> theRepository -> store( $specificationRequest );
+        return $this -> theRepository -> store( $theProduct, $specificationRequest );
     }
 
     /**

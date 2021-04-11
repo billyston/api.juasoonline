@@ -19,29 +19,32 @@ class ProductRepository implements ProductRepositoryInterface
     }
 
     /**
+     * @param $theStore
      * @return array|mixed
      */
-    public function index() : array
+    public function index( $theStore ) : array
     {
-        return $this -> productService -> getAll();
+        return $this -> productService -> getAll( $theStore );
     }
 
     /**
      * @param ProductRequest $productRequest
+     * @param $theStore
      * @return array|mixed
      */
-    public function store( ProductRequest $productRequest ) : array
+    public function store( ProductRequest $productRequest, $theStore ) : array
     {
-        return $this -> productService -> createProduct( $productRequest );
+        return $this -> productService -> createProduct( $productRequest, $theStore );
     }
 
     /**
-     * @param $Product
+     * @param $theStore
+     * @param $theProduct
      * @return array|mixed
      */
-    public function show( $Product ) : array
+    public function show( $theStore, $theProduct ) : array
     {
-        return $this -> productService -> getProduct( $Product );
+        return $this -> productService -> getProduct( $theStore, $theProduct );
     }
 
     /**

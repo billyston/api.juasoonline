@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Repositories\ProductService\Product;
+namespace App\Repositories\ProductService\Product\Specification;
 
-use App\Http\Requests\ProductService\Product\SpecificationRequest;
-use App\Services\ProductService\Product\SpecificationService;
+use App\Http\Requests\ProductService\Product\Specification\SpecificationRequest;
+use App\Services\ProductService\Product\Specification\SpecificationService;
 
 class SpecificationRepository implements SpecificationRepositoryInterface
 {
@@ -19,11 +19,12 @@ class SpecificationRepository implements SpecificationRepositoryInterface
     }
 
     /**
+     * @param $theProduct
      * @return array|mixed
      */
-    public function index(): array
+    public function index( $theProduct ): array
     {
-        return $this -> theService -> getAll();
+        return $this -> theService -> getAll( $theProduct );
     }
 
     /**
@@ -36,12 +37,13 @@ class SpecificationRepository implements SpecificationRepositoryInterface
     }
 
     /**
+     * @param $theProduct
      * @param SpecificationRequest $specificationRequest
      * @return array|mixed
      */
-    public function store( SpecificationRequest $specificationRequest ): array
+    public function store( $theProduct, SpecificationRequest $specificationRequest ): array
     {
-        return $this -> theService -> createSpecification( $specificationRequest );
+        return $this -> theService -> createSpecification( $theProduct, $specificationRequest );
     }
 
     /**

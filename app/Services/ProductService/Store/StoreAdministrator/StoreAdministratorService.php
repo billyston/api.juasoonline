@@ -1,21 +1,18 @@
 <?php
 
-namespace App\Services\ProductService\Store;
+namespace App\Services\ProductService\Store\StoreAdministrator;
 
 use App\Traits\ExternalService;
 
-class BranchService
+class StoreAdministratorService
 {
     use ExternalService;
     private $baseURL;
 
     public function __construct()
     {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/branches';
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/administrator';
     }
-
-//    private $baseURL = "http://products.juasoonline.dev/stores/branches";
-//    private $baseURL = "https://test.products.juasoonline.com/stores/branches";
 
     /**
      * @return array|mixed
@@ -29,18 +26,18 @@ class BranchService
      * @param $theRequest
      * @return array|mixed
      */
-    public function createBranch( $theRequest ) : array
+    public function createAdministrator( $theRequest ) : array
     {
         return $this -> postRequest( $this -> baseURL, $theRequest );
     }
 
     /**
-     * @param $theBranch
+     * @param $theAdministrator
      * @return array|mixed
      */
-    public function getBranch( $theBranch ) : array
+    public function getAdministrator( $theAdministrator ) : array
     {
-        return $this -> getRequest( $this -> baseURL, $theBranch,  );
+        return $this -> getRequest( $this -> baseURL, $theAdministrator,  );
     }
 
     /**
@@ -48,7 +45,7 @@ class BranchService
      * @param $theBranch
      * @return array|mixed
      */
-    public function updateBranch( $theRequest, $theBranch ) : array
+    public function updateAdministrator( $theRequest, $theBranch ) : array
     {
         return $this -> putRequest( $this -> baseURL, $theRequest, $theBranch  );
     }
@@ -57,7 +54,7 @@ class BranchService
      * @param $theBranch
      * @return array|mixed
      */
-    public function deleteBranch( $theBranch ) : array
+    public function deleteAdministrator( $theBranch ) : array
     {
         return $this -> deleteRequest( $this -> baseURL, $theBranch  );
     }
