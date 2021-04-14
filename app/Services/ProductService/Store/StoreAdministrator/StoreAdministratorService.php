@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Services\ProductService\Store;
+namespace App\Services\ProductService\Store\StoreAdministrator;
 
 use App\Traits\ExternalService;
 
-class StoreService
+class StoreAdministratorService
 {
     use ExternalService;
     private $baseURL;
 
     public function __construct()
     {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores';
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/administrator';
     }
 
     /**
@@ -26,18 +26,18 @@ class StoreService
      * @param $theRequest
      * @return array|mixed
      */
-    public function createShop( $theRequest ) : array
+    public function createAdministrator( $theRequest ) : array
     {
         return $this -> postRequest( $this -> baseURL, $theRequest );
     }
 
     /**
-     * @param $theBranch
+     * @param $theAdministrator
      * @return array|mixed
      */
-    public function getShop( $theBranch ) : array
+    public function getAdministrator( $theAdministrator ) : array
     {
-        return $this -> getRequest( $this -> baseURL, $theBranch,  );
+        return $this -> getRequest( $this -> baseURL, $theAdministrator,  );
     }
 
     /**
@@ -45,7 +45,7 @@ class StoreService
      * @param $theBranch
      * @return array|mixed
      */
-    public function updateShop( $theRequest, $theBranch ) : array
+    public function updateAdministrator( $theRequest, $theBranch ) : array
     {
         return $this -> putRequest( $this -> baseURL, $theRequest, $theBranch  );
     }
@@ -54,7 +54,7 @@ class StoreService
      * @param $theBranch
      * @return array|mixed
      */
-    public function deleteShop( $theBranch ) : array
+    public function deleteAdministrator( $theBranch ) : array
     {
         return $this -> deleteRequest( $this -> baseURL, $theBranch  );
     }

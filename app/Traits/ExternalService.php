@@ -12,9 +12,20 @@ trait ExternalService
      * @param null $theResource
      * @return array|mixed
      */
-    public function getRequest( $url, $theResource = null ) : array
+    public function getAllRequest( $url ) : array
     {
-        $response = Http::withHeaders([ 'Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json' ]) -> get( $url . $theResource, [ 'include' => request() ->include ] );
+        $response = Http::withHeaders([ 'Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json' ]) -> get( $url, [ 'include' => request()->include ] );
+        return $response -> json();
+    }
+
+    /**
+     * @param $url
+     * @param null $theResource
+     * @return array|mixed
+     */
+    public function getRequest( $url, $theResource ) : array
+    {
+        $response = Http::withHeaders([ 'Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json' ]) -> get( $url.'/'.$theResource, [ 'include' => request()->include ] );
         return $response -> json();
     }
 
@@ -25,7 +36,7 @@ trait ExternalService
      */
     public function postRequest( $url, $data ) : array
     {
-        $response = Http::withHeaders([ 'Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json' ]) -> post( $url, [ 'data' => $data -> data ] );
+        $response = Http::withHeaders(['Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json']) -> post( $url, ['data' => $data -> data] );
         return $response -> json();
     }
 
@@ -38,7 +49,6 @@ trait ExternalService
     public function putRequest( $url, $data, $theResource ) : JsonResponse
     {
         $response = Http::withHeaders([ 'Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json' ]) -> put( $url . $theResource, [ 'data' => $data -> data ] );
-
         return $response -> json();
     }
 
@@ -50,7 +60,17 @@ trait ExternalService
     public function deleteRequest( $theUrl, $theResource ) : JsonResponse
     {
         $response = Http::withHeaders([ 'Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json' ]) -> delete( $theUrl . $theResource );
+        return $response -> json();
+    }
 
+    /**
+     * @param $url
+     * @param $theResource
+     * @return array|mixed
+     */
+    public function postWithFiles( $url, $theResource ) : array
+    {
+        $response = Http::withHeaders(['Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json']) -> post( $url, ['data' => $theResource] );
         return $response -> json();
     }
 }

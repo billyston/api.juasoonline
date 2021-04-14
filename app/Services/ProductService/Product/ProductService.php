@@ -7,32 +7,43 @@ use App\Traits\ExternalService;
 class ProductService
 {
     use ExternalService;
-    private $baseURL = "http://products.juasoonline.dev/products/";
+    private $baseURL;
 
     /**
+     * ProductService constructor.
+     */
+    public function __construct()
+    {
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'store/';
+    }
+
+    /**
+     * @param $theStore
      * @return array|mixed
      */
-    public function getAll() : array
+    public function getAll( $theStore ) : array
     {
-        return $this -> getRequest( $this -> baseURL );
+        return $this -> getAllRequest( $this -> baseURL.$theStore."/products" );
     }
 
     /**
      * @param $theRequest
+     * @param $theStore
      * @return array|mixed
      */
-    public function createProduct( $theRequest ) : array
+    public function createProduct( $theRequest, $theStore ) : array
     {
-        return $this -> postRequest( $this -> baseURL, $theRequest );
+        return $this -> postRequest( $this -> baseURL.$theStore."/products", $theRequest );
     }
 
     /**
+     * @param $theStore
      * @param $theProduct
      * @return array|mixed
      */
-    public function getProduct( $theProduct ) : array
+    public function getProduct( $theStore, $theProduct ) : array
     {
-        return $this -> getRequest( $this -> baseURL, $theProduct  );
+        return $this -> getRequest( $this -> baseURL.$theStore.'/products', $theProduct  );
     }
 
     /**

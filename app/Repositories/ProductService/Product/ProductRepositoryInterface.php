@@ -7,21 +7,24 @@ use App\Http\Requests\ProductService\Product\ProductRequest;
 interface ProductRepositoryInterface
 {
     /**
+     * @param $theStore
      * @return array|mixed
      */
-    public function index(): array;
+    public function index( $theStore ): array;
 
     /**
      * @param ProductRequest $productRequest
+     * @param $theStore
      * @return array|mixed
      */
-    public function store( ProductRequest $productRequest ): array;
+    public function store( ProductRequest $productRequest, $theStore ): array;
 
     /**
-     * @param $Product
+     * @param $theStore
+     * @param $theProduct
      * @return array|mixed
      */
-    public function show( $Product ): array;
+    public function show( $theStore, $theProduct ): array;
 
     /**
      * @param ProductRequest $productRequest

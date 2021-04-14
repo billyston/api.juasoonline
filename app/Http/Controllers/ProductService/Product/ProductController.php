@@ -23,31 +23,34 @@ class ProductController extends Controller
 
     /**
      * Display a listing of the resource.
+     * @param $theStore
      * @return array|mixed
      */
-    public function index() : array
+    public function index( $theStore ) : array
     {
-        return $this -> theRepository -> index();
+        return $this -> theRepository -> index( $theStore );
     }
 
     /**
      * Store a newly created resource in storage.
      * @param ProductRequest $productRequest
+     * @param $theStore
      * @return array|mixed
      */
-    public function store( ProductRequest $productRequest ) : array
+    public function store( ProductRequest $productRequest, $theStore ) : array
     {
-        return $this -> theRepository -> store( $productRequest );
+        return $this -> theRepository -> store( $productRequest, $theStore );
     }
 
     /**
      * Display the specified resource.
-     * @param $Product
+     * @param $theStore
+     * @param $theProduct
      * @return array|mixed
      */
-    public function show( $Product ) : array
+    public function show( $theStore, $theProduct ) : array
     {
-        return $this -> theRepository -> show( $Product );
+        return $this -> theRepository -> show( $theStore, $theProduct );
     }
 
     /**
