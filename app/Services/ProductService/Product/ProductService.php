@@ -23,7 +23,7 @@ class ProductService
      */
     public function getAll( $theStore ) : array
     {
-        return $this -> getAllRequest( $this -> baseURL.$theStore."/products" );
+        return $this -> getAllRequest( $this -> baseURL . $theStore . '/products' );
     }
 
     /**
@@ -31,9 +31,9 @@ class ProductService
      * @param $theStore
      * @return array|mixed
      */
-    public function createProduct( $theRequest, $theStore ) : array
+    public function createProduct( $theStore, $theRequest ) : array
     {
-        return $this -> postRequest( $this -> baseURL.$theStore."/products", $theRequest );
+        return $this -> postRequest( $this -> baseURL . $theStore . '/products', $theRequest );
     }
 
     /**
@@ -43,25 +43,27 @@ class ProductService
      */
     public function getProduct( $theStore, $theProduct ) : array
     {
-        return $this -> getRequest( $this -> baseURL.$theStore.'/products', $theProduct  );
+        return $this -> getRequest( $this -> baseURL . $theStore . '/products/' . $theProduct  );
     }
 
     /**
+     * @param $theStore
      * @param $theRequest
      * @param $theProduct
      * @return array|mixed
      */
-    public function updateProduct( $theRequest, $theProduct ) : array
+    public function updateProduct( $theStore, $theRequest, $theProduct ) : array
     {
-        return $this -> putRequest( $this -> baseURL, $theRequest, $theProduct  );
+        return $this -> putRequest( $this -> baseURL . $theStore . '/products/'. $theProduct, $theRequest  );
     }
 
     /**
+     * @param $theStore
      * @param $theProduct
      * @return array|mixed
      */
-    public function deleteProduct( $theProduct ) : array
+    public function deleteProduct( $theStore, $theProduct ) : array
     {
-        return $this -> deleteRequest( $this -> baseURL, $theProduct  );
+        return $this -> deleteRequest( $this -> baseURL . $theStore . '/products/' . $theProduct  );
     }
 }

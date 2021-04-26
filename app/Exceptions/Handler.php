@@ -3,12 +3,18 @@
 namespace App\Exceptions;
 
 use App\Traits\apiResponseBuilder;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Http\JsonResponse;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
+use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -45,11 +51,36 @@ class Handler extends ExceptionHandler
         if ( $exception instanceof ModelNotFoundException && $request -> wantsJson()) {
             return $this -> errorResponse( null, 'Error', 'Resource not found', Response::HTTP_NOT_FOUND );
         }
-
+        elseif ( $exception instanceof MethodNotAllowedHttpException )
+        {
+            return $this -> errorResponse( null, 'Error', 'Action is not allowed', Response::HTTP_METHOD_NOT_ALLOWED );
+        }
+        elseif ( $exception instanceof NotFoundHttpException )
+        {
+            return $this -> errorResponse( null, 'Error', 'Endpoint do not exist', Response::HTTP_NOT_FOUND );
+        }
+        elseif ( $exception instanceof AccessDeniedHttpException )
+        {
+            return $this -> errorResponse( null, 'Error', 'This action is unauthorized', Response::HTTP_FORBIDDEN );
+        }
         elseif ( $exception instanceof ValidationException && $request -> wantsJson() ){
             return $this -> errorResponse( $exception -> validator -> errors(), 'Error', 'The given data was invalid.', Response::HTTP_UNPROCESSABLE_ENTITY );
         }
         return parent::render( $request, $exception );
+    }
+
+    /**
+     * @param Request $request
+     * @param AuthenticationException $exception
+     * @return JsonResponse|RedirectResponse|\Symfony\Component\HttpFoundation\Response
+     */
+    protected function unauthenticated($request, AuthenticationException $exception )
+    {
+        if ( $request -> expectsJson() )
+        {
+            return $this -> errorResponse( null, 'Error', 'User not authenticated', Response::HTTP_UNAUTHORIZED );
+        }
+        return redirect()->guest('login');
     }
 
     /**

@@ -36,39 +36,42 @@ class OverviewController extends Controller
      * @param $theProduct
      * @return array|mixed
      */
-    public function store( OverviewRequest $overviewRequest, $theProduct ) : array
+    public function store( $theProduct, OverviewRequest $overviewRequest ) : array
     {
         return $this -> theRepository -> store( $overviewRequest, $theProduct );
     }
 
     /**
      * Display the specified resource.
+     * @param $theProduct
      * @param $theOverview
      * @return array|mixed
      */
-    public function show( $theOverview ) : array
+    public function show( $theProduct, $theOverview ) : array
     {
-        return $this -> theRepository -> show( $theOverview );
+        return $this -> theRepository -> show( $theProduct, $theOverview );
     }
 
     /**
      * Update the specified resource in storage.
+     * @param $theProduct
      * @param OverviewRequest $overviewRequest
      * @param $theOverview
      * @return array|mixed
      */
-    public function update( OverviewRequest $overviewRequest, $theOverview ) : array
+    public function update( $theProduct, OverviewRequest $overviewRequest, $theOverview ) : array
     {
-        return $this -> theRepository -> update( $overviewRequest, $theOverview );
+        return $this -> theRepository -> update( $theProduct, $overviewRequest, $theOverview );
     }
 
     /**
      * Remove the specified resource from storage.
+     * @param $theProduct
      * @param $theOverview
      * @return array|mixed
      */
-    public function destroy( $theOverview ) : array
+    public function destroy( $theProduct, $theOverview ) : array
     {
-        return $this -> theRepository -> destroy( $theOverview );
+        return $this -> theRepository -> destroy( $theProduct, $theOverview );
     }
 }

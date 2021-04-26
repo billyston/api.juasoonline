@@ -9,53 +9,60 @@ class BranchService
     use ExternalService;
     private $baseURL;
 
+    /**
+     * BranchService constructor.
+     */
     public function __construct()
     {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/branches';
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'store/';
     }
 
     /**
      * @return array|mixed
      */
-    public function getAll() : array
+    public function getAll( $theStore ) : array
     {
-        return $this -> getAllRequest( $this -> baseURL );
+        return $this -> getAllRequest( $this -> baseURL . $theStore . '/branches' );
     }
 
     /**
+     * @param $theStore
      * @param $theRequest
      * @return array|mixed
      */
-    public function createBranch( $theRequest ) : array
+    public function createBranch( $theStore, $theRequest ) : array
     {
-        return $this -> postRequest( $this -> baseURL, $theRequest );
+        return $this -> postRequest( $this -> baseURL . $theStore . '/branches', $theRequest );
     }
 
     /**
+     * @param $theStore
      * @param $theBranch
      * @return array|mixed
      */
-    public function getBranch( $theBranch ) : array
+    public function getBranch( $theStore, $theBranch ) : array
     {
-        return $this -> getRequest( $this -> baseURL, $theBranch,  );
+        return $this -> getRequest( $this -> baseURL . $theStore . '/branches/' . $theBranch,  );
     }
 
     /**
+     * @param $theStore
      * @param $theRequest
      * @param $theBranch
      * @return array|mixed
      */
-    public function updateBranch( $theRequest, $theBranch ) : array
+    public function updateBranch( $theStore, $theRequest, $theBranch ) : array
     {
-        return $this -> putRequest( $this -> baseURL, $theRequest, $theBranch  );
+        return $this -> putRequest( $this -> baseURL . $theStore . '/branches/' . $theBranch, $theRequest  );
     }
 
     /**
+     * @param $theStore
      * @param $theBranch
      * @return array|mixed
      */
-    public function deleteBranch( $theBranch ) : array
+    public function deleteBranch( $theStore, $theBranch ) : array
     {
-        return $this -> deleteRequest( $this -> baseURL, $theBranch  );
+        return $this -> deleteRequest( $this -> baseURL . $theStore . '/branches/' . $theBranch  );
     }
 }

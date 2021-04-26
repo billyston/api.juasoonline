@@ -49,7 +49,7 @@ class StoreRepository implements StoreRepositoryInterface
      * @param $theShop
      * @return array|mixed
      */
-    public function update(StoreRequest $shopRequest, $theShop )
+    public function update( StoreRequest $shopRequest, $theShop )
     {
         return $this -> shopService -> updateShop( $shopRequest, $theShop );
     }

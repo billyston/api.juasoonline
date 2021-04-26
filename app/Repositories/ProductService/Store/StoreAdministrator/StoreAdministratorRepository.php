@@ -30,12 +30,13 @@ class StoreAdministratorRepository implements StoreAdministratorRepositoryInterf
     }
 
     /**
+     * @param $theStore
      * @param StoreAdministratorRequest $administratorRequest
      * @return array|mixed
      */
-    public function store( StoreAdministratorRequest $administratorRequest ) : array
+    public function store( $theStore, StoreAdministratorRequest $administratorRequest ) : array
     {
-        $response =  $this -> administratorService -> createAdministrator( $administratorRequest );
+        $response =  $this -> administratorService -> createAdministrator( $theStore, $administratorRequest );
 
         // Store Admin login
         $storeAdmin = new StoreAdministrator(['resource_id' => $response['data']['attributes']['resource_id'], 'email' => $response['data']['attributes']['email'], 'password' => bcrypt( $administratorRequest -> input( 'data.attributes.password' ) ), 'verification_code' => generateVerificationCode( 6 ) ]);
@@ -47,30 +48,33 @@ class StoreAdministratorRepository implements StoreAdministratorRepositoryInterf
     }
 
     /**
+     * @param $theStore
      * @param $theAdministrator
      * @return array|mixed
      */
-    public function show( $theAdministrator ) : array
+    public function show( $theStore, $theAdministrator ) : array
     {
-        return $this -> administratorService -> getAdministrator( $theAdministrator );
+        return $this -> administratorService -> getAdministrator( $theStore, $theAdministrator );
     }
 
     /**
+     * @param $theStore
      * @param StoreAdministratorRequest $administratorRequest
      * @param $theAdministrator
      * @return array|mixed
      */
-    public function update( StoreAdministratorRequest $administratorRequest, $theAdministrator ) : array
+    public function update( $theStore, StoreAdministratorRequest $administratorRequest, $theAdministrator ) : array
     {
-        return $this -> administratorService -> updateAdministrator( $administratorRequest, $theAdministrator );
+        return $this -> administratorService -> updateAdministrator( $theStore, $administratorRequest, $theAdministrator );
     }
 
     /**
+     * @param $theStore
      * @param $theAdministrator
      * @return array|mixed
      */
-    public function destroy( $theAdministrator ) : array
+    public function destroy( $theStore, $theAdministrator ) : array
     {
-        return $this -> administratorService -> deleteAdministrator( $theAdministrator );
+        return $this -> administratorService -> deleteAdministrator( $theStore, $theAdministrator );
     }
 }

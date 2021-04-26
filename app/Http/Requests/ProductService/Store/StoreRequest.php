@@ -2,10 +2,23 @@
 
 namespace App\Http\Requests\ProductService\Store;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\Response;
 
 class StoreRequest extends FormRequest
 {
+    /**
+     * @param Validator $validator
+     */
+    protected function failedValidation( Validator $validator )
+    {
+        throw new HttpResponseException(
+            response() -> json([ 'status' => 'Error', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'errors' => $validator -> errors() -> all() ])
+        );
+    }
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -38,7 +51,9 @@ class StoreRequest extends FormRequest
             'data'                                                      => [ 'required' ],
             'data.type'                                                 => [ 'required', 'string', 'in:Store' ],
 
-            'data.attributes.store_name'                                 => [ 'required', 'string' ],
+            'data.attributes.name'                                      => [ 'required', 'string' ],
+
+            'data.attributes.doing_business_as'                         => [ 'required', 'string' ],
 
             'data.attributes.region'                                    => [ 'required', 'string' ],
             'data.attributes.city'                                      => [ 'required', 'string' ],
@@ -66,8 +81,10 @@ class StoreRequest extends FormRequest
             'data.type.string'                                          => "The type must be of a string",
             'data.type.in'                                              => "The type is invalid",
 
-            'data.attributes.store_name.required'                       => "The shop name is required",
-            'data.attributes.store_name.string'                         => "The shop name must be of a string type",
+            'data.attributes.name.required'                             => "The shop name is required",
+            'data.attributes.name.string'                               => "The shop name must be of a string type",
+
+            'data.attributes.doing_business_as.required'                => "The shop nickname is required",
 
             'data.attributes.region.required'                           => "The region is required",
             'data.attributes.region.string'                             => "The region must be of a string type",

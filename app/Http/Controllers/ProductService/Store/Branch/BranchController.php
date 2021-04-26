@@ -22,45 +22,49 @@ class BranchController extends Controller
     /**
      * @return mixed
      */
-    public function index()
+    public function index( $theStore )
     {
-        return $this -> theRepository -> index();
+        return $this -> theRepository -> index( $theStore );
     }
 
     /**
+     * @param $theStore
      * @param BranchRequest $branchRequest
      * @return mixed
      */
-    public function store( BranchRequest $branchRequest )
+    public function store( $theStore, BranchRequest $branchRequest )
     {
-        return $this -> theRepository -> store( $branchRequest );
+        return $this -> theRepository -> store( $theStore, $branchRequest );
     }
 
     /**
+     * @param $theStore
      * @param $theBranch
      * @return mixed
      */
-    public function show( $theBranch )
+    public function show( $theStore, $theBranch )
     {
-        return $this -> theRepository -> show( $theBranch );
+        return $this -> theRepository -> show( $theStore, $theBranch );
     }
 
     /**
+     * @param $theStore
      * @param BranchRequest $branchRequest
      * @param $theBranch
      * @return mixed
      */
-    public function update( BranchRequest $branchRequest, $theBranch )
+    public function update( $theStore, BranchRequest $branchRequest, $theBranch )
     {
-        return $this -> theRepository -> update( $branchRequest, $theBranch );
+        return $this -> theRepository -> update( $theStore, $branchRequest, $theBranch );
     }
 
     /**
+     * @param $theStore
      * @param $theBranch
      * @return mixed
      */
-    public function destroy( $theBranch )
+    public function destroy( $theStore, $theBranch )
     {
-        return $this -> theRepository -> destroy( $theBranch );
+        return $this -> theRepository -> destroy( $theStore, $theBranch );
     }
 }

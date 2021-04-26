@@ -9,30 +9,34 @@ interface BranchRepositoryInterface
     /**
      * @return array|mixed
      */
-    public function index() : array;
+    public function index( $theStore ) : array;
 
     /**
+     * @param $theStore
      * @param BranchRequest $branchRequest
      * @return array|mixed
      */
-    public function store( BranchRequest $branchRequest ) : array;
+    public function store( $theStore, BranchRequest $branchRequest ) : array;
 
     /**
+     * @param $theStore
      * @param $theBranch
      * @return array|mixed
      */
-    public function show( $theBranch ) : array;
+    public function show( $theStore, $theBranch ) : array;
 
     /**
+     * @param $theStore
      * @param BranchRequest $branchRequest
      * @param $theBranch
      * @return array|mixed
      */
-    public function update( BranchRequest $branchRequest, $theBranch ) : array;
+    public function update( $theStore, BranchRequest $branchRequest, $theBranch ) : array;
 
     /**
+     * @param $theStore
      * @param $theBranch
      * @return array|mixed
      */
-    public function destroy( $theBranch ) : array;
+    public function destroy( $theStore, $theBranch ) : array;
 }

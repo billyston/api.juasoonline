@@ -22,32 +22,33 @@ class ImageController extends Controller
 
     /**
      * Display a listing of the resource.
-     * @param $product
+     * @param $theProduct
      * @return array|mixed
      */
-    public function index( $product ) : array
+    public function index( $theProduct ) : array
     {
-        return $this -> theRepository -> index( $product );
+        return $this -> theRepository -> index( $theProduct );
     }
 
     /**
      * Store a newly created resource in storage.
+     * @param $theProduct
      * @param ImageRequest $imageRequest
-     * @param $product
      * @return array|mixed
      */
-    public function store( ImageRequest $imageRequest, $product ) : array
+    public function store( $theProduct, ImageRequest $imageRequest ) : array
     {
-        return $this -> theRepository -> store( $imageRequest, $product );
+        return $this -> theRepository -> store( $theProduct, $imageRequest );
     }
 
     /**
      * Display the specified resource.
      *
-     * @param $product
+     * @param $theProduct
+     * @param $theImage
      * @return array
      */
-    public function show( $product ) : array
+    public function show( $theProduct, $theImage ) : array
     {
         //
     }
@@ -55,11 +56,12 @@ class ImageController extends Controller
     /**
      * Update the specified resource in storage.
      *
+     * @param $theProduct
      * @param ImageRequest $imageRequest
-     * @param $product
+     * @param $theImage
      * @return array
      */
-    public function update( ImageRequest $imageRequest, $product ) : array
+    public function update( $theProduct, ImageRequest $imageRequest, $theImage ) : array
     {
         //
     }
@@ -67,10 +69,11 @@ class ImageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param $product
+     * @param $theProduct
+     * @param $theImage
      * @return array
      */
-    public function destroy( $product ) : array
+    public function destroy( $theProduct, $theImage ) : array
     {
         //
     }

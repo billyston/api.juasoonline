@@ -19,20 +19,20 @@ class ImageRepository implements ImageRepositoryInterface
     }
 
     /**
-     * @param $product
+     * @param $theProduct
      * @return array|mixed
      */
-    public function index ( $product ) : array
+    public function index ( $theProduct ) : array
     {
-        return $this -> theService -> getAll( $product );
+        return $this -> theService -> getAll( $theProduct );
     }
 
     /**
+     * @param $theProduct
      * @param ImageRequest $imageRequest
-     * @param $product
      * @return array|mixed
      */
-    public function store ( ImageRequest $imageRequest, $product ) : array
+    public function store ( $theProduct, ImageRequest $imageRequest ) : array
     {
         $data = array( 'type' => 'Image', 'images' => array( 'data' => []), 'relationships' => array( 'product' => array( 'product_id' => $imageRequest['product_id'] )));
         for( $i = 0; $i <  count( $imageRequest['description'] ); $i++  )
@@ -40,28 +40,31 @@ class ImageRepository implements ImageRepositoryInterface
             $file =  $imageRequest['file'][$i] -> store('products/images/products');
             array_push( $data['images']['data'], array( 'description' => $imageRequest['description'][$i], 'file' => $file ) );
         }
-        return $this -> theService -> createImage( $data, $product );
+        return $this -> theService -> createImage( $data, $theProduct );
     }
 
     /**
+     * @param $theProduct
      * @param $theImage
      * @return array|mixed
      */
-    public function show ( $theImage ) : array
+    public function show ( $theProduct, $theImage ) : array
     {}
 
     /**
+     * @param $theProduct
      * @param ImageRequest $imageRequest
      * @param $theImage
      * @return array|mixed
      */
-    public function update ( ImageRequest $imageRequest, $theImage ) : array
+    public function update ( $theProduct, ImageRequest $imageRequest, $theImage ) : array
     {}
 
     /**
+     * @param $theProduct
      * @param $theImage
      * @return array|mixed
      */
-    public function destroy ( $theImage ) : array
+    public function destroy ( $theProduct, $theImage ) : array
     {}
 }

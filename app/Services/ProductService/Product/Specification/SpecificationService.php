@@ -23,7 +23,7 @@ class SpecificationService
      */
     public function getAll( $theProduct ) : array
     {
-        return $this -> getAllRequest( $this -> baseURL.$theProduct."/specifications" );
+        return $this -> getAllRequest( $this -> baseURL . $theProduct . '/specifications' );
     }
 
     /**
@@ -33,34 +33,37 @@ class SpecificationService
      */
     public function createSpecification( $theProduct, $theRequest ) : array
     {
-        return $this -> postRequest( $this -> baseURL.$theProduct."/specifications", $theRequest );
+        return $this -> postRequest( $this -> baseURL . $theProduct . '/specifications', $theRequest );
     }
 
     /**
+     * @param $theProduct
      * @param $theSpecification
      * @return array|mixed
      */
-    public function getSpecification( $theSpecification ) : array
+    public function getSpecification( $theProduct, $theSpecification ) : array
     {
-        return $this -> getRequest( $this -> baseURL, $theSpecification  );
+        return $this -> getRequest( $this -> baseURL . $theProduct . '/specifications/' . $theSpecification  );
     }
 
     /**
+     * @param $theProduct
      * @param $theRequest
      * @param $theSpecification
      * @return array|mixed
      */
-    public function updateSpecification( $theRequest, $theSpecification ) : array
+    public function updateSpecification( $theProduct, $theRequest, $theSpecification ) : array
     {
-        return $this -> putRequest( $this -> baseURL, $theRequest, $theSpecification  );
+        return $this -> putRequest( $this -> baseURL . $theProduct . '/specifications/' . $theSpecification, $theRequest  );
     }
 
     /**
+     * @param $theProduct
      * @param $theSpecification
      * @return array|mixed
      */
-    public function deleteSpecification( $theSpecification ) : array
+    public function deleteSpecification( $theProduct, $theSpecification ) : array
     {
-        return $this -> deleteRequest( $this -> baseURL, $theSpecification  );
+        return $this -> deleteRequest( $this -> baseURL . $theProduct . '/specifications/' . $theSpecification  );
     }
 }

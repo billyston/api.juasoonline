@@ -12,27 +12,31 @@ interface StoreAdministratorRepositoryInterface
     public function index();
 
     /**
+     * @param $theStore
      * @param StoreAdministratorRequest $administratorRequest
      * @return array|mixed
      */
-    public function store( StoreAdministratorRequest $administratorRequest ) : array;
+    public function store( $theStore, StoreAdministratorRequest $administratorRequest ) : array;
 
     /**
+     * @param $theStore
      * @param $theAdministrator
      * @return array|mixed
      */
-    public function show( $theAdministrator ) : array;
+    public function show( $theStore, $theAdministrator ) : array;
 
     /**
+     * @param $theStore
      * @param StoreAdministratorRequest $administratorRequest
      * @param $theAdministrator
      * @return array|mixed
      */
-    public function update(StoreAdministratorRequest $administratorRequest, $theAdministrator );
+    public function update( $theStore, StoreAdministratorRequest $administratorRequest, $theAdministrator );
 
     /**
+     * @param $theStore
      * @param $theAdministrator
      * @return array|mixed
      */
-    public function destroy( $theAdministrator );
+    public function destroy( $theStore, $theAdministrator );
 }

@@ -2,10 +2,23 @@
 
 namespace App\Http\Requests\ProductService\Store\Branch;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\Response;
 
 class BranchRequest extends FormRequest
 {
+    /**
+     * @param Validator $validator
+     */
+    protected function failedValidation( Validator $validator )
+    {
+        throw new HttpResponseException(
+            response() -> json([ 'status' => 'Error', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'errors' => $validator -> errors() -> all() ])
+        );
+    }
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -29,14 +42,14 @@ class BranchRequest extends FormRequest
             [
                 'data'                                                  => [ 'required' ],
                 'data.id'                                               => [ 'required', 'string', ],
-                'data.type'                                             => [ 'required', 'string', 'in:StoreBranch' ],
+                'data.type'                                             => [ 'required', 'string', 'in:Branch' ],
             ];
         }
 
         return
         [
             'data'                                                      => [ 'required' ],
-            'data.type'                                                 => [ 'required', 'string', 'in:StoreBranch' ],
+            'data.type'                                                 => [ 'required', 'string', 'in:Branch' ],
 
             'data.attributes.branch_name'                               => [ 'required', 'string' ],
 

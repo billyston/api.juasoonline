@@ -3,6 +3,7 @@
 namespace App\Traits;
 
 use App\Http\Requests\UserLoginRequest;
+use App\Http\Resources\OrderService\Customer\CustomerResource;
 use App\Http\Resources\ProductService\Store\StoreAdministratorResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
@@ -122,5 +123,6 @@ trait AuthenticatesJwtUsers
     {
         $user = auth( $this -> guard_name ) -> user();
         if ( $this -> guard_name === 'store_administrator' ) { return [ 'data' => ( new StoreAdministratorResource( $user ) ) -> toArray( request() ) ]; }
+        elseif ( $this -> guard_name === 'customer' ) { return [ 'data' => ( new CustomerResource( $user ) ) -> toArray( request() ) ]; }
     }
 }

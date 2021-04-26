@@ -7,34 +7,37 @@ use App\Http\Requests\ProductService\Product\Image\ImageRequest;
 interface ImageRepositoryInterface
 {
     /**
-     * @param $product
+     * @param $theProduct
      * @return array|mixed
      */
-    public function index( $product ) : array;
+    public function index( $theProduct ) : array;
 
     /**
+     * @param $theProduct
      * @param ImageRequest $imageRequest
-     * @param $product
      * @return array|mixed
      */
-    public function store( ImageRequest $imageRequest, $product ): array;
+    public function store( $theProduct, ImageRequest $imageRequest ): array;
 
     /**
+     * @param $theProduct
      * @param $theImage
      * @return array|mixed
      */
-    public function show( $theImage ): array;
+    public function show( $theProduct, $theImage ): array;
 
     /**
+     * @param $theProduct
      * @param ImageRequest $imageRequest
      * @param $theImage
      * @return array|mixed
      */
-    public function update( ImageRequest $imageRequest, $theImage ): array;
+    public function update( $theProduct, ImageRequest $imageRequest, $theImage ): array;
 
     /**
+     * @param $theProduct
      * @param $theImage
      * @return array
      */
-    public function destroy( $theImage ): array;
+    public function destroy( $theProduct, $theImage ): array;
 }

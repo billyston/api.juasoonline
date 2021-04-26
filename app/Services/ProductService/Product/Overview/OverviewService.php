@@ -23,7 +23,7 @@ class OverviewService
      */
     public function getAll( $theProduct ) : array
     {
-        return $this -> getAllRequest( $this -> baseURL.$theProduct."/overviews" );
+        return $this -> getAllRequest( $this -> baseURL . $theProduct . '/overviews' );
     }
 
     /**
@@ -31,36 +31,39 @@ class OverviewService
      * @param $theProduct
      * @return array|mixed
      */
-    public function createOverview( $theRequest, $theProduct ) : array
+    public function createOverview( $theProduct, $theRequest ) : array
     {
-        return $this -> postWithFiles( $this -> baseURL.$theProduct."/overviews", $theRequest );
+        return $this -> postWithFiles( $this -> baseURL . $theProduct . '/overviews', $theRequest );
     }
 
     /**
+     * @param $theProduct
      * @param $theOverview
      * @return array|mixed
      */
-    public function getOverview( $theOverview ) : array
+    public function getOverview( $theProduct, $theOverview ) : array
     {
-        return $this -> getRequest( $this -> baseURL, $theOverview  );
+        return $this -> getRequest( $this -> baseURL . $theProduct . '/overviews/' . $theOverview  );
     }
 
     /**
+     * @param $theProduct
      * @param $theRequest
      * @param $theOverview
      * @return array|mixed
      */
-    public function updateOverview( $theRequest, $theOverview ) : array
+    public function updateOverview( $theProduct, $theRequest, $theOverview ) : array
     {
-        return $this -> putRequest( $this -> baseURL, $theRequest, $theOverview  );
+        return $this -> putRequest( $this -> baseURL . $theProduct . '/overviews/' . $theOverview, $theRequest  );
     }
 
     /**
+     * @param $theProduct
      * @param $theOverview
      * @return array|mixed
      */
-    public function deleteOverview( $theOverview ) : array
+    public function deleteOverview( $theProduct, $theOverview ) : array
     {
-        return $this -> deleteRequest( $this -> baseURL, $theOverview  );
+        return $this -> deleteRequest( $this -> baseURL . $theProduct . '/overviews/' . $theOverview  );
     }
 }

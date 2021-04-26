@@ -9,6 +9,9 @@ class StoreService
     use ExternalService;
     private $baseURL;
 
+    /**
+     * StoreService constructor.
+     */
     public function __construct()
     {
         $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores';
@@ -32,30 +35,30 @@ class StoreService
     }
 
     /**
-     * @param $theBranch
+     * @param $theStore
      * @return array|mixed
      */
-    public function getShop( $theBranch ) : array
+    public function getShop( $theStore ) : array
     {
-        return $this -> getRequest( $this -> baseURL, $theBranch,  );
+        return $this -> getRequest( $this -> baseURL . '/' . $theStore  );
     }
 
     /**
      * @param $theRequest
-     * @param $theBranch
+     * @param $theStore
      * @return array|mixed
      */
-    public function updateShop( $theRequest, $theBranch ) : array
+    public function updateShop( $theRequest, $theStore ) : array
     {
-        return $this -> putRequest( $this -> baseURL, $theRequest, $theBranch  );
+        return $this -> putRequest( $this -> baseURL . '/' . $theStore, $theRequest  );
     }
 
     /**
-     * @param $theBranch
+     * @param $theStore
      * @return array|mixed
      */
-    public function deleteShop( $theBranch ) : array
+    public function deleteShop( $theStore ) : array
     {
-        return $this -> deleteRequest( $this -> baseURL, $theBranch  );
+        return $this -> deleteRequest( $this -> baseURL . '/' . $theStore  );
     }
 }

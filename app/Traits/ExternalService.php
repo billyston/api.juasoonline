@@ -9,23 +9,11 @@ trait ExternalService
 {
     /**
      * @param $url
-     * @param null $theResource
      * @return array|mixed
      */
     public function getAllRequest( $url ) : array
     {
-        $response = Http::withHeaders([ 'Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json' ]) -> get( $url, [ 'include' => request()->include ] );
-        return $response -> json();
-    }
-
-    /**
-     * @param $url
-     * @param null $theResource
-     * @return array|mixed
-     */
-    public function getRequest( $url, $theResource ) : array
-    {
-        $response = Http::withHeaders([ 'Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json' ]) -> get( $url.'/'.$theResource, [ 'include' => request()->include ] );
+        $response = Http::withHeaders(['Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json']) -> get( $url, ['include' => request()->include] );
         return $response -> json();
     }
 
@@ -42,35 +30,43 @@ trait ExternalService
 
     /**
      * @param $url
-     * @param $data
-     * @param $theResource
      * @return array|mixed
      */
-    public function putRequest( $url, $data, $theResource ) : JsonResponse
+    public function getRequest( $url ) : array
     {
-        $response = Http::withHeaders([ 'Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json' ]) -> put( $url . $theResource, [ 'data' => $data -> data ] );
-        return $response -> json();
-    }
-
-    /**
-     * @param $theUrl
-     * @param $theResource
-     * @return array|mixed
-     */
-    public function deleteRequest( $theUrl, $theResource ) : JsonResponse
-    {
-        $response = Http::withHeaders([ 'Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json' ]) -> delete( $theUrl . $theResource );
+        $response = Http::withHeaders(['Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json']) -> get( $url, ['include' => request()->include] );
         return $response -> json();
     }
 
     /**
      * @param $url
-     * @param $theResource
+     * @param $data
      * @return array|mixed
      */
-    public function postWithFiles( $url, $theResource ) : array
+    public function putRequest( $url, $data ) : array
     {
-        $response = Http::withHeaders(['Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json']) -> post( $url, ['data' => $theResource] );
+        $response = Http::withHeaders(['Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json']) -> put( $url, ['data' => $data -> data] );
+        return $response -> json();
+    }
+
+    /**
+     * @param $url
+     * @return array|mixed
+     */
+    public function deleteRequest( $url ) : array
+    {
+        $response = Http::withHeaders(['Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json']) -> delete( $url );
+        return $response -> json();
+    }
+
+    /**
+     * @param $url
+     * @param $data
+     * @return array|mixed
+     */
+    public function postWithFiles( $url, $data ) : array
+    {
+        $response = Http::withHeaders(['Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json']) -> post( $url, ['data' => $data] );
         return $response -> json();
     }
 }

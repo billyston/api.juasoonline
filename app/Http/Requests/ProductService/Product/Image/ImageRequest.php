@@ -2,10 +2,23 @@
 
 namespace App\Http\Requests\ProductService\Product\Image;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\Response;
 
 class ImageRequest extends FormRequest
 {
+    /**
+     * @param Validator $validator
+     */
+    protected function failedValidation( Validator $validator )
+    {
+        throw new HttpResponseException(
+            response() -> json([ 'status' => 'Error', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'errors' => $validator -> errors() -> all() ])
+        );
+    }
+
     /**
      * Determine if the user is authorized to make this request.
      * @return bool
@@ -25,12 +38,14 @@ class ImageRequest extends FormRequest
         {
             return $rules =
             [
+                'data'                              => [ 'required' ],
+                'data.type'                         => [ 'required', 'string', 'in:Image' ],
             ];
         }
         return
         [
-            'product_id'                            => [ 'required' ],
-            'file.*'                                => [ 'required', 'mimes:jpg,jpeg,png', 'max:2048' ]
+            'data'                                  => [ 'required' ],
+            'data.type'                             => [ 'required', 'string', 'in:Image' ],
         ];
     }
 
@@ -41,11 +56,6 @@ class ImageRequest extends FormRequest
     {
         return
         [
-            'product_id.required'                   => "The product id is required",
-
-            'file.*.required'                       => "Image(s) are required",
-            'file.*.mimes'                          => "Image(s) must be jpg, jpeg, or png",
-
         ];
     }
 }

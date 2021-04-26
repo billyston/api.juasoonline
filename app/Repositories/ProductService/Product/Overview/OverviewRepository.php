@@ -32,7 +32,7 @@ class OverviewRepository implements OverviewRepositoryInterface
      * @param $theProduct
      * @return array|mixed
      */
-    public function store( OverviewRequest $overviewRequest, $theProduct ) : array
+    public function store( $theProduct, OverviewRequest $overviewRequest ) : array
     {
         $data = array( 'type' => 'Overview', 'overviews' => array( 'data' => []), 'relationships' => array( 'product' => array( 'product_id' => $overviewRequest['product_id'] )));
         for( $i = 0; $i <  count($overviewRequest['title']); $i++  )
@@ -44,30 +44,33 @@ class OverviewRepository implements OverviewRepositoryInterface
     }
 
     /**
+     * @param $theProduct
      * @param $theOverview
      * @return array|mixed
      */
-    public function show( $theOverview ) : array
+    public function show( $theProduct, $theOverview ) : array
     {
-        return $this -> theOverviewService -> getOverview( $theOverview );
+        return $this -> theOverviewService -> getOverview( $theProduct, $theOverview );
     }
 
     /**
+     * @param $theProduct
      * @param OverviewRequest $overviewRequest
      * @param $theOverview
      * @return array
      */
-    public function update( OverviewRequest $overviewRequest, $theOverview ) : array
+    public function update( $theProduct, OverviewRequest $overviewRequest, $theOverview ) : array
     {
-        return $this -> theOverviewService -> updateOverview( $overviewRequest, $theOverview );
+        return $this -> theOverviewService -> updateOverview( $theProduct, $overviewRequest, $theOverview );
     }
 
     /**
+     * @param $theProduct
      * @param $theOverview
      * @return array
      */
-    public function destroy( $theOverview ) : array
+    public function destroy( $theProduct, $theOverview ) : array
     {
-        return $this -> theOverviewService -> deleteOverview( $theOverview );
+        return $this -> theOverviewService -> deleteOverview( $theProduct, $theOverview );
     }
 }

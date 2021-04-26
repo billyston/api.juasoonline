@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\OrderService\Customer\Customer;
 use App\Models\ProductService\Store\StoreAdministrator;
 
 return [
@@ -45,6 +46,12 @@ return [
             'provider' => 'store_administrators',
         ],
 
+        'customer' =>
+        [
+            'driver' => 'jwt',
+            'provider' => 'customers',
+        ],
+
         'web' =>
         [
             'driver' => 'session',
@@ -82,6 +89,12 @@ return [
         [
             'driver' => 'eloquent',
             'model' => StoreAdministrator::class,
+        ],
+
+        'customers' =>
+        [
+            'driver' => 'eloquent',
+            'model' => Customer::class,
         ],
 
 

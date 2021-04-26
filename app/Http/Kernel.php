@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\CustomerGuard;
 use App\Http\Middleware\StoreAdministratorGuard;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 
@@ -65,5 +66,6 @@ class Kernel extends HttpKernel
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
 
         'auth.store_administrator'  => StoreAdministratorGuard::class,
+        'auth.customer'  => CustomerGuard::class,
     ];
 }

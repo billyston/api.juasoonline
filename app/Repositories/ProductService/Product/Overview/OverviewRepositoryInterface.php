@@ -17,24 +17,27 @@ interface OverviewRepositoryInterface
      * @param $theProduct
      * @return array
      */
-    public function store( OverviewRequest $overviewRequest, $theProduct ): array;
+    public function store( $theProduct, OverviewRequest $overviewRequest ): array;
 
     /**
+     * @param $theProduct
      * @param $theOverview
      * @return array
      */
-    public function show( $theOverview ): array;
+    public function show( $theProduct, $theOverview ): array;
 
     /**
+     * @param $theProduct
      * @param OverviewRequest $overviewRequest
      * @param $theOverview
      * @return array
      */
-    public function update( OverviewRequest $overviewRequest, $theOverview ): array;
+    public function update( $theProduct, OverviewRequest $overviewRequest, $theOverview ): array;
 
     /**
+     * @param $theProduct
      * @param $theOverview
      * @return array
      */
-    public function destroy( $theOverview ): array;
+    public function destroy( $theProduct, $theOverview ): array;
 }

@@ -2,10 +2,23 @@
 
 namespace App\Http\Requests\ProductService\Store\StoreAdministrator;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\Response;
 
 class StoreAdministratorRequest extends FormRequest
 {
+    /**
+     * @param Validator $validator
+     */
+    protected function failedValidation( Validator $validator )
+    {
+        throw new HttpResponseException(
+            response() -> json([ 'status' => 'Error', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'errors' => $validator -> errors() -> all() ])
+        );
+    }
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -48,6 +61,8 @@ class StoreAdministratorRequest extends FormRequest
             'data.attributes.other_phone'                               => [ 'min:10', 'numeric' ],
 
             'data.attributes.email'                                     => [ 'required', 'email', 'unique:store_administrators,email' ],
+            'data.attributes.password'                                  => [ 'required', 'min:6' ],
+            'data.attributes.password_confirmation'                     => [ 'sometimes' ],
 
             'data.relationships.store.store_id'                         => [ 'required', 'numeric' ],
         ];
@@ -87,6 +102,9 @@ class StoreAdministratorRequest extends FormRequest
             'data.attributes.email.required'                            => "The email is required",
             'data.attributes.email.email'                               => "The email address is invalid",
             'data.attributes.email.unique'                              => "The email address has already been taken",
+
+            'data.attributes.password.required'                         => "The password is required",
+            'data.attributes.password.min'                              => "The password must be more than 5 characters",
 
             'data.relationships.shop.shop_id.required'                  => "The shop id is required",
         ];

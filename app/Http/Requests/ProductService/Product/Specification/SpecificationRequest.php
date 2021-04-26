@@ -2,10 +2,23 @@
 
 namespace App\Http\Requests\ProductService\Product\Specification;
 
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
+use Illuminate\Http\Response;
 
 class SpecificationRequest extends FormRequest
 {
+    /**
+     * @param Validator $validator
+     */
+    protected function failedValidation( Validator $validator )
+    {
+        throw new HttpResponseException(
+            response() -> json([ 'status' => 'Error', 'code' => Response::HTTP_UNPROCESSABLE_ENTITY, 'errors' => $validator -> errors() -> all() ])
+        );
+    }
+
     /**
      * Determine if the user is authorized to make this request.
      *

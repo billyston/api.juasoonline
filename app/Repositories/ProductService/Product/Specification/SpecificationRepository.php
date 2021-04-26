@@ -28,12 +28,13 @@ class SpecificationRepository implements SpecificationRepositoryInterface
     }
 
     /**
+     * @param $theProduct
      * @param $theSpecification
      * @return array|mixed
      */
-    public function show( $theSpecification ): array
+    public function show( $theProduct, $theSpecification ): array
     {
-        return $this -> theService -> getSpecification( $theSpecification );
+        return $this -> theService -> getSpecification( $theProduct, $theSpecification );
     }
 
     /**
@@ -47,21 +48,23 @@ class SpecificationRepository implements SpecificationRepositoryInterface
     }
 
     /**
+     * @param $theProduct
      * @param SpecificationRequest $specificationRequest
      * @param $theSpecification
      * @return array|mixed
      */
-    public function update( SpecificationRequest $specificationRequest, $theSpecification ): array
+    public function update( $theProduct, SpecificationRequest $specificationRequest, $theSpecification ): array
     {
-        return $this -> theService -> updateSpecification( $specificationRequest, $theSpecification );
+        return $this -> theService -> updateSpecification( $theProduct, $specificationRequest, $theSpecification );
     }
 
     /**
+     * @param $theProduct
      * @param $theSpecification
      * @return array
      */
-    public function destroy( $theSpecification ): array
+    public function destroy( $theProduct, $theSpecification ): array
     {
-        return $this -> theService -> deleteSpecification( $theSpecification );
+        return $this -> theService -> deleteSpecification( $theProduct, $theSpecification );
     }
 }

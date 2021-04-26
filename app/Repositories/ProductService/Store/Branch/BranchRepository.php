@@ -21,27 +21,27 @@ class BranchRepository implements BranchRepositoryInterface
     /**
      * @return array|mixed
      */
-    public function index() : array
+    public function index( $theStore ) : array
     {
-        return $this -> branchService -> getAll();
+        return $this -> branchService -> getAll( $theStore );
     }
 
     /**
      * @param BranchRequest $branchRequest
      * @return array|mixed
      */
-    public function store( BranchRequest $branchRequest ) : array
+    public function store( $theStore, BranchRequest $branchRequest ) : array
     {
-        return $this -> branchService -> createBranch( $branchRequest );
+        return $this -> branchService -> createBranch( $theStore, $branchRequest );
     }
 
     /**
      * @param $theBranch
      * @return array|mixed
      */
-    public function show( $theBranch ) : array
+    public function show( $theStore, $theBranch ) : array
     {
-        return $this -> branchService -> getBranch( $theBranch );
+        return $this -> branchService -> getBranch( $theStore, $theBranch );
     }
 
     /**
@@ -49,17 +49,17 @@ class BranchRepository implements BranchRepositoryInterface
      * @param $theBranch
      * @return array|mixed
      */
-    public function update( BranchRequest $branchRequest, $theBranch ) : array
+    public function update( $theStore, BranchRequest $branchRequest, $theBranch ) : array
     {
-        return $this -> branchService -> updateBranch( $branchRequest, $theBranch );
+        return $this -> branchService -> updateBranch( $theStore, $branchRequest, $theBranch );
     }
 
     /**
      * @param $theBranch
      * @return array|mixed
      */
-    public function destroy( $theBranch ) : array
+    public function destroy( $theStore, $theBranch ) : array
     {
-        return $this -> branchService -> deleteBranch( $theBranch );
+        return $this -> branchService -> deleteBranch( $theStore, $theBranch );
     }
 }

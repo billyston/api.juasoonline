@@ -13,10 +13,11 @@ interface SpecificationRepositoryInterface
     public function index( $theProduct ): array;
 
     /**
+     * @param $theProduct
      * @param $theSpecification
      * @return array|mixed
      */
-    public function show( $theSpecification ): array;
+    public function show( $theProduct, $theSpecification ): array;
 
     /**
      * @param $theProduct
@@ -26,15 +27,17 @@ interface SpecificationRepositoryInterface
     public function store( $theProduct, SpecificationRequest $specificationRequest ): array;
 
     /**
+     * @param $theProduct
      * @param SpecificationRequest $specificationRequest
      * @param $theSpecification
      * @return array|mixed
      */
-    public function update( SpecificationRequest $specificationRequest, $theSpecification ): array;
+    public function update( $theProduct, SpecificationRequest $specificationRequest, $theSpecification ): array;
 
     /**
+     * @param $theProduct
      * @param $theSpecification
      * @return array
      */
-    public function destroy( $theSpecification ): array;
+    public function destroy( $theProduct, $theSpecification ): array;
 }

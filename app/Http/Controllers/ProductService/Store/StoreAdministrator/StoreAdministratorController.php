@@ -30,39 +30,43 @@ class StoreAdministratorController extends Controller
     }
 
     /**
+     * @param $theStore
      * @param StoreAdministratorRequest $administratorRequest
      * @return array|mixed
      */
-    public function store( StoreAdministratorRequest $administratorRequest ) : array
+    public function store( $theStore, StoreAdministratorRequest $administratorRequest ) : array
     {
-        return $this -> theRepository -> store( $administratorRequest );
+        return $this -> theRepository -> store( $theStore, $administratorRequest );
     }
 
     /**
+     * @param $theStore
      * @param $theAdministrator
      * @return array|mixed
      */
-    public function show( $theAdministrator ) : array
+    public function show( $theStore, $theAdministrator ) : array
     {
-        return $this -> theRepository -> show( $theAdministrator );
+        return $this -> theRepository -> show( $theStore, $theAdministrator );
     }
 
     /**
+     * @param $theStore
      * @param StoreAdministratorRequest $administratorRequest
      * @param $theAdministrator
      * @return mixed
      */
-    public function update( StoreAdministratorRequest $administratorRequest, $theAdministrator )
+    public function update( $theStore, StoreAdministratorRequest $administratorRequest, $theAdministrator )
     {
-        return $this -> theRepository -> update( $administratorRequest, $theAdministrator );
+        return $this -> theRepository -> update( $theStore, $administratorRequest, $theAdministrator );
     }
 
     /**
+     * @param $theStore
      * @param $theAdministrator
      * @return mixed
      */
-    public function destroy( $theAdministrator )
+    public function destroy( $theStore, $theAdministrator )
     {
-        return $this -> theRepository -> destroy( $theAdministrator );
+        return $this -> theRepository -> destroy( $theStore, $theAdministrator );
     }
 }

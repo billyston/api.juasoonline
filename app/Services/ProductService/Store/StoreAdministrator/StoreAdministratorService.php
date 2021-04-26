@@ -9,9 +9,12 @@ class StoreAdministratorService
     use ExternalService;
     private $baseURL;
 
+    /**
+     * StoreAdministratorService constructor.
+     */
     public function __construct()
     {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'stores/administrator';
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'store/';
     }
 
     /**
@@ -23,39 +26,43 @@ class StoreAdministratorService
     }
 
     /**
+     * @param $theStore
      * @param $theRequest
      * @return array|mixed
      */
-    public function createAdministrator( $theRequest ) : array
+    public function createAdministrator( $theStore, $theRequest ) : array
     {
-        return $this -> postRequest( $this -> baseURL, $theRequest );
+        return $this -> postRequest( $this -> baseURL . $theStore . '/administrator', $theRequest );
     }
 
     /**
+     * @param $theStore
      * @param $theAdministrator
      * @return array|mixed
      */
-    public function getAdministrator( $theAdministrator ) : array
+    public function getAdministrator( $theStore, $theAdministrator ) : array
     {
-        return $this -> getRequest( $this -> baseURL, $theAdministrator,  );
+        return $this -> getRequest( $this -> baseURL . $theStore . '/administrator/' . $theAdministrator,  );
     }
 
     /**
+     * @param $theStore
      * @param $theRequest
-     * @param $theBranch
+     * @param $theAdministrator
      * @return array|mixed
      */
-    public function updateAdministrator( $theRequest, $theBranch ) : array
+    public function updateAdministrator( $theStore, $theRequest, $theAdministrator ) : array
     {
-        return $this -> putRequest( $this -> baseURL, $theRequest, $theBranch  );
+        return $this -> putRequest( $this -> baseURL . $theStore . '/administrator/' . $theAdministrator, $theRequest  );
     }
 
     /**
-     * @param $theBranch
+     * @param $theStore
+     * @param $theAdministrator
      * @return array|mixed
      */
-    public function deleteAdministrator( $theBranch ) : array
+    public function deleteAdministrator( $theStore, $theAdministrator ) : array
     {
-        return $this -> deleteRequest( $this -> baseURL, $theBranch  );
+        return $this -> deleteRequest( $this -> baseURL . $theStore . '/administrator/' . $theAdministrator  );
     }
 }

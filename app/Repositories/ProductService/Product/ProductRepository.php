@@ -32,9 +32,9 @@ class ProductRepository implements ProductRepositoryInterface
      * @param $theStore
      * @return array|mixed
      */
-    public function store( ProductRequest $productRequest, $theStore ) : array
+    public function store( $theStore, ProductRequest $productRequest ) : array
     {
-        return $this -> productService -> createProduct( $productRequest, $theStore );
+        return $this -> productService -> createProduct( $theStore, $productRequest );
     }
 
     /**
@@ -48,21 +48,23 @@ class ProductRepository implements ProductRepositoryInterface
     }
 
     /**
+     * @param $theStore
      * @param ProductRequest $productRequest
      * @param $Product
      * @return array|mixed
      */
-    public function update( ProductRequest $productRequest, $Product ) : array
+    public function update( $theStore, ProductRequest $productRequest, $Product ) : array
     {
-        return $this -> productService -> updateProduct( $productRequest, $Product );
+        return $this -> productService -> updateProduct( $theStore, $productRequest, $Product );
     }
 
     /**
+     * @param $theStore
      * @param $Product
      * @return array|mixed
      */
-    public function destroy( $Product ) : array
+    public function destroy( $theStore, $Product ) : array
     {
-        return $this -> productService -> deleteProduct( $Product );
+        return $this -> productService -> deleteProduct( $theStore, $Product );
     }
 }

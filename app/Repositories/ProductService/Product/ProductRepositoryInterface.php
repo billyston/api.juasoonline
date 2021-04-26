@@ -17,7 +17,7 @@ interface ProductRepositoryInterface
      * @param $theStore
      * @return array|mixed
      */
-    public function store( ProductRequest $productRequest, $theStore ): array;
+    public function store( $theStore, ProductRequest $productRequest ): array;
 
     /**
      * @param $theStore
@@ -27,15 +27,16 @@ interface ProductRepositoryInterface
     public function show( $theStore, $theProduct ): array;
 
     /**
+     * @param $theStore
      * @param ProductRequest $productRequest
      * @param $Product
      * @return array|mixed
      */
-    public function update( ProductRequest $productRequest, $Product ): array;
+    public function update( $theStore, ProductRequest $productRequest, $Product ): array;
 
     /**
      * @param $Product
      * @return array|mixed
      */
-    public function destroy( $Product ): array;
+    public function destroy( $theStore, $Product ): array;
 }

@@ -45,34 +45,37 @@ class SpecificationController extends Controller
     /**
      * Display the specified resource.
      *
+     * @param $theProduct
      * @param $theSpecification
      * @return array|mixed
      */
-    public function show( $theSpecification ) : array
+    public function show( $theProduct, $theSpecification ) : array
     {
-        return $this -> theRepository -> show( $theSpecification );
+        return $this -> theRepository -> show( $theProduct, $theSpecification );
     }
 
     /**
      * Update the specified resource in storage.
      *
+     * @param $theProduct
      * @param SpecificationRequest $specificationRequest
      * @param $theSpecification
      * @return array|mixed
      */
-    public function update( SpecificationRequest $specificationRequest, $theSpecification ) : array
+    public function update( $theProduct, SpecificationRequest $specificationRequest, $theSpecification ) : array
     {
-        return $this -> theRepository -> update( $specificationRequest, $theSpecification );
+        return $this -> theRepository -> update( $theProduct, $specificationRequest, $theSpecification );
     }
 
     /**
      * Remove the specified resource from storage.
      *
+     * @param $theProduct
      * @param $theSpecification
      * @return array|mixed
      */
-    public function destroy( $theSpecification ) : array
+    public function destroy( $theProduct, $theSpecification ) : array
     {
-        return $this -> theRepository -> destroy( $theSpecification );
+        return $this -> theRepository -> destroy( $theProduct, $theSpecification );
     }
 }

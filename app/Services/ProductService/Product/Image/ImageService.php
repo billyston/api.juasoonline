@@ -9,6 +9,9 @@ class ImageService
     use ExternalService;
     private $baseURL;
 
+    /**
+     * ImageService constructor.
+     */
     public function __construct()
     {
         $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'product/';
@@ -20,7 +23,7 @@ class ImageService
      */
     public function getAll( $product ) : array
     {
-        return $this -> getAllRequest( $this -> baseURL.$product."/images" );
+        return $this -> getAllRequest( $this -> baseURL . $product . '/images' );
     }
 
     /**
@@ -30,16 +33,17 @@ class ImageService
      */
     public function createImage( $theRequest, $product ) : array
     {
-        return $this -> postWithFiles( $this -> baseURL.$product."/images", $theRequest );
+        return $this -> postWithFiles( $this -> baseURL . $product . '/images', $theRequest );
     }
 
     /**
+     * @param $product
      * @param $theImage
      * @return array|mixed
      */
-    public function getImage( $theImage ) : array
+    public function getImage( $product, $theImage ) : array
     {
-        return $this -> getRequest( $this -> baseURL, $theImage  );
+        return $this -> getRequest( $this -> baseURL . $product . '/' . $theImage  );
     }
 
     /**
@@ -47,17 +51,17 @@ class ImageService
      * @param $theImage
      * @return array|mixed
      */
-    public function updateImage( $theRequest, $theImage ) : array
+    public function updateImage( $product, $theRequest, $theImage ) : array
     {
-        return $this -> putRequest( $this -> baseURL, $theRequest, $theImage  );
+        return $this -> putRequest( $this -> baseURL . $product . '/' . $theImage,  $theRequest  );
     }
 
     /**
      * @param $theImage
      * @return array|mixed
      */
-    public function deleteImage( $theImage ) : array
+    public function deleteImage( $product, $theImage ) : array
     {
-        return $this -> deleteRequest( $this -> baseURL, $theImage  );
+        return $this -> deleteRequest( $this -> baseURL . $product . '/' . $theImage  );
     }
 }

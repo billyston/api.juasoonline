@@ -37,9 +37,9 @@ class ProductController extends Controller
      * @param $theStore
      * @return array|mixed
      */
-    public function store( ProductRequest $productRequest, $theStore ) : array
+    public function store( $theStore, ProductRequest $productRequest ) : array
     {
-        return $this -> theRepository -> store( $productRequest, $theStore );
+        return $this -> theRepository -> store( $theStore, $productRequest );
     }
 
     /**
@@ -55,22 +55,24 @@ class ProductController extends Controller
 
     /**
      * Update the specified resource in storage.
+     * @param $theStore
      * @param ProductRequest $productRequest
      * @param $Product
      * @return array|mixed
      */
-    public function update( ProductRequest $productRequest, $Product ) : array
+    public function update( $theStore, ProductRequest $productRequest, $Product ) : array
     {
-        return $this -> theRepository -> update( $productRequest, $Product );
+        return $this -> theRepository -> update( $theStore, $productRequest, $Product );
     }
 
     /**
      * Remove the specified resource from storage.
+     * @param $theStore
      * @param $Product
      * @return array|mixed
      */
-    public function destroy( $Product ) : array
+    public function destroy( $theStore, $Product ) : array
     {
-        return $this -> theRepository -> destroy( $Product );
+        return $this -> theRepository -> destroy( $theStore, $Product );
     }
 }

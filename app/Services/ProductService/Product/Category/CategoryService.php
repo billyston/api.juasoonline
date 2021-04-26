@@ -9,6 +9,9 @@ class CategoryService
     use ExternalService;
     private $baseURL;
 
+    /**
+     * CategoryService constructor.
+     */
     public function __construct()
     {
         $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'categories';
@@ -28,6 +31,6 @@ class CategoryService
      */
     public function getCategory( $theCategory ) : array
     {
-        return $this -> getRequest( $this -> baseURL, $theCategory  );
+        return $this -> getRequest( $this -> baseURL . "/" . $theCategory  );
     }
 }
