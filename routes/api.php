@@ -1,6 +1,7 @@
 <?php
 
-use App\Http\Controllers\ProductService\Product\Category\CategoryController;
+use App\Http\Controllers\ProductService\Other\Category\CategoryController;
+use App\Http\Controllers\ProductService\Other\Brand\BrandController;
 
 use App\Http\Controllers\ProductService\Store\StoreController;
 use App\Http\Controllers\ProductService\Store\StoreAdministrator\StoreAdministratorController;
@@ -38,9 +39,9 @@ Route::group(['prefix' => 'web'], function ()
     // Unauthenticated (Unprotected) administrator routes
     Route::group([], function ()
     {
-        Route::post( 'stores', [ StoreController::class, "store" ]);
-        Route::post( 'store/{store}/administrator', [ StoreAdministratorController::class, "store" ]);
-        Route::post( 'stores/auth/login', [ StoreAdministratorController::class, "login" ]);
+        Route::post( 'stores', [StoreController::class, 'store']);
+        Route::post( 'store/{store}/administrator', [StoreAdministratorController::class, 'store']);
+        Route::post( 'stores/auth/login', [StoreAdministratorController::class, 'login']);
     });
 
     // Authenticated (Protected) administrator routes
@@ -48,9 +49,9 @@ Route::group(['prefix' => 'web'], function ()
     {
         Route::group([], function ()
         {
-            Route::post( 'stores/auth/logout', [ StoreAdministratorController::class, "logout" ]);
+            Route::post( 'stores/auth/logout', [StoreAdministratorController::class, 'logout']);
 
-            Route::apiResource( 'stores', StoreController::class, ['parameters' => [ '' => 'store' ]] ) -> only([ 'show', 'update']);
+            Route::apiResource( 'stores', StoreController::class) -> only(['show', 'update']);
             Route::apiResource( 'store.administrator', StoreAdministratorController::class ) -> only(['update', 'show']);
             Route::apiResource( 'store.branches', BranchController::class );
         });
@@ -67,20 +68,22 @@ Route::group(['prefix' => 'web'], function ()
         Route::group([], function ()
         {
             Route::apiResource( 'categories', CategoryController::class ) -> only([ 'index', 'show' ]);
+            Route::apiResource( 'brands', BrandController::class ) -> only([ 'index', 'show' ]);
         });
     });
 
     // Unauthenticated (Unprotected) customer routes
     Route::group([], function()
     {
-        Route::post( 'customers/registration', [ CustomerController::class, "registration" ]);
-        Route::post( 'customers/auth/login', [ CustomerController::class, "login" ]);
+        Route::post( 'customers/registration', [ CustomerController::class, 'store' ]);
+        Route::post( 'customers/auth/login', [ CustomerController::class, 'login' ]);
+        Route::post( 'customers/account/verification', [ CustomerController::class, 'verification' ]);
     });
 
     // Authenticated (Protected) customer routes
     Route::group(['middleware' => 'auth:customer'], function()
     {
-        Route::post( 'customers/auth/logout', [ CustomerController::class, "logout" ]);
+        Route::post( 'customers/auth/logout', [ CustomerController::class, 'logout' ]);
         Route::apiResource( 'customers', CustomerController::class ) -> only([ 'store', 'show', 'update' ]);
         Route::apiResource( 'customer.addresses', AddressController::class );
         Route::apiResource( 'customer.wishlists', WishlistController::class );

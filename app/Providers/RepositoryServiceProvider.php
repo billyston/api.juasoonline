@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
-use App\Repositories\ProductService\Product\Category\CategoryRepositoryInterface;
-use App\Repositories\ProductService\Product\Category\CategoryRepository;
+use App\Repositories\ProductService\Other\Category\CategoryRepositoryInterface;
+use App\Repositories\ProductService\Other\Category\CategoryRepository;
+use App\Repositories\ProductService\Other\Brand\BrandRepositoryInterface;
+use App\Repositories\ProductService\Other\Brand\BrandRepository;
 
 use App\Repositories\ProductService\Store\StoreRepositoryInterface;
 use App\Repositories\ProductService\Store\StoreRepository;
@@ -50,6 +52,7 @@ class RepositoryServiceProvider extends ServiceProvider
     public function register()
     {
         $this -> app -> bind( CategoryRepositoryInterface::class, CategoryRepository::class );
+        $this -> app -> bind( BrandRepositoryInterface::class, BrandRepository::class );
 
         $this -> app -> bind( StoreRepositoryInterface::class, StoreRepository::class );
         $this -> app -> bind( StoreAdministratorRepositoryInterface::class, StoreAdministratorRepository::class );

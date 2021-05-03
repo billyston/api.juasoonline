@@ -41,8 +41,8 @@ interface CustomerRepositoryInterface
     public function destroy( $theCustomer ): array;
 
     /**
-     * @param CustomerRegistrationRequest $customerRegistrationRequest
-     * @return JsonResponse
+     * @param $request
+     * @return JsonResponse|mixed
      */
-    public function registration( CustomerRegistrationRequest $customerRegistrationRequest ) : JsonResponse;
+    public function verification( $request ) : JsonResponse;
 }

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Services\ProductService\Product\Category;
+namespace App\Services\ProductService\Other\Brand;
 
 use App\Traits\ExternalService;
 
-class CategoryService
+class BrandService
 {
     use ExternalService;
     private $baseURL;
@@ -14,7 +14,7 @@ class CategoryService
      */
     public function __construct()
     {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'categories';
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'brands';
     }
 
     /**
@@ -26,11 +26,11 @@ class CategoryService
     }
 
     /**
-     * @param $theCategory
+     * @param $theBrand
      * @return array|mixed
      */
-    public function getCategory( $theCategory ) : array
+    public function getBrand( $theBrand ) : array
     {
-        return $this -> getRequest( $this -> baseURL . "/" . $theCategory  );
+        return $this -> getRequest( $this -> baseURL . "/" . $theBrand  );
     }
 }

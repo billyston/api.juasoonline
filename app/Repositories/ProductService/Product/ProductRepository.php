@@ -34,7 +34,47 @@ class ProductRepository implements ProductRepositoryInterface
      */
     public function store( $theStore, ProductRequest $productRequest ) : array
     {
-        return $this -> productService -> createProduct( $theStore, $productRequest );
+        $data = array('type' => 'Product', 'attributes' => array('name' => $productRequest['name'], 'quantity' => $productRequest['quantity'], 'price' => $productRequest['price'], 'brand_id' => 1, 'sales_price' => $productRequest['sales_price'], 'description' => $productRequest['description']), 'relationships' => array('store' => array('store_id' => $productRequest['store_id']), 'categories' => array('data' => array()), 'specifications' => array('data' => array()), 'images' => array('data' => array()), 'overviews' => array('data' => array()), 'colors' => array('data' => array()), 'sizes' => array('data' => array())));
+
+        // Check if product has categories
+        for( $i = 0; $i <  count($productRequest['categories']); $i++  )
+        {
+            array_push( $data['relationships']['categories']['data'], array('type' => 'Category', 'category_id' => $productRequest['categories'][$i]) );
+        }
+
+        // Check if product has specifications
+        for( $i = 0; $i <  count($productRequest['specifications']); $i++  )
+        {
+            array_push( $data['relationships']['specifications']['data'], array('type' => 'Specification', 'specification' => $productRequest['specifications'][$i], 'value' => $productRequest['specification_value'][$i] ) );
+        }
+
+        // Check if product has images
+        for( $i = 0; $i <  count($productRequest['product_image_descriptions']); $i++  )
+        {
+            $image =  $productRequest['product_images'][$i] -> store('products/images/products');
+            array_push( $data['relationships']['images']['data'], array('type' => 'Image', 'description' => $productRequest['product_image_descriptions'][$i], 'file' => $image ));
+        }
+
+        // Check if product has overviews
+        for( $i = 0; $i <  count($productRequest['overview_titles']); $i++  )
+        {
+            $image =  $productRequest['overview_images'][$i] -> store('products/images/overviews');
+            array_push( $data['relationships']['overviews']['data'], array('type' => 'Overview', 'title' => $productRequest['overview_titles'][$i], 'description' => $productRequest['product_image_descriptions'][$i], 'image' => $image ));
+        }
+
+        // Check if product has colors
+        for( $i = 0; $i <  count($productRequest['colors']); $i++  )
+        {
+            $image =  $productRequest['color_images'][$i] -> store('products/images/colors');
+            array_push( $data['relationships']['colors']['data'], array('type' => 'Color', 'color' => $productRequest['colors'][$i], 'image' => $image ));
+        }
+
+        // Check if product has sizes
+        for( $i = 0; $i <  count($productRequest['sizes']); $i++  )
+        {
+            array_push( $data['relationships']['sizes']['data'], array('type' => 'Size', 'size' => $productRequest['sizes'][$i], 'description' => $productRequest['size_descriptions'][$i]));
+        }
+        return $this -> productService -> createProduct( $theStore, $data );
     }
 
     /**

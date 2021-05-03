@@ -42,7 +42,7 @@ class StoreAdministratorService
      */
     public function getAdministrator( $theStore, $theAdministrator ) : array
     {
-        return $this -> getRequest( $this -> baseURL . $theStore . '/administrator/' . $theAdministrator,  );
+        return $this -> getRequest( $this -> baseURL . $theStore . '/administrator/' . $theAdministrator );
     }
 
     /**

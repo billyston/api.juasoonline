@@ -61,7 +61,7 @@ class CustomerRequest extends FormRequest
             'data.attributes.middle_name'                               => [ 'sometimes', 'string' ],
             'data.attributes.last_name'                                 => [ 'required', 'string' ],
 
-            'data.attributes.email'                                     => [ 'required', 'email', 'exists:customers,email' ],
+            'data.attributes.email'                                     => [ 'required', 'email', 'unique:customers,email' ],
             'data.attributes.mobile_phone'                              => [ 'required', 'min:10', 'numeric' ],
         ];
     }

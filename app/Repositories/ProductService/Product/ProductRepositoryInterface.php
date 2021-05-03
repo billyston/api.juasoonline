@@ -35,6 +35,7 @@ interface ProductRepositoryInterface
     public function update( $theStore, ProductRequest $productRequest, $Product ): array;
 
     /**
+     * @param $theStore
      * @param $Product
      * @return array|mixed
      */

@@ -46,25 +46,68 @@ class ProductRequest extends FormRequest
         }
         return
         [
-            'data'                                                      => [ 'required' ],
-            'data.type'                                                 => [ 'required', 'string', 'in:Product' ],
+            'name'                                                      => ['required', 'string'],
+            'quantity'                                                  => ['required', 'numeric'],
+            'price'                                                     => ['required', 'numeric', 'regex:/^\d*(\.\d{2})?$/'],
+            'sales_price'                                               => ['required', 'numeric', 'regex:/^\d*(\.\d{2})?$/'],
+            'description'                                               => ['required', 'string'],
+
+            'categories'                                                => ['required'],
+            'categories.*'                                              => ['required'],
+
+            'store_id'                                                  => ['required', 'numeric'],
+
+            'specifications'                                            => ['required'],
+            'specifications.*'                                          => ['required'],
+
+            'specification_value'                                       => ['required'],
+            'specification_value.*'                                     => ['required'],
+
+
+            'product_image_descriptions'                                => ['required'],
+            'product_image_descriptions.*'                              => ['required'],
+
+            'product_images'                                            => ['required'],
+            'product_images.*'                                          => ['required'],
+
+
+            'overview_titles'                                           => ['required'],
+            'overview_titles.*'                                         => ['required'],
+
+            'overview_descriptions'                                     => ['required'],
+            'overview_descriptions.*'                                   => ['required'],
+
+            'overview_images'                                           => ['required'],
+            'overview_images.*'                                         => ['required'],
+
+
+            'colors.*'                                                  => ['required'],
+            'color_images.*'                                            => ['required'],
+
+            'sizes.*'                                                   => ['required'],
+            'size_descriptions.*'                                       => ['required'],
+
+
+
+//            'data'                                                      => [ 'required' ],
+//            'data.type'                                                 => [ 'required', 'string', 'in:Product' ],
 
             // Validate product attributes
-            'data.attributes.name'                                      => [ 'required', 'string' ],
-            'data.attributes.quantity'                                  => [ 'required', 'numeric' ],
-            'data.attributes.price'                                     => [ 'sometimes', 'numeric', 'regex:/^\d*(\.\d{2})?$/' ],
-            'data.attributes.sales_price'                               => [ 'required', 'numeric', 'regex:/^\d*(\.\d{2})?$/' ],
+//            'data.attributes.name'                                      => [ 'required', 'string' ],
+//            'data.attributes.quantity'                                  => [ 'required', 'numeric' ],
+//            'data.attributes.price'                                     => [ 'sometimes', 'numeric', 'regex:/^\d*(\.\d{2})?$/' ],
+//            'data.attributes.sales_price'                               => [ 'required', 'numeric', 'regex:/^\d*(\.\d{2})?$/' ],
 
             // Validate product relationship with brand
             // Coming soon
 
             // Validate product categories and relations
-            'data.relationships.categories'                             => [ 'required' ],
-            'data.relationships.categories.data'                        => [ 'required' ],
-            'data.relationships.categories.data.*.type'                 => [ 'required', 'in:Category' ],
+//            'data.relationships.categories'                             => [ 'required' ],
+//            'data.relationships.categories.data'                        => [ 'required' ],
+//            'data.relationships.categories.data.*.type'                 => [ 'required', 'in:Category' ],
 
             // Validate product relationship with store
-            'data.relationships.store.store_id'                         => [ 'required' ],
+//            'data.relationships.store.store_id'                         => [ 'required' ],
         ];
     }
     /**
@@ -74,20 +117,21 @@ class ProductRequest extends FormRequest
     {
         return
         [
-            'data.required'                                             => "The data field is invalid",
-
-            'data.type.required'                                        => "The type is required",
-            'data.type.string'                                          => "The type must be of a string",
-            'data.type.in'                                              => "The type is invalid",
-
-            'data.attributes.name.required'                             => "Name is required",
-            'data.attributes.quantity.required'                         => "Quantity is required",
-            'data.attributes.quantity.numeric'                          => "Quantity must be of a number type",
-            'data.attributes.price.number'                              => "Prices must be of a number type",
-            'data.attributes.sales_price.required'                      => "Sales price is required",
-            'data.attributes.sales_price.number'                        => "Sales price must be of a number type",
-
-            'data.relationships.relationships.store_id.required'        => "Store id is required",
+//            'name.required'                                               => 'The product name is required'
+//            'data.required'                                             => "The data field is invalid",
+//
+//            'data.type.required'                                        => "The type is required",
+//            'data.type.string'                                          => "The type must be of a string",
+//            'data.type.in'                                              => "The type is invalid",
+//
+//            'data.attributes.name.required'                             => "Name is required",
+//            'data.attributes.quantity.required'                         => "Quantity is required",
+//            'data.attributes.quantity.numeric'                          => "Quantity must be of a number type",
+//            'data.attributes.price.number'                              => "Prices must be of a number type",
+//            'data.attributes.sales_price.required'                      => "Sales price is required",
+//            'data.attributes.sales_price.number'                        => "Sales price must be of a number type",
+//
+//            'data.relationships.relationships.store_id.required'        => "Store id is required",
         ];
     }
 }

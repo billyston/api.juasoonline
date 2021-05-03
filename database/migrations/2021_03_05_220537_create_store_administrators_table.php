@@ -17,12 +17,12 @@ class CreateStoreAdministratorsTable extends Migration
         {
             $table -> bigIncrements('id' );
             $table -> uuid( 'resource_id' ) -> unique() -> nullable( false );
+            $table -> string( 'store_resource_id' ) -> unique() -> nullable( false );
 
             $table -> string('email') -> unique();
             $table -> string('password');
 
             $table -> string('verification_code') -> unique() -> nullable( true );
-            $table -> timestamp('email_verified_at') -> nullable();
             $table -> integer('status') ->default( 1 );
 
             $table -> timestamps();

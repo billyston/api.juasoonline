@@ -5,7 +5,6 @@ namespace App\Http\Controllers\ProductService\Product\Review;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductService\Product\Review\ReviewRequest;
 use App\Repositories\ProductService\Product\Review\ReviewRepositoryInterface;
-use Illuminate\Http\Request;
 
 class ReviewController extends Controller
 {

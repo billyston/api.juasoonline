@@ -39,7 +39,7 @@ class StoreAdministratorRepository implements StoreAdministratorRepositoryInterf
         $response =  $this -> administratorService -> createAdministrator( $theStore, $administratorRequest );
 
         // Store Admin login
-        $storeAdmin = new StoreAdministrator(['resource_id' => $response['data']['attributes']['resource_id'], 'email' => $response['data']['attributes']['email'], 'password' => bcrypt( $administratorRequest -> input( 'data.attributes.password' ) ), 'verification_code' => generateVerificationCode( 6 ) ]);
+        $storeAdmin = new StoreAdministrator([ 'resource_id' => $response['data']['attributes']['resource_id'], 'store_resource_id' => $administratorRequest -> input('data.attributes.store_resource_id'), 'email' => $response['data']['attributes']['email'], 'password' => bcrypt( $administratorRequest -> input( 'data.attributes.password' ) ), 'verification_code' => generateVerificationCode( 6 ) ]);
         $storeAdmin -> save();
 
         // Email confirmation code

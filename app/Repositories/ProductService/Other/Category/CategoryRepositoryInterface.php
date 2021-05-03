@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Repositories\ProductService\Product\Category;
+namespace App\Repositories\ProductService\Other\Category;
 
 interface CategoryRepositoryInterface
 {
@@ -13,5 +13,5 @@ interface CategoryRepositoryInterface
      * @param $theCategory
      * @return array|mixed
      */
-    public function show($theCategory): array;
+    public function show( $theCategory ): array;
 }

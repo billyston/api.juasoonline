@@ -17,6 +17,7 @@ class CreateCustomersTable extends Migration
         {
             $table -> bigIncrements('id' );
             $table -> uuid( 'resource_id' ) -> unique() -> nullable( false );
+            $table -> string('first_name' ) -> nullable( false );
 
             $table -> string('email') -> unique();
             $table -> string('password');

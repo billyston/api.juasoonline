@@ -11,14 +11,15 @@ use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Http\Response;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Exception;
 
 class CreateCustomer implements ShouldQueue
 {
-    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-    use apiResponseBuilder; private $theRequest;
+    use Dispatchable, InteractsWithQueue, Queueable, SerializesModels, apiResponseBuilder;
+    private $theRequest;
 
     /**
      * Create a new job instance.
@@ -32,7 +33,7 @@ class CreateCustomer implements ShouldQueue
 
     /**
      * Execute the job.
-     * @return CustomerResource|void
+     * @return CustomerResource|mixed
      */
     public function handle() : CustomerResource
     {
@@ -47,7 +48,7 @@ class CreateCustomer implements ShouldQueue
         catch ( Exception $exception )
         {
             report( $exception );
-            return abort(500, 'something went wrong, please try again later');
+            return abort( $this -> errorResponse( null, 'Error', 'Something went wrong, please try again later', Response::HTTP_SERVICE_UNAVAILABLE ) );
         }
     }
 }

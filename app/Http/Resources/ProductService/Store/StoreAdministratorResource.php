@@ -23,6 +23,7 @@ class StoreAdministratorResource extends JsonResource
             'attributes' =>
             [
                 'resource_id'       => $this -> resource_id,
+                'store_resource_id' => $this -> store_resource_id,
 
                 'created_at'        => $this -> created_at -> toDateTimeString(),
                 'updated_at'        => $this -> updated_at -> toDateTimeString(),

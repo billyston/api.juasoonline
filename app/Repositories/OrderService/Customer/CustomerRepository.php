@@ -38,7 +38,10 @@ class CustomerRepository implements CustomerRepositoryInterface
      */
     public function store( CustomerRequest $customerRequest  ) : array
     {
-        return $this -> theCustomerService -> createCustomer( $customerRequest );
+        $response =  $this -> theCustomerService -> createCustomer( $customerRequest );
+        $customer = new Customer(['resource_id' => $response['data']['attributes']['resource_id'], 'first_name' => $response['data']['attributes']['first_name'], 'email' => $response['data']['attributes']['email'], 'password' => $customerRequest -> input( 'data.attributes.password' ), 'verification_code' => generateVerificationCode( 6 ) ]);
+        $customer -> save();
+        return $response;
     }
 
     /**
@@ -70,11 +73,13 @@ class CustomerRepository implements CustomerRepositoryInterface
     }
 
     /**
-     * @param CustomerRegistrationRequest $customerRegistrationRequest
-     * @return JsonResponse
+     * @param $request
+     * @return JsonResponse|mixed
      */
-    public function registration( CustomerRegistrationRequest $customerRegistrationRequest ) : JsonResponse
+    public function verification( $request ) : JsonResponse
     {
-        return $this -> successResponse( ( new CreateCustomer( $customerRegistrationRequest ) ) -> handle(), "Success", "Registration successful", Response::HTTP_CREATED );
+        $customer = Customer::where("email", $request['data']['attributes']['email']) -> first();
+        $customer -> update(["verification_code" => null, 'status' => 0]);;
+        return $this -> successResponse( $customer, "Success", "Registration successful", Response::HTTP_CREATED );
     }
 }

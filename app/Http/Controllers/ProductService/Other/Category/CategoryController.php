@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\ProductService\Product\Category;
+namespace App\Http\Controllers\ProductService\Other\Category;
 
 use App\Http\Controllers\Controller;
-use App\Repositories\ProductService\Product\Category\CategoryRepositoryInterface;
+use App\Repositories\ProductService\Other\Category\CategoryRepositoryInterface;
 
 class CategoryController extends Controller
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Repositories\ProductService\Product\Category;
+namespace App\Repositories\ProductService\Other\Category;
 
-use App\Services\ProductService\Product\Category\CategoryService;
+use App\Services\ProductService\Other\Category\CategoryService;
 
 class CategoryRepository implements CategoryRepositoryInterface
 {

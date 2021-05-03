@@ -5,11 +5,10 @@ namespace App\Http\Controllers\OrderService\Customer;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\OrderService\Customer\CustomerRegistrationRequest;
 use App\Http\Requests\OrderService\Customer\CustomerRequest;
-use App\Models\OrderService\Customer\Customer;
 use App\Repositories\OrderService\Customer\CustomerRepositoryInterface;
 use App\Traits\AuthenticatesJwtUsers;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
-use Illuminate\Http\Resources\Json\JsonResource;
 
 class CustomerController extends Controller
 {
@@ -47,7 +46,7 @@ class CustomerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Customer $customer
+     * @param $theCustomer
      * @return array|mixed
      */
     public function show( $theCustomer ) : array
@@ -78,13 +77,30 @@ class CustomerController extends Controller
         return $this -> theRepository -> destroy( $theCustomer );
     }
 
+    public function verification( Request $request ) : JsonResponse
+    {
+        $request -> validate([
+            'data'                                      => ['required'],
+            'data.type'                                 => ['required', 'string', 'in:Customer'],
+
+            'data.attributes.email'                     => ['required', 'email', 'exists:customers,email'],
+            'data.attributes.verification_code'         => ['required', 'exists:customers,verification_code'],
+        ],
+        [
+            'data.attributes.email.required'            => "The email is required",
+            'data.attributes.email.email'               => "The email address is invalid",
+            'data.attributes.email.exists'              => "The email address does not exist",
+        ]);
+        return $this -> theRepository -> verification( $request );
+    }
+
     /**
      * Store a newly created resource in storage.
      * @param CustomerRegistrationRequest $customerRegistrationRequest
-     * @return array|mixed
+     * @return JsonResponse|mixed
      */
-    public function registration( CustomerRegistrationRequest $customerRegistrationRequest ) : array
-    {
-       return $this -> theRepository -> registration( $customerRegistrationRequest );
-    }
+//    public function registration( CustomerRegistrationRequest $customerRegistrationRequest ) : JsonResponse
+//    {
+//       return $this -> theRepository -> registration( $customerRegistrationRequest );
+//    }
 }

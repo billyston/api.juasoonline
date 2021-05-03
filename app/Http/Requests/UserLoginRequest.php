@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests;
 
+use App\Rules\CheckUserStatus;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Http\Exceptions\HttpResponseException;
@@ -41,6 +42,7 @@ class UserLoginRequest extends FormRequest
             'data'                      => [ 'required', 'array' ],
             'data.type'                 => [ 'required', 'in:StoreAdministrator,Customer' ],
             'data.attributes.email'     => [ 'required', 'email' ],
+//            'data.attributes.email'     => [ 'required', 'email', new CheckUserStatus() ],
             'data.attributes.password'  => [ 'required', 'string', 'min:6', 'max:50' ]
         ];
     }
