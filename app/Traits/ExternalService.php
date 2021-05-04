@@ -2,7 +2,6 @@
 
 namespace App\Traits;
 
-use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\Http;
 
 trait ExternalService
