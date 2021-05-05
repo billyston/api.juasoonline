@@ -14,8 +14,7 @@ class CustomerService
      */
     public function __construct()
     {
-        $this -> baseURL = 'https://test.orders.juasoonline.com/' . 'customers/';
-//        $this -> baseURL = env('ORDER_SERVICE_URL') . 'customers/';
+        $this -> baseURL = env('ORDER_SERVICE_URL') . 'customers/';
     }
 
     /**

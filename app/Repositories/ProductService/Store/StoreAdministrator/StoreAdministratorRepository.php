@@ -43,7 +43,7 @@ class StoreAdministratorRepository implements StoreAdministratorRepositoryInterf
         $storeAdmin -> save();
 
         // Email confirmation code
-        Mail::to( $response['data']['attributes']['email'] ) -> send( new StoreAdministratorEmailVerification( $storeAdmin ) );
+//        Mail::to( $response['data']['attributes']['email'] ) -> send( new StoreAdministratorEmailVerification( $storeAdmin ) );
         return $response;
     }
 
