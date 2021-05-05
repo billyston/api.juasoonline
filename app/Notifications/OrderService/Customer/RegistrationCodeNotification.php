@@ -42,7 +42,7 @@ class RegistrationCodeNotification extends Notification
      */
     public function toMail( $notifiable ) : MailMessage
     {
-        return ( new MailMessage ) -> view( 'customer.registrationcode', ['data' => $this -> theCustomer] );
+        return ( new MailMessage ) -> view( 'customer.RegistrationCode', ['data' => $this -> theCustomer] );
     }
 
     /**
