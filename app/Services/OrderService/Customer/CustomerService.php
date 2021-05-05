@@ -14,7 +14,7 @@ class CustomerService
      */
     public function __construct()
     {
-        $this -> baseURL = env('ORDER_SERVICE_URL') . 'customers/';
+        $this -> baseURL = env('ORDER_SERVICE_URL') . 'customers';
     }
 
     /**
@@ -40,7 +40,7 @@ class CustomerService
      */
     public function getCustomer( $theCustomer ) : array
     {
-        return $this -> getRequest( $this -> baseURL . $theCustomer );
+        return $this -> getRequest( $this -> baseURL . '/' . $theCustomer );
     }
 
     /**
@@ -50,7 +50,7 @@ class CustomerService
      */
     public function updateCustomer( $theCustomer, $theRequest ) : array
     {
-        return $this -> putRequest( $this -> baseURL . $theCustomer, $theRequest );
+        return $this -> putRequest( $this -> baseURL . '/' . $theCustomer, $theRequest );
     }
 
     /**
@@ -59,6 +59,6 @@ class CustomerService
      */
     public function deleteCustomer( $theCustomer ) : array
     {
-        return $this -> deleteRequest( $this -> baseURL . $theCustomer );
+        return $this -> deleteRequest( $this -> baseURL . '/' . $theCustomer );
     }
 }
