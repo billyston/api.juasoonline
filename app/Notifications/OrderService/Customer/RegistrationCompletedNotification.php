@@ -42,7 +42,7 @@ class RegistrationCompletedNotification extends Notification
      */
     public function toMail( $notifiable ) : MailMessage
     {
-        return ( new MailMessage ) -> view( 'customer.RegistrationCompleted', ['data' => $this -> theCustomer] );
+        return ( new MailMessage ) -> view( 'RegistrationCompleted', ['data' => $this -> theCustomer] );
     }
 
     /**
