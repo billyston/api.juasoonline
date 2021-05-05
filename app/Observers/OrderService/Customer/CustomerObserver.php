@@ -21,11 +21,11 @@ class CustomerObserver
      */
     public function created( Customer $customer )
     {
-        $customer -> notify( new RegistrationCodeNotification( $customer ) );
+//        $customer -> notify( new RegistrationCodeNotification( $customer ) );
     }
 
     public function updated( Customer $customer )
     {
-        $customer -> notify( new RegistrationCompletedNotification( $customer ) );
+//        $customer -> notify( new RegistrationCompletedNotification( $customer ) );
     }
 }
