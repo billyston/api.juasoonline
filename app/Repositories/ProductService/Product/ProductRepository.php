@@ -4,6 +4,7 @@ namespace App\Repositories\ProductService\Product;
 
 use App\Http\Requests\ProductService\Product\ProductRequest;
 use App\Services\ProductService\Product\ProductService;
+use Illuminate\Support\Facades\Storage;
 
 class ProductRepository implements ProductRepositoryInterface
 {
@@ -51,22 +52,22 @@ class ProductRepository implements ProductRepositoryInterface
         // Check if product has images
         for( $i = 0; $i <  count($productRequest['product_image_descriptions']); $i++  )
         {
-            $image =  $productRequest['product_images'][$i] -> store('products/images/products');
-            array_push( $data['relationships']['images']['data'], array('type' => 'Image', 'description' => $productRequest['product_image_descriptions'][$i], 'file' => $image ));
+            $image =  $productRequest['product_images'][$i] -> store('images/products');
+            array_push( $data['relationships']['images']['data'], array('type' => 'Image', 'description' => $productRequest['product_image_descriptions'][$i], 'image' => env( 'DO_SPACES_PATH' ) . $image ));
         }
 
         // Check if product has overviews
         for( $i = 0; $i <  count($productRequest['overview_titles']); $i++  )
         {
-            $image =  $productRequest['overview_images'][$i] -> store('products/images/overviews');
-            array_push( $data['relationships']['overviews']['data'], array('type' => 'Overview', 'title' => $productRequest['overview_titles'][$i], 'description' => $productRequest['product_image_descriptions'][$i], 'image' => $image ));
+            $image =  $productRequest['overview_images'][$i] -> store('images/overviews');
+            array_push( $data['relationships']['overviews']['data'], array('type' => 'Overview', 'title' => $productRequest['overview_titles'][$i], 'description' => $productRequest['product_image_descriptions'][$i], 'image' => env( 'DO_SPACES_PATH' ) . $image ));
         }
 
         // Check if product has colors
         for( $i = 0; $i <  count($productRequest['colors']); $i++  )
         {
-            $image =  $productRequest['color_images'][$i] -> store('products/images/colors');
-            array_push( $data['relationships']['colors']['data'], array('type' => 'Color', 'color' => $productRequest['colors'][$i], 'image' => $image ));
+            $image =  $productRequest['color_images'][$i] -> store('images/colors');
+            array_push( $data['relationships']['colors']['data'], array('type' => 'Color', 'color' => $productRequest['colors'][$i], 'image' => env( 'DO_SPACES_PATH' ) . $image ));
         }
 
         // Check if product has sizes
@@ -74,6 +75,7 @@ class ProductRepository implements ProductRepositoryInterface
         {
             array_push( $data['relationships']['sizes']['data'], array('type' => 'Size', 'size' => $productRequest['sizes'][$i], 'description' => $productRequest['size_descriptions'][$i]));
         }
+
         return $this -> productService -> createProduct( $theStore, $data );
     }
 
