@@ -15,7 +15,7 @@ class SizeRepository implements SizeRepositoryInterface
      */
     public function __construct( SizeService $sizeService )
     {
-        return $this -> theService = $sizeService;
+        $this -> theService = $sizeService;
     }
 
     /**

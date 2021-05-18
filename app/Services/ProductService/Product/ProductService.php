@@ -33,7 +33,6 @@ class ProductService
      */
     public function createProduct( $theStore, $theRequest ) : array
     {
-//        logger($theRequest);
         return $this -> postWithFiles( $this -> baseURL . $theStore . '/products', $theRequest );
     }
 

@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductRepository implements ProductRepositoryInterface
 {
-    private $productService;
+    private ProductService $productService;
 
     /**
      * StoreRepository constructor.
@@ -35,7 +35,7 @@ class ProductRepository implements ProductRepositoryInterface
      */
     public function store( $theStore, ProductRequest $productRequest ) : array
     {
-        $data = array('type' => 'Product', 'attributes' => array('name' => $productRequest['name'], 'quantity' => $productRequest['quantity'], 'price' => $productRequest['price'], 'brand_id' => 1, 'sales_price' => $productRequest['sales_price'], 'description' => $productRequest['description']), 'relationships' => array('store' => array('store_id' => $productRequest['store_id']), 'categories' => array('data' => array()), 'specifications' => array('data' => array()), 'images' => array('data' => array()), 'overviews' => array('data' => array()), 'colors' => array('data' => array()), 'sizes' => array('data' => array())));
+        $data = array('type' => 'Product', 'attributes' => array('name' => $productRequest['name'], 'quantity' => $productRequest['quantity'], 'price' => $productRequest['price'], 'brand_id' => 1, 'sales_price' => $productRequest['sales_price'], 'description' => $productRequest['description']), 'relationships' => array('store' => array('store_id' => $productRequest['store_id']), 'charge' => array('charge_id' => $productRequest['charge_id']), 'categories' => array('data' => array()), 'specifications' => array('data' => array()), 'images' => array('data' => array()), 'overviews' => array('data' => array()), 'colors' => array('data' => array()), 'sizes' => array('data' => array())));
 
         // Check if product has categories
         for( $i = 0; $i <  count($productRequest['categories']); $i++  )
@@ -52,21 +52,21 @@ class ProductRepository implements ProductRepositoryInterface
         // Check if product has images
         for( $i = 0; $i <  count($productRequest['product_image_descriptions']); $i++  )
         {
-            $image =  $productRequest['product_images'][$i] -> store('images/products');
+            $image =  $productRequest['product_images'][$i] -> store( env( 'DO_SOURCE_FOLDER').'products');
             array_push( $data['relationships']['images']['data'], array('type' => 'Image', 'description' => $productRequest['product_image_descriptions'][$i], 'image' => env( 'DO_SPACES_PATH' ) . $image ));
         }
 
         // Check if product has overviews
         for( $i = 0; $i <  count($productRequest['overview_titles']); $i++  )
         {
-            $image =  $productRequest['overview_images'][$i] -> store('images/overviews');
+            $image =  $productRequest['overview_images'][$i] -> store(env( 'DO_SOURCE_FOLDER').'overviews');
             array_push( $data['relationships']['overviews']['data'], array('type' => 'Overview', 'title' => $productRequest['overview_titles'][$i], 'description' => $productRequest['product_image_descriptions'][$i], 'image' => env( 'DO_SPACES_PATH' ) . $image ));
         }
 
         // Check if product has colors
         for( $i = 0; $i <  count($productRequest['colors']); $i++  )
         {
-            $image =  $productRequest['color_images'][$i] -> store('images/colors');
+            $image =  $productRequest['color_images'][$i] -> store( env( 'DO_SOURCE_FOLDER').'colors');
             array_push( $data['relationships']['colors']['data'], array('type' => 'Color', 'color' => $productRequest['colors'][$i], 'image' => env( 'DO_SPACES_PATH' ) . $image ));
         }
 
