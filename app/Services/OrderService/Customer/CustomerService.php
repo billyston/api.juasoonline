@@ -7,7 +7,7 @@ use App\Traits\ExternalService;
 class CustomerService
 {
     use ExternalService;
-    private $baseURL;
+    private string $baseURL;
 
     /**
      * CustomerService constructor.
