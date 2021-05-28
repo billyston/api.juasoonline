@@ -48,6 +48,9 @@ use App\Repositories\OrderService\Customer\Cart\CartRepository;
 use App\Repositories\OrderService\Customer\Order\OrderRepositoryInterface;
 use App\Repositories\OrderService\Customer\Order\OrderRepository;
 
+use App\Repositories\Juasoonline\JuasoonlineRepositoryInterface;
+use App\Repositories\Juasoonline\JuasoonlineRepository;
+
 
 use Illuminate\Support\ServiceProvider;
 
@@ -84,6 +87,8 @@ class RepositoryServiceProvider extends ServiceProvider
         $this -> app -> bind( WishlistRepositoryInterface::class, WishlistRepository::class );
         $this -> app -> bind( CartRepositoryInterface::class, CartRepository::class );
         $this -> app -> bind( OrderRepositoryInterface::class, OrderRepository::class );
+
+        $this -> app -> bind( JuasoonlineRepositoryInterface::class, JuasoonlineRepository::class );
     }
 
     /**

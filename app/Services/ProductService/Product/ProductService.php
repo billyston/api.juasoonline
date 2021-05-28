@@ -66,12 +66,4 @@ class ProductService
     {
         return $this -> deleteRequest( $this -> baseURL . $theStore . '/products/' . $theProduct  );
     }
-
-    /**
-     * @return array|mixed
-     */
-    public function getProducts() : array
-    {
-        return $this -> getAllRequest( env('PRODUCT_SERVICE_URL') . 'products' );
-    }
 }

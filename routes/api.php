@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Juasoonline\JuasoonlineController;
 use App\Http\Controllers\ProductService\Other\Category\CategoryController;
 use App\Http\Controllers\ProductService\Other\Brand\BrandController;
 
@@ -123,6 +124,7 @@ Route::group(['prefix' => 'web'], function ()
 
     Route::group([], function ()
     {
-        Route::get( 'products', [ ProductController::class, 'products' ]);
+        Route::get( 'products', [ JuasoonlineController::class, 'products' ]);
+        Route::get( 'product/{product}', [ JuasoonlineController::class, 'product' ]);
     });
 });

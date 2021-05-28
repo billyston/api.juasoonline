@@ -75,12 +75,4 @@ class ProductController extends Controller
     {
         return $this -> theRepository -> destroy( $theStore, $Product );
     }
-
-    /**
-     * @return array|mixed
-     */
-    public function products() : array
-    {
-        return $this -> theRepository -> products();
-    }
 }

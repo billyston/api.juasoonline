@@ -4,14 +4,13 @@ namespace App\Repositories\ProductService\Product;
 
 use App\Http\Requests\ProductService\Product\ProductRequest;
 use App\Services\ProductService\Product\ProductService;
-use Illuminate\Support\Facades\Storage;
 
 class ProductRepository implements ProductRepositoryInterface
 {
     private ProductService $productService;
 
     /**
-     * StoreRepository constructor.
+     * ProductRepository constructor.
      * @param ProductService $productService
      */
     public function __construct( ProductService $productService )
@@ -108,13 +107,5 @@ class ProductRepository implements ProductRepositoryInterface
     public function destroy( $theStore, $Product ) : array
     {
         return $this -> productService -> deleteProduct( $theStore, $Product );
-    }
-
-    /**
-     * @return array|mixed
-     */
-    public function products() : array
-    {
-        return $this -> productService -> getProducts();
     }
 }

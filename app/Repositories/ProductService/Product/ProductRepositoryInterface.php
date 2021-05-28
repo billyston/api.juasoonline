@@ -41,9 +41,4 @@ interface ProductRepositoryInterface
      * @return array|mixed
      */
     public function destroy( $theStore, $Product ): array;
-
-    /**
-     * @return array|mixed
-     */
-    public function products() : array;
 }
