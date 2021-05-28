@@ -7,7 +7,7 @@ use App\Traits\ExternalService;
 class ProductService
 {
     use ExternalService;
-    private $baseURL;
+    private string $baseURL;
 
     /**
      * ProductService constructor.
@@ -65,5 +65,13 @@ class ProductService
     public function deleteProduct( $theStore, $theProduct ) : array
     {
         return $this -> deleteRequest( $this -> baseURL . $theStore . '/products/' . $theProduct  );
+    }
+
+    /**
+     * @return array|mixed
+     */
+    public function getProducts() : array
+    {
+        return $this -> getAllRequest( env('PRODUCT_SERVICE_URL') . 'products' );
     }
 }

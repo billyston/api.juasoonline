@@ -3,6 +3,7 @@
 namespace App\Repositories\ProductService\Product;
 
 use App\Http\Requests\ProductService\Product\ProductRequest;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 interface ProductRepositoryInterface
 {
@@ -40,4 +41,9 @@ interface ProductRepositoryInterface
      * @return array|mixed
      */
     public function destroy( $theStore, $Product ): array;
+
+    /**
+     * @return array|mixed
+     */
+    public function products() : array;
 }

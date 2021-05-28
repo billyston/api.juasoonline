@@ -120,4 +120,9 @@ Route::group(['prefix' => 'web'], function ()
         // Product service [ product and related resource ] routes
         Route::apiResource( 'product.promotions', PromotionController::class );
     });
+
+    Route::group([], function ()
+    {
+        Route::get( 'products', [ ProductController::class, 'products' ]);
+    });
 });

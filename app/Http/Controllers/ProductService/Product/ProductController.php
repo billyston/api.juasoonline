@@ -6,10 +6,11 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\ProductService\Product\ProductRequest;
 use App\Repositories\ProductService\Product\ProductRepositoryInterface;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class ProductController extends Controller
 {
-    private $theRepository;
+    private ProductRepositoryInterface $theRepository;
 
     /**
      * ProductController constructor.
@@ -73,5 +74,13 @@ class ProductController extends Controller
     public function destroy( $theStore, $Product ) : array
     {
         return $this -> theRepository -> destroy( $theStore, $Product );
+    }
+
+    /**
+     * @return array|mixed
+     */
+    public function products() : array
+    {
+        return $this -> theRepository -> products();
     }
 }

@@ -109,4 +109,12 @@ class ProductRepository implements ProductRepositoryInterface
     {
         return $this -> productService -> deleteProduct( $theStore, $Product );
     }
+
+    /**
+     * @return array|mixed
+     */
+    public function products() : array
+    {
+        return $this -> productService -> getProducts();
+    }
 }
