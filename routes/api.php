@@ -122,7 +122,8 @@ Route::group(['prefix' => 'web'], function ()
         Route::apiResource( 'product.promotions', PromotionController::class );
     });
 
-    Route::group([], function ()
+    // Juasoonline routes
+    Route::group(['prefix' => 'juaso'], function ()
     {
         Route::get( 'products', [ JuasoonlineController::class, 'products' ]);
         Route::get( 'product/{product}', [ JuasoonlineController::class, 'product' ]);

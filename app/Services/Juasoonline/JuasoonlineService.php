@@ -14,7 +14,7 @@ class JuasoonlineService
      */
     public function __construct()
     {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL');
+        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'juaso/';
     }
 
     /**
@@ -22,7 +22,7 @@ class JuasoonlineService
      */
     public function getProducts() : array
     {
-        return $this -> getAllRequest( env('PRODUCT_SERVICE_URL') . 'products' );
+        return $this -> getAllRequest( $this -> baseURL . 'products' );
     }
 
     /**
@@ -30,6 +30,6 @@ class JuasoonlineService
      */
     public function getProduct( $theProduct ) : array
     {
-        return $this -> getAllRequest( env('PRODUCT_SERVICE_URL') . 'product/' . $theProduct );
+        return $this -> getAllRequest( $this -> baseURL . 'product/' . $theProduct );
     }
 }
