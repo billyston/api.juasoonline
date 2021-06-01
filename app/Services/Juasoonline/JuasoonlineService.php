@@ -41,4 +41,12 @@ class JuasoonlineService
     {
         return $this -> getWithBody( $this -> baseURL . 'products/recommendations', $request );
     }
+
+    /**
+     * @return array|mixed
+     */
+    public function getStoreProducts( $theStore ) : array
+    {
+        return $this -> getAllRequest( $this -> baseURL . 'store/' . $theStore . '/products' );
+    }
 }

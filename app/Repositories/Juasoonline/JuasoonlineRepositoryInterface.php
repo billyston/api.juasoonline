@@ -2,7 +2,6 @@
 
 namespace App\Repositories\Juasoonline;
 
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 interface JuasoonlineRepositoryInterface
@@ -23,4 +22,9 @@ interface JuasoonlineRepositoryInterface
      * @return array|mixed
      */
     public function recommendations( Request $request ) : array;
+
+    /**
+     * @return array|mixed
+     */
+    public function storeProducts( $theStore ) : array;
 }

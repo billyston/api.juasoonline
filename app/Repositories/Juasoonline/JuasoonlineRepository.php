@@ -3,7 +3,6 @@
 namespace App\Repositories\Juasoonline;
 
 use App\Services\Juasoonline\JuasoonlineService;
-use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
 class JuasoonlineRepository implements JuasoonlineRepositoryInterface
@@ -38,10 +37,18 @@ class JuasoonlineRepository implements JuasoonlineRepositoryInterface
 
     /**
      * @param Request $request
-     * @return JsonResponse
+     * @return array
      */
     public function recommendations( Request $request ) : array
     {
         return $this -> juasoonlineService -> getRecommendations( $request );
+    }
+
+    /**
+     * @return array|mixed
+     */
+    public function storeProducts( $theStore ) : array
+    {
+        return $this -> juasoonlineService -> getStoreProducts( $theStore );
     }
 }

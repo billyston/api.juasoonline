@@ -125,8 +125,12 @@ Route::group(['prefix' => 'web'], function ()
     // Juasoonline routes
     Route::group(['prefix' => 'juaso'], function ()
     {
+        // Product routes
         Route::get( 'products', [ JuasoonlineController::class, 'products' ]);
         Route::get( 'product/{product}', [ JuasoonlineController::class, 'product' ]);
         Route::get( 'products/recommendations', [ JuasoonlineController::class, 'recommendations' ]);
+
+        // Store routes
+        Route::get( 'store/{store}/products', [ JuasoonlineController::class, 'storeProducts' ]);
     });
 });
