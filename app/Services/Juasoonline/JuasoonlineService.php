@@ -3,6 +3,7 @@
 namespace App\Services\Juasoonline;
 
 use App\Traits\ExternalService;
+use Illuminate\Http\Request;
 
 class JuasoonlineService
 {
@@ -31,5 +32,13 @@ class JuasoonlineService
     public function getProduct( $theProduct ) : array
     {
         return $this -> getAllRequest( $this -> baseURL . 'product/' . $theProduct );
+    }
+
+    /**
+     * @return array|mixed
+     */
+    public function getRecommendations( Request $request ) : array
+    {
+        return $this -> getWithBody( $this -> baseURL . 'products/recommendations', $request );
     }
 }

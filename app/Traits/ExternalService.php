@@ -68,4 +68,15 @@ trait ExternalService
         $response = Http::withHeaders(['Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json']) -> post( $url, ['data' => $data] );
         return $response -> json();
     }
+
+    /**
+     * @param $url
+     * @param $data
+     * @return array|mixed
+     */
+    public function getWithBody( $url, $data ) : array
+    {
+        $response = Http::withHeaders(['Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json']) -> get( $url, ['data' => $data] );
+        return $response -> json();
+    }
 }

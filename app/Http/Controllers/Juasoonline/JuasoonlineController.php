@@ -35,4 +35,13 @@ class JuasoonlineController extends Controller
     {
         return $this -> theRepository -> product( $theProduct );
     }
+
+    /**
+     * @param Request $request
+     * @return array|mixed
+     */
+    public function recommendations( Request $request ) : array
+    {
+        return $this -> theRepository -> recommendations( $request );
+    }
 }
