@@ -7,7 +7,7 @@ use App\Repositories\ProductService\Other\Category\CategoryRepositoryInterface;
 
 class CategoryController extends Controller
 {
-    private $theRepository;
+    private CategoryRepositoryInterface $theRepository;
 
     public function __construct( CategoryRepositoryInterface $categoryRepository )
     {

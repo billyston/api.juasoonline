@@ -32,4 +32,9 @@ interface JuasoonlineRepositoryInterface
      * @return array|mixed
      */
     public function deals() : array;
+
+    /**
+     * @return array|mixed
+     */
+    public function categories() : array;
 }

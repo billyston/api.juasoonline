@@ -59,4 +59,12 @@ class JuasoonlineRepository implements JuasoonlineRepositoryInterface
     {
         return $this -> juasoonlineService -> getDeals();
     }
+
+    /**
+     * @return array|mixed
+     */
+    public function categories() : array
+    {
+        return $this -> juasoonlineService -> getCategories();
+    }
 }
