@@ -49,4 +49,12 @@ class JuasoonlineService
     {
         return $this -> getAllRequest( $this -> baseURL . 'store/' . $theStore . '/products' );
     }
+
+    /**
+     * @return array|mixed
+     */
+    public function getDeals() : array
+    {
+        return $this -> getAllRequest( $this -> baseURL . 'products/deals' );
+    }
 }

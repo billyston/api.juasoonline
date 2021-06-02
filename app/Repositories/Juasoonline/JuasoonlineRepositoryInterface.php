@@ -27,4 +27,9 @@ interface JuasoonlineRepositoryInterface
      * @return array|mixed
      */
     public function storeProducts( $theStore ) : array;
+
+    /**
+     * @return array|mixed
+     */
+    public function deals() : array;
 }

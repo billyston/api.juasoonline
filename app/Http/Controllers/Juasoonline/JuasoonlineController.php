@@ -53,4 +53,12 @@ class JuasoonlineController extends Controller
     {
         return $this -> theRepository -> storeProducts( $theStore );
     }
+
+    /**
+     * @return array|mixed
+     */
+    public function deals() : array
+    {
+        return $this -> theRepository -> deals();
+    }
 }
