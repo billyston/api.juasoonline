@@ -63,6 +63,14 @@ class JuasoonlineRepository implements JuasoonlineRepositoryInterface
     /**
      * @return array|mixed
      */
+    public function storeAds() : array
+    {
+        return $this -> juasoonlineService -> getStoreAds();
+    }
+
+    /**
+     * @return array|mixed
+     */
     public function categories() : array
     {
         return $this -> juasoonlineService -> getCategories();

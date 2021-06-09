@@ -36,5 +36,10 @@ interface JuasoonlineRepositoryInterface
     /**
      * @return array|mixed
      */
+    public function storeAds() : array;
+
+    /**
+     * @return array|mixed
+     */
     public function categories() : array;
 }

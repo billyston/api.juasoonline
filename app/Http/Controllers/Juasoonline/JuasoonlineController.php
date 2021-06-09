@@ -65,6 +65,14 @@ class JuasoonlineController extends Controller
     /**
      * @return array|mixed
      */
+    public function storeAds() : array
+    {
+        return $this -> theRepository -> storeAds();
+    }
+
+    /**
+     * @return array|mixed
+     */
     public function categories() : array
     {
         return $this -> theRepository -> categories();

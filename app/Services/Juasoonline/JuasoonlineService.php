@@ -61,6 +61,14 @@ class JuasoonlineService
     /**
      * @return array|mixed
      */
+    public function getStoreAds() : array
+    {
+        return $this -> getAllRequest( $this -> baseURL . 'stores/ads' );
+    }
+
+    /**
+     * @return array|mixed
+     */
     public function getCategories() : array
     {
         return $this -> getAllRequest( $this -> baseURL . 'categories' );
