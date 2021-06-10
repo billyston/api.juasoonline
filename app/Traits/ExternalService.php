@@ -12,7 +12,7 @@ trait ExternalService
      */
     public function getAllRequest( $url ) : array
     {
-        $response = Http::withHeaders(['Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json']) -> get( $url, ['include' => request()->include] );
+        $response = Http::withHeaders(['Content-Type' => 'application/vnd.api+json', 'Accept' => 'application/vnd.api+json']) -> get( $url, ['page' => request()->page, 'include' => request()->include] );
         return $response -> json();
     }
 
