@@ -53,6 +53,14 @@ class JuasoonlineService
     /**
      * @return array|mixed
      */
+    public function getStoreRecommendations( $theProduct ) : array
+    {
+        return $this -> getAllRequest( $this -> baseURL . 'store/product/' . $theProduct . '/recommendations' );
+    }
+
+    /**
+     * @return array|mixed
+     */
     public function getDeals() : array
     {
         return $this -> getAllRequest( $this -> baseURL . 'products/deals' );
