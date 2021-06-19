@@ -21,7 +21,7 @@
                             <tr>
                                 <td style="box-sizing:border-box;padding:0;font-size:12px;vertical-align:top;text-align:left" valign="top" align="left">
                                     <a href="" style="box-sizing:border-box;color:#348eda;font-weight:400;text-decoration:none" target="_blank">
-                                        <img src="https://assets.juasoonline.com/juasoonline/assets/images/logo.png?__WB_REVISION__=84c7234beb62f5d1397ef204a06ec568" height="30" alt="SendGrid" style="max-width:100%;border-style:none" class="CToWUd">
+                                        <img src="https://assets.juasoonline.com/juasoonline/assets/images/logo.png?__WB_REVISION__=84c7234beb62f5d1397ef204a06ec568" height="30" alt="Juasoonline" style="max-width:100%;border-style:none" class="CToWUd">
                                     </a>
                                 </td>
                             </tr>
@@ -107,7 +107,7 @@
                             <tr style="font-size:12px">
                                 <td style="box-sizing:border-box;vertical-align:top;font-size:12px;text-align:center;padding:20px 0" valign="top" align="center">
                                     <a href="" style="box-sizing:border-box;color:#348eda;font-weight:400;text-decoration:none;font-size:12px" target="_blank">
-                                        <img src="https://assets.juasoonline.com/juasoonline/assets/images/logo.png?__WB_REVISION__=84c7234beb62f5d1397ef204a06ec568" height="20" alt="SendGrid" style="max-width:100%;border-style:none;font-size:12px" class="CToWUd">
+                                        <img src="https://assets.juasoonline.com/juasoonline/assets/images/logo.png?__WB_REVISION__=84c7234beb62f5d1397ef204a06ec568" height="20" alt="Juasoonline" style="max-width:100%;border-style:none;font-size:12px" class="CToWUd">
                                     </a>
                                     <p style="color:#294661;font-size:12px;font-weight:400;margin-bottom:5px;margin:10px 0 20px">
                                         Shop with confidence

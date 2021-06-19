@@ -138,7 +138,6 @@ Route::group(['prefix' => 'web'], function ()
         Route::get( 'products/deals', [ JuasoonlineController::class, 'deals' ]);
         Route::get( 'stores/ads', [ JuasoonlineController::class, 'storeAds' ]);
 
-
         // Other routes
         Route::get( 'categories', [ JuasoonlineController::class, 'categories' ]);
     });
