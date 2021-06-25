@@ -7,15 +7,15 @@ use Illuminate\Http\Request;
 
 class JuasoonlineService
 {
-    use ExternalService;
-    private string $baseURL;
+    use ExternalService; private string $productURL; private string $orderURL;
 
     /**
      * JuasoonlineService constructor.
      */
     public function __construct()
     {
-        $this -> baseURL = env('PRODUCT_SERVICE_URL') . 'juaso/';
+        $this -> productURL = env('PRODUCT_SERVICE_URL') . 'juaso/';
+        $this -> orderURL = env('ORDER_SERVICE_URL') . 'juaso/';
     }
 
     /**
@@ -23,7 +23,7 @@ class JuasoonlineService
      */
     public function getProducts() : array
     {
-        return $this -> getAllRequest( $this -> baseURL . 'products' );
+        return $this -> getAllRequest( $this -> productURL . 'products' );
     }
 
     /**
@@ -31,7 +31,7 @@ class JuasoonlineService
      */
     public function getProduct( $theProduct ) : array
     {
-        return $this -> getAllRequest( $this -> baseURL . 'product/' . $theProduct );
+        return $this -> getAllRequest( $this -> productURL . 'product/' . $theProduct );
     }
 
     /**
@@ -39,7 +39,7 @@ class JuasoonlineService
      */
     public function getRecommendations( Request $request ) : array
     {
-        return $this -> getWithBody( $this -> baseURL . 'products/recommendations', $request );
+        return $this -> getWithBody( $this -> productURL . 'products/recommendations', $request );
     }
 
     /**
@@ -47,7 +47,7 @@ class JuasoonlineService
      */
     public function getStoreProducts( $theStore ) : array
     {
-        return $this -> getAllRequest( $this -> baseURL . 'store/' . $theStore . '/products' );
+        return $this -> getAllRequest( $this -> productURL . 'store/' . $theStore . '/products' );
     }
 
     /**
@@ -55,7 +55,7 @@ class JuasoonlineService
      */
     public function getStoreRecommendations( $theProduct ) : array
     {
-        return $this -> getAllRequest( $this -> baseURL . 'store/product/' . $theProduct . '/recommendations' );
+        return $this -> getAllRequest( $this -> productURL . 'store/product/' . $theProduct . '/recommendations' );
     }
 
     /**
@@ -63,7 +63,7 @@ class JuasoonlineService
      */
     public function getDeals() : array
     {
-        return $this -> getAllRequest( $this -> baseURL . 'products/deals' );
+        return $this -> getAllRequest( $this -> productURL . 'products/deals' );
     }
 
     /**
@@ -71,7 +71,7 @@ class JuasoonlineService
      */
     public function getStoreAds() : array
     {
-        return $this -> getAllRequest( $this -> baseURL . 'stores/ads' );
+        return $this -> getAllRequest( $this -> productURL . 'stores/ads' );
     }
 
     /**
@@ -79,6 +79,14 @@ class JuasoonlineService
      */
     public function getCategories() : array
     {
-        return $this -> getAllRequest( $this -> baseURL . 'categories' );
+        return $this -> getAllRequest( $this -> productURL . 'categories' );
+    }
+
+    /**
+     * @return array|mixed
+     */
+    public function getPaymentMethods() : array
+    {
+        return $this -> getAllRequest( $this -> orderURL . 'payment-methods' );
     }
 }

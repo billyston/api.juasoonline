@@ -13,7 +13,7 @@ use Illuminate\Http\Response;
 
 class CustomerRepository implements CustomerRepositoryInterface
 {
-    use apiResponseBuilder; private $theCustomerService;
+    use apiResponseBuilder; private CustomerService $theCustomerService;
 
     /**
      * CustomerRepository constructor.

@@ -4,19 +4,23 @@ namespace App\Repositories\OrderService\Customer\Order;
 
 use App\Http\Requests\OrderService\Customer\Order\OrderRequest;
 use App\Services\OrderService\Customer\OrderService\OrderService;
+use App\Traits\HybridService;
 
 class OrderRepository implements OrderRepositoryInterface
 {
-    private $theOrderService;
+    private OrderService $theOrderService;
+    private HybridService $theHybridService;
 
     /**
      * OrderRepository constructor.
      *
      * @param OrderService $orderService
+     * @param HybridService $hybridService
      */
-    public function __construct( OrderService $orderService )
+    public function __construct( OrderService $orderService, HybridService $hybridService )
     {
         $this -> theOrderService = $orderService;
+        $this -> theHybridService = $hybridService;
     }
 
     /**
@@ -39,7 +43,14 @@ class OrderRepository implements OrderRepositoryInterface
      */
     public function store( $theCustomer, OrderRequest $orderRequest ) : array
     {
-        return $this -> theOrderService -> createOrder( $theCustomer, $orderRequest );
+        // Get product and calculate subtotal
+        $product = $this -> theHybridService -> getProduct( $orderRequest -> input('data.attributes.product_id' ));
+        $subTotal = $orderRequest -> input('data.attributes.quantity') * $product['data']['attributes']['raw_sales_price'];
+
+        //
+
+        $data = array( 'type' => 'Order', 'attributes' => array('product_id' => $orderRequest -> input('data.attributes.product_id'), 'quantity' => $orderRequest -> input('data.attributes.quantity'), 'subtotal' => $subTotal, 'total' => $subTotal + 30 ), 'relationships' => array('customer' => array( 'customer_id' => $orderRequest -> input('data.relationships.customer.customer_id') )));
+        return $this -> theOrderService -> createOrder( $theCustomer, $data );
     }
 
     /**

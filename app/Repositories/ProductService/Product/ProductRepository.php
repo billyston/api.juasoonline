@@ -39,7 +39,7 @@ class ProductRepository implements ProductRepositoryInterface
         // Check if product has categories
         for( $i = 0; $i <  count($productRequest['categories']); $i++  )
         {
-            array_push( $data['relationships']['categories']['data'], array('type' => 'Category', 'category_id' => $productRequest['categories'][$i]) );
+            array_push( $data['relationships']['categories']['data'], array('type' => 'Category', 'category_id' => $productRequest['categories'][$i]));
         }
 
         // Check if product has specifications

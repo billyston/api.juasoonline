@@ -47,4 +47,9 @@ interface JuasoonlineRepositoryInterface
      * @return array|mixed
      */
     public function categories() : array;
+
+    /**
+     * @return array|mixed
+     */
+    public function paymentMethods() : array;
 }

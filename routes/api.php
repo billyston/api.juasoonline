@@ -140,5 +140,6 @@ Route::group(['prefix' => 'web'], function ()
 
         // Other routes
         Route::get( 'categories', [ JuasoonlineController::class, 'categories' ]);
+        Route::get( 'payment-methods', [ JuasoonlineController::class, 'paymentMethods' ]);
     });
 });
