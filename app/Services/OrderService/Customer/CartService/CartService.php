@@ -6,8 +6,7 @@ use App\Traits\ExternalService;
 
 class CartService
 {
-    use ExternalService;
-    private $baseURL;
+    use ExternalService; private string $baseURL;
 
     /**
      * CartService constructor.
@@ -33,7 +32,7 @@ class CartService
      */
     public function createCart( $theCustomer, $theRequest ) : array
     {
-        return $this -> postRequest( $this -> baseURL . $theCustomer . '/carts', $theRequest );
+        return $this -> postWithFiles( $this -> baseURL . $theCustomer . '/carts', $theRequest );
     }
 
     /**

@@ -4,19 +4,23 @@ namespace App\Repositories\OrderService\Customer\Cart;
 
 use App\Http\Requests\OrderService\Customer\Cart\CartRequest;
 use App\Services\OrderService\Customer\CartService\CartService;
+use App\Traits\HybridService;
 
 class CartRepository implements CartRepositoryInterface
 {
-    private $theCartService;
+    private CartService $theCartService;
+    private HybridService $theHybridService;
 
     /**
      * CartRepository constructor.
      *
      * @param CartService $orderService
+     * @param HybridService $hybridService
      */
-    public function __construct( CartService $orderService )
+    public function __construct( CartService $orderService, HybridService $hybridService )
     {
         $this -> theCartService = $orderService;
+        $this -> theHybridService = $hybridService;
     }
 
     /**
@@ -39,7 +43,12 @@ class CartRepository implements CartRepositoryInterface
      */
     public function store( $theCustomer, CartRequest $CartRequest ) : array
     {
-        return $this -> theCartService -> createCart( $theCustomer, $CartRequest );
+        // Get product and calculate subtotal
+        $product = $this -> theHybridService -> getProduct( $CartRequest -> input('data.attributes.product_id' ));
+        $subTotal = $CartRequest -> input('data.attributes.quantity') * $product['data']['attributes']['raw_sales_price'];
+
+        $data = array( 'type' => 'Cart', 'attributes' => array('product_id' => $CartRequest -> input('data.attributes.product_id'), 'color_id' => $CartRequest -> input('data.attributes.color_id'), 'size_id' => $CartRequest -> input('data.attributes.size_id'), 'bundle_id' => $CartRequest -> input('data.attributes.bundle_id'), 'quantity' => $CartRequest -> input('data.attributes.quantity'), 'subtotal' => $subTotal, 'total' => $subTotal + 30 ), 'relationships' => array('customer' => array( 'customer_id' => $CartRequest -> input('data.relationships.customer.customer_id') )));
+        return $this -> theCartService -> createCart( $theCustomer, $data );
     }
 
     /**

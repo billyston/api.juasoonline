@@ -47,9 +47,7 @@ class OrderRepository implements OrderRepositoryInterface
         $product = $this -> theHybridService -> getProduct( $orderRequest -> input('data.attributes.product_id' ));
         $subTotal = $orderRequest -> input('data.attributes.quantity') * $product['data']['attributes']['raw_sales_price'];
 
-        //
-
-        $data = array( 'type' => 'Order', 'attributes' => array('product_id' => $orderRequest -> input('data.attributes.product_id'), 'quantity' => $orderRequest -> input('data.attributes.quantity'), 'subtotal' => $subTotal, 'total' => $subTotal + 30 ), 'relationships' => array('customer' => array( 'customer_id' => $orderRequest -> input('data.relationships.customer.customer_id') )));
+        $data = array( 'type' => 'Order', 'attributes' => array('product_id' => $orderRequest -> input('data.attributes.product_id'), 'color_id' => $orderRequest -> input('data.attributes.color_id'), 'size_id' => $orderRequest -> input('data.attributes.size_id'), 'bundle_id' => $orderRequest -> input('data.attributes.bundle_id'), 'quantity' => $orderRequest -> input('data.attributes.quantity'), 'subtotal' => $subTotal, 'total' => $subTotal + 30 ), 'relationships' => array('customer' => array( 'customer_id' => $orderRequest -> input('data.relationships.customer.customer_id') )));
         return $this -> theOrderService -> createOrder( $theCustomer, $data );
     }
 
