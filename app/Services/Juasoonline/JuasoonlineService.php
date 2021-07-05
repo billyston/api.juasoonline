@@ -14,8 +14,8 @@ class JuasoonlineService
      */
     public function __construct()
     {
-        $this -> productURL = env('PRODUCT_SERVICE_URL') . 'juaso/';
-        $this -> orderURL = env('ORDER_SERVICE_URL') . 'juaso/';
+        $this -> productURL = env('PRODUCT_SERVICE_URL') . 'juasoonline/';
+        $this -> orderURL = env('ORDER_SERVICE_URL') . 'juasoonline/';
     }
 
     /**
@@ -88,5 +88,13 @@ class JuasoonlineService
     public function getPaymentMethods() : array
     {
         return $this -> getAllRequest( $this -> orderURL . 'payment-methods' );
+    }
+
+    /**
+     * @return array|mixed
+     */
+    public function getDeliveryFees() : array
+    {
+        return $this -> getAllRequest( $this -> orderURL . 'delivery-fee' );
     }
 }

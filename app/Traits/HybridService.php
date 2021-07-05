@@ -17,6 +17,6 @@ class HybridService
 
     public function getProduct ( $theProduct )
     {
-        return $this -> getAllRequest( $this -> productServiceURL . 'juaso/product/' . $theProduct );
+        return $this -> getAllRequest( $this -> productServiceURL . 'juasooline/product/' . $theProduct );
     }
 }

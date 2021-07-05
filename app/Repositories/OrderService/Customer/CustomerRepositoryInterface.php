@@ -45,4 +45,10 @@ interface CustomerRepositoryInterface
      * @return JsonResponse|mixed
      */
     public function verification( $request ) : JsonResponse;
+
+    /**
+     * @param $customer
+     * @return array|mixed
+     */
+    public function getStats( $customer ) : array;
 }

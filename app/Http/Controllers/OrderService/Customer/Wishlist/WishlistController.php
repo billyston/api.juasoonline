@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class WishlistController extends Controller
 {
-    private $theRepository;
+    private WishlistRepositoryInterface $theRepository;
 
     public function __construct( WishlistRepositoryInterface $wishlistRepository )
     {
@@ -32,7 +32,6 @@ class WishlistController extends Controller
      *
      * @param $theCustomer
      * @param WishlistRequest $wishlistRequest
-     * @param $theWishlist
      * @return array|mixed
      */
     public function store( $theCustomer, WishlistRequest $wishlistRequest ) : array

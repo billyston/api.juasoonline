@@ -91,4 +91,12 @@ class JuasoonlineRepository implements JuasoonlineRepositoryInterface
     {
         return $this -> juasoonlineService -> getPaymentMethods();
     }
+
+    /**
+     * @return array|mixed
+     */
+    public function deliveryFees() : array
+    {
+        return $this -> juasoonlineService -> getDeliveryFees();
+    }
 }

@@ -12,7 +12,7 @@ use Illuminate\Http\Request;
 
 class CustomerController extends Controller
 {
-    private $theRepository; use AuthenticatesJwtUsers;
+    private CustomerRepositoryInterface $theRepository; use AuthenticatesJwtUsers;
 
     /**
      * CustomerController constructor.
@@ -103,4 +103,13 @@ class CustomerController extends Controller
 //    {
 //       return $this -> theRepository -> registration( $customerRegistrationRequest );
 //    }
+
+    /**
+     * @param $customer
+     * @return array|mixed
+     */
+    public function getStats( $customer ) : array
+    {
+        return $this -> theRepository -> getStats( $customer );
+    }
 }

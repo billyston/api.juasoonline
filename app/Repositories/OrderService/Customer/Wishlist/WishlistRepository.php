@@ -7,7 +7,7 @@ use App\Services\OrderService\Customer\Wishlist\WishlistService;
 
 class WishlistRepository implements WishlistRepositoryInterface
 {
-    private $theWishlistService;
+    private WishlistService $theWishlistService;
 
     /**
      * WishlistRepository constructor.

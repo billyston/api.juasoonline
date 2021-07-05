@@ -39,7 +39,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// System admins routes
 Route::group(['prefix' => 'web'], function ()
+{
+    // Other product services resources routes
+    Route::apiResource( 'countries', CountryController::class );
+    Route::apiResource( 'promo-types', PromoTypeController::class );
+    Route::apiResource( 'categories', CategoryController::class );
+    Route::apiResource( 'brands', BrandController::class );
+
+    // Product service [ store and related resource ] routes
+    Route::apiResource( 'stores', StoreController::class);
+    Route::apiResource( 'store.charges', ChargeController::class );
+
+    // Product service [ product and related resource ] routes
+    Route::apiResource( 'product.promotions', PromotionController::class );
+});
+
+// Business web app routes
+Route::group(['prefix' => 'web/store'], function ()
 {
     // Store administrator's routes
     Route::group([], function ()
@@ -81,65 +99,55 @@ Route::group(['prefix' => 'web'], function ()
             });
         });
     });
+});
 
-    // Store customer's routes
+// Juasoonline web app routes
+Route::group(['prefix' => 'web/juasoonline'], function ()
+{
+    // Customer's routes
     Route::group([], function ()
     {
         // Unauthenticated (Unprotected) customer routes
-        Route::group([], function()
+        Route::group(['prefix' => 'customers/auth'], function()
         {
-            Route::post( 'customers/registration', [ CustomerController::class, 'store' ]);
-            Route::post( 'customers/auth/login', [ CustomerController::class, 'login' ]);
-            Route::post( 'customers/account/verification', [ CustomerController::class, 'verification' ]);
+            Route::post( 'registration', [ CustomerController::class, 'store' ]);
+            Route::post( 'verification', [ CustomerController::class, 'verification' ]);
+            Route::post( 'login', [ CustomerController::class, 'login' ]);
         });
 
         // Authenticated (Protected) customer routes
         Route::group(['middleware' => 'auth:customer'], function()
         {
+            // Auth routes
             Route::post( 'customers/auth/logout', [ CustomerController::class, 'logout' ]);
+
+            // Customer main resource
             Route::apiResource( 'customers', CustomerController::class ) -> only([ 'store', 'show', 'update' ]);
-            Route::apiResource( 'customer.addresses', AddressController::class );
-            Route::apiResource( 'customer.wishlists', WishlistController::class );
-            Route::apiResource( 'customer.carts', CartController::class );
-            Route::apiResource( 'customer.orders', OrderController::class );
+            Route::apiResource( 'customers.addresses', AddressController::class );
+            Route::apiResource( 'customers.wishlists', WishlistController::class ) -> only([ 'index', 'store', 'destroy' ]);
+            Route::apiResource( 'customers.carts', CartController::class ) -> only([ 'index', 'store', 'destroy' ]);
+            Route::apiResource( 'customers.orders', OrderController::class ) -> only([ 'index', 'store', 'show', 'update' ]);
+
+            // Other resource
+            Route::get( 'customers/{customer}/stats', [ CustomerController::class, 'getStats' ] );
         });
     });
 
-    // System admins routes
-    Route::group([], function ()
-    {
-        // Other product services resources routes
-        Route::apiResource( 'countries', CountryController::class );
-        Route::apiResource( 'promo-types', PromoTypeController::class );
-        Route::apiResource( 'categories', CategoryController::class );
-        Route::apiResource( 'brands', BrandController::class );
+    // Product routes
+    Route::get('products', [JuasoonlineController::class, 'products']);
+    Route::get('product/{product}', [JuasoonlineController::class, 'product']);
+    Route::get('products/recommendations', [JuasoonlineController::class, 'recommendations']);
 
-        // Product service [ store and related resource ] routes
-        Route::apiResource( 'stores', StoreController::class);
-        Route::apiResource( 'store.charges', ChargeController::class );
+    // Store routes
+    Route::get('store/{store}/products', [JuasoonlineController::class, 'storeProducts']);
+    Route::get('store/product/{product}/recommendations', [JuasoonlineController::class, 'storeRecommendations']);
 
-        // Product service [ product and related resource ] routes
-        Route::apiResource( 'product.promotions', PromotionController::class );
-    });
+    // Ad routes
+    Route::get('products/deals', [JuasoonlineController::class, 'deals']);
+    Route::get('stores/ads', [JuasoonlineController::class, 'storeAds']);
 
-    // Juasoonline routes
-    Route::group(['prefix' => 'juaso'], function ()
-    {
-        // Product routes
-        Route::get( 'products', [ JuasoonlineController::class, 'products' ]);
-        Route::get( 'product/{product}', [ JuasoonlineController::class, 'product' ]);
-        Route::get( 'products/recommendations', [ JuasoonlineController::class, 'recommendations' ]);
-
-        // Store routes
-        Route::get( 'store/{store}/products', [ JuasoonlineController::class, 'storeProducts' ]);
-        Route::get( 'store/product/{product}/recommendations', [ JuasoonlineController::class, 'storeRecommendations' ]);
-
-        // Ad routes
-        Route::get( 'products/deals', [ JuasoonlineController::class, 'deals' ]);
-        Route::get( 'stores/ads', [ JuasoonlineController::class, 'storeAds' ]);
-
-        // Other routes
-        Route::get( 'categories', [ JuasoonlineController::class, 'categories' ]);
-        Route::get( 'payment-methods', [ JuasoonlineController::class, 'paymentMethods' ]);
-    });
+    // Other routes
+    Route::get('categories', [JuasoonlineController::class, 'categories']);
+    Route::get('payment-methods', [JuasoonlineController::class, 'paymentMethods']);
+    Route::get('delivery-fees', [JuasoonlineController::class, 'deliveryFees']);
 });

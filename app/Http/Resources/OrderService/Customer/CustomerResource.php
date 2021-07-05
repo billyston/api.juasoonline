@@ -17,18 +17,18 @@ class CustomerResource extends JsonResource
     {
         return
         [
-            'id'                    => $this -> id,
+            'id'                    => $this -> resource -> id,
             'type'                  => 'Customer',
 
             'attributes' =>
             [
-                'resource_id'       => $this -> resource_id,
-                'email'             => $this -> email,
+                'resource_id'       => $this -> resource -> resource_id,
+                'email'             => $this -> resource -> email,
 
-                'status'            => $this -> status,
+                'status'            => $this -> resource -> status,
 
-                'created_at'        => $this -> created_at -> toDateTimeString(),
-                'updated_at'        => $this -> updated_at -> toDateTimeString(),
+                'created_at'        => $this -> resource -> created_at -> toDateTimeString(),
+                'updated_at'        => $this -> resource -> updated_at -> toDateTimeString(),
             ]
         ];
     }

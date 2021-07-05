@@ -82,4 +82,13 @@ class CustomerRepository implements CustomerRepositoryInterface
         $customer -> update(["verification_code" => null, 'status' => 0]);;
         return $this -> successResponse( $customer, "Success", "Registration successful", Response::HTTP_CREATED );
     }
+
+    /**
+     * @param $customer
+     * @return array|mixed
+     */
+    public function getStats( $customer ) : array
+    {
+        return $this -> theCustomerService -> getStats( $customer );
+    }
 }

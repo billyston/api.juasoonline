@@ -52,4 +52,9 @@ interface JuasoonlineRepositoryInterface
      * @return array|mixed
      */
     public function paymentMethods() : array;
+
+    /**
+     * @return array|mixed
+     */
+    public function deliveryFees() : array;
 }

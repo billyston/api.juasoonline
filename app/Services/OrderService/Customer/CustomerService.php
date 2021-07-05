@@ -61,4 +61,14 @@ class CustomerService
     {
         return $this -> deleteRequest( $this -> baseURL . '/' . $theCustomer );
     }
+
+    /**
+     * @param $theCustomer
+     * @return array|mixed
+     */
+    public function getStats( $theCustomer ) : array
+    {
+        logger($theCustomer);
+        return $this -> getRequest( $this -> baseURL . '/' . $theCustomer . '/stats' );
+    }
 }

@@ -94,4 +94,12 @@ class JuasoonlineController extends Controller
     {
         return $this -> theRepository -> paymentMethods();
     }
+
+    /**
+     * @return array|mixed
+     */
+    public function deliveryFees() : array
+    {
+        return $this -> theRepository -> deliveryFees();
+    }
 }
